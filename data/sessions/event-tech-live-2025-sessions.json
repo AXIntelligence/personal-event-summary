@@ -1,0 +1,274 @@
+{
+  "sessions": [
+    {
+      "id": "etl-101",
+      "title": "Streamlining Onsite Registration: From Kiosks to Mobile Check-In",
+      "description": "Learn how modern registration technology is transforming the attendee experience. Discover best practices for reducing wait times, improving data accuracy, and creating seamless check-in flows using kiosks, mobile apps, and self-service solutions.",
+      "speakers": ["Marcus Johnson, Senior Sales, Eventpack", "Sarah Mitchell, VP of Event Solutions, Choose 2 Rent"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-102",
+      "title": "The Death of Plastic Badges: Sustainable Solutions for 2025",
+      "description": "Explore eco-friendly alternatives to traditional plastic badges. From biodegradable materials to digital badges, learn how to reduce your event's environmental impact while maintaining professional standards.",
+      "speakers": ["Nina Patel, Regional Manager, enviricard", "Michael O'Brien, Integration Specialist, Cvent"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-103",
+      "title": "RFID & UHF Technology: The Future of Attendee Tracking",
+      "description": "Discover how RFID and UHF technology enables real-time attendee tracking, session analytics, and personalized experiences. See live demonstrations of the latest hardware and learn implementation best practices.",
+      "speakers": ["Sarah Mitchell, VP of Event Solutions, Choose 2 Rent"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-104",
+      "title": "Reducing Wait Times: Self-Service Check-In Strategies",
+      "description": "Practical strategies for implementing self-service check-in that attendees love. Learn about kiosk placement, user interface design, backup procedures, and staff training for smooth operations.",
+      "speakers": ["Marcus Johnson, Senior Sales, Eventpack", "Tom Hughes, Product Manager, Lineup Ninja"],
+      "dateTime": "2025-11-13T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-201",
+      "title": "From Random Encounters to Intentional Connections: AI-Powered Networking",
+      "description": "Transform your networking experience with AI-powered matchmaking. Learn how machine learning algorithms create meaningful connections based on interests, goals, and professional backgrounds.",
+      "speakers": ["Alex Zhang, Technical Lead, Erleah", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-202",
+      "title": "Peer-to-Peer Learning: Creating Knowledge-Sharing Communities",
+      "description": "Discover how Braindate's crowdsourced knowledge platform enables attendees to become teachers and learners. See how peer-to-peer sessions drive deeper engagement and create lasting professional relationships.",
+      "speakers": ["Rachel Foster, Business Development, Braindate", "Jennifer Walsh, Chief Experience Officer, Braindate"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-203",
+      "title": "Live Q&A Done Right: Engaging Hybrid Audiences",
+      "description": "Master the art of inclusive Q&A sessions that engage both in-person and virtual attendees. Learn about moderation strategies, AI-powered translation, and real-time polling to keep everyone involved.",
+      "speakers": ["Lisa Romano, Partnership Manager, Pigeonhole"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-204",
+      "title": "Gamification & ROI: Measuring Sponsor Engagement",
+      "description": "Learn how gamification drives attendee engagement while delivering measurable ROI for sponsors. Explore interactive content strategies, loyalty programs, and data capture techniques.",
+      "speakers": ["David Kim, Solutions Architect, Komo"],
+      "dateTime": "2025-11-13T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-205",
+      "title": "Speed Networking 2.0: Quality Over Quantity",
+      "description": "Reimagine speed networking with structured formats that create meaningful connections. Learn how to facilitate productive conversations, track interactions, and provide follow-up tools.",
+      "speakers": ["Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-13T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-301",
+      "title": "AI in Events: Beyond the Hype",
+      "description": "Separate AI fact from fiction in the events industry. Explore practical applications of artificial intelligence in registration, networking, content delivery, and analytics with real-world case studies.",
+      "speakers": ["Alex Zhang, Technical Lead, Erleah", "Simon Crawford, Head of Innovation, Erleah"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-302",
+      "title": "Mobile-First Event Experiences",
+      "description": "Design event experiences that put mobile at the center. Learn from Eventbase's work with Olympics, SXSW, and CES on creating apps that attendees actually use.",
+      "speakers": ["James Chen, Product Director, Eventbase", "Patricia Moore, VP of Product, Eventbase"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-303",
+      "title": "The Rise of Extended Reality: Virtual Production Studios",
+      "description": "Explore how XR technology and virtual production studios are creating immersive event experiences. See live demonstrations of LED walls, real-time rendering, and mixed reality applications.",
+      "speakers": ["Chris Taylor, AV Specialist, 4Wall"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 60,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-304",
+      "title": "Event Tech Integration: Making Your Stack Work Together",
+      "description": "Stop fighting with incompatible systems. Learn integration strategies, API best practices, and middleware solutions that make your event tech stack work seamlessly together.",
+      "speakers": ["James Chen, Product Director, Eventbase", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-13T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-401",
+      "title": "Breaking Language Barriers: Real-Time Translation Technology",
+      "description": "Make your events truly global with real-time translation and interpretation. Learn about AI-powered translation, human interpretation services, and hybrid approaches for 6000+ language combinations.",
+      "speakers": ["Dr. Elena Rodriguez, Head of Language Services, TransPerfect Live", "Emma Thompson, Account Executive, Interprefy"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Accessibility & Inclusion"
+    },
+    {
+      "id": "etl-402",
+      "title": "Live Captioning: Legal Requirements and Best Practices",
+      "description": "Navigate accessibility regulations while providing excellent captioning services. Understand ADA compliance, WCAG guidelines, and the technology that makes real-time captioning possible.",
+      "speakers": ["Emma Thompson, Account Executive, Interprefy"],
+      "dateTime": "2025-11-12T16:00:00Z",
+      "durationMinutes": 45,
+      "track": "Accessibility & Inclusion"
+    },
+    {
+      "id": "etl-403",
+      "title": "Designing Accessible Hybrid Experiences",
+      "description": "Create hybrid events that work for everyone, regardless of ability or location. Learn universal design principles, assistive technology integration, and inclusive content delivery strategies.",
+      "speakers": ["Dr. Elena Rodriguez, Head of Language Services, TransPerfect Live"],
+      "dateTime": "2025-11-13T15:00:00Z",
+      "durationMinutes": 45,
+      "track": "Accessibility & Inclusion"
+    },
+    {
+      "id": "etl-501",
+      "title": "Measuring Event Carbon Footprint: Tools and Strategies",
+      "description": "Learn how to calculate, track, and reduce your event's environmental impact. Explore carbon calculators, offset programs, and sustainable vendor selection criteria.",
+      "speakers": ["Marcus Brown, Sustainability Director, One Tribe"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Sustainability"
+    },
+    {
+      "id": "etl-502",
+      "title": "The Business Case for Sustainable Events",
+      "description": "Sustainability isn't just good ethics—it's good business. Discover how sustainable practices reduce costs, attract attendees, and differentiate your events in a competitive market.",
+      "speakers": ["Marcus Brown, Sustainability Director, One Tribe"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Sustainability"
+    },
+    {
+      "id": "etl-503",
+      "title": "Tech Rental vs. Purchase: The Environmental Impact",
+      "description": "Compare the carbon footprint of purchasing versus renting event technology. Learn how equipment rental reduces e-waste and supports circular economy principles.",
+      "speakers": ["Sarah Mitchell, VP of Event Solutions, Choose 2 Rent", "Nina Patel, Regional Manager, One World Rental"],
+      "dateTime": "2025-11-13T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Sustainability"
+    },
+    {
+      "id": "etl-601",
+      "title": "Capturing and Monetizing Event Content",
+      "description": "Transform your event content into revenue streams. Learn video production strategies, content licensing, and on-demand platforms that extend event value beyond the live experience.",
+      "speakers": ["Sophie Martin, Account Director, First Sight Media"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-602",
+      "title": "Facial Recognition for Photo Distribution: Privacy and Possibilities",
+      "description": "Explore AI-powered photo distribution that respects privacy. Learn about consent management, data protection, and the technology that matches attendees with their event photos automatically.",
+      "speakers": ["Jessica Brown, Sales Director, PreMagic"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-603",
+      "title": "Live Streaming Best Practices for Global Audiences",
+      "description": "Deliver professional-quality live streams to audiences worldwide. Cover encoding, CDN selection, multi-platform distribution, and engagement strategies for virtual attendees.",
+      "speakers": ["Sophie Martin, Account Director, First Sight Media"],
+      "dateTime": "2025-11-13T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-701",
+      "title": "Conference Programme Management: From Chaos to Control",
+      "description": "Streamline speaker management and agenda planning with smart scheduling tools. Learn about auto-clash detection, speaker communication workflows, and last-minute change management.",
+      "speakers": ["Tom Hughes, Product Manager, Lineup Ninja"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-702",
+      "title": "AV Excellence on Any Budget",
+      "description": "Deliver professional AV experiences without breaking the bank. Learn equipment selection, vendor negotiation, and creative solutions for small to mid-sized events.",
+      "speakers": ["Chris Taylor, AV Specialist, Novum Live"],
+      "dateTime": "2025-11-12T16:00:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-703",
+      "title": "Event WiFi: Ensuring Connectivity for 1000+ Attendees",
+      "description": "Plan and deploy robust WiFi networks that handle high-density crowds. Learn about bandwidth requirements, access point placement, and troubleshooting strategies.",
+      "speakers": ["Nina Patel, Regional Manager, One World Rental"],
+      "dateTime": "2025-11-13T09:30:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-801",
+      "title": "Lead Intelligence: Turning Scans into Sales",
+      "description": "Help exhibitors convert badge scans into revenue. Learn lead scoring, qualification workflows, CRM integration, and ROI measurement that proves event value to sponsors.",
+      "speakers": ["Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "etl-802",
+      "title": "Measuring Event ROI: Beyond Attendance Numbers",
+      "description": "Define and track metrics that matter. Explore engagement scores, content consumption, network value, and other KPIs that demonstrate true event impact to stakeholders.",
+      "speakers": ["David Kim, Solutions Architect, Komo", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "etl-803",
+      "title": "Attendee Data Privacy in 2025: GDPR and Beyond",
+      "description": "Navigate the complex landscape of data privacy regulations. Learn GDPR compliance, consent management, data retention policies, and emerging privacy laws globally.",
+      "speakers": ["James Chen, Product Director, Eventbase", "David Kim, Solutions Architect, Komo"],
+      "dateTime": "2025-11-13T16:00:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "etl-901",
+      "title": "The Hybrid Playbook: Engaging Online and In-Person Audiences Simultaneously",
+      "description": "Master the art of hybrid events that deliver value to both physical and virtual attendees. Learn production techniques, engagement strategies, and technology integration for seamless experiences.",
+      "speakers": ["Michael O'Brien, Integration Specialist, Cvent", "James Chen, Product Director, Eventbase"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 60,
+      "track": "Hybrid & Virtual Events"
+    },
+    {
+      "id": "etl-902",
+      "title": "Virtual Events That Don't Suck: Lessons from 1000+ Webinars",
+      "description": "Create virtual events that attendees actually enjoy. Learn from Cvent's extensive experience with engagement tactics, platform selection, and content formats that work in virtual environments.",
+      "speakers": ["Michael O'Brien, Integration Specialist, Cvent"],
+      "dateTime": "2025-11-13T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Hybrid & Virtual Events"
+    }
+  ]
+}
