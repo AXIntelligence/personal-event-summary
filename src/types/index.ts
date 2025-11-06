@@ -20,6 +20,42 @@ export interface CallToAction {
 }
 
 /**
+ * Represents a product explored by an attendee at a B2B event
+ */
+export interface Product {
+  /** Product name */
+  name: string;
+  /** Company offering the product */
+  company: string;
+  /** Product category */
+  category: string;
+}
+
+/**
+ * Represents a booth visit at a B2B event
+ */
+export interface BoothVisit {
+  /** Company name */
+  company: string;
+  /** Time spent at booth in minutes */
+  timeSpentMinutes: number;
+  /** Products viewed at the booth */
+  productsViewed: string[];
+}
+
+/**
+ * Represents an interaction with an event sponsor
+ */
+export interface SponsorInteraction {
+  /** Sponsor name */
+  sponsor: string;
+  /** Type of interaction */
+  type: 'booth_visit' | 'demo_request' | 'meeting' | 'download' | 'other';
+  /** Timestamp of interaction */
+  timestamp: string;
+}
+
+/**
  * Represents a session at an event
  */
 export interface Session {
@@ -123,6 +159,12 @@ export interface Attendee {
   callsToAction: CallToAction[];
   /** Registration date */
   registeredAt: string;
+  /** Products explored at B2B event (optional) */
+  productsExplored?: Product[];
+  /** Booths visited at B2B event (optional) */
+  boothsVisited?: BoothVisit[];
+  /** Sponsor interactions at B2B event (optional) */
+  sponsorInteractions?: SponsorInteraction[];
 }
 
 /**
@@ -167,7 +209,9 @@ export function isSession(obj: unknown): obj is Session {
 export function isAttendee(obj: unknown): obj is Attendee {
   if (typeof obj !== 'object' || obj === null) return false;
   const a = obj as Attendee;
-  return (
+
+  // Check required fields
+  const hasRequiredFields = (
     typeof a.id === 'string' &&
     typeof a.firstName === 'string' &&
     typeof a.lastName === 'string' &&
@@ -181,6 +225,23 @@ export function isAttendee(obj: unknown): obj is Attendee {
     typeof a.stats === 'object' &&
     typeof a.registeredAt === 'string'
   );
+
+  if (!hasRequiredFields) return false;
+
+  // Validate optional B2B fields if present
+  if (a.productsExplored !== undefined && !Array.isArray(a.productsExplored)) {
+    return false;
+  }
+
+  if (a.boothsVisited !== undefined && !Array.isArray(a.boothsVisited)) {
+    return false;
+  }
+
+  if (a.sponsorInteractions !== undefined && !Array.isArray(a.sponsorInteractions)) {
+    return false;
+  }
+
+  return true;
 }
 
 /**

@@ -1,0 +1,28 @@
+<!-- Products Explored Section -->
+{{#if productsExplored}}
+<section class="products-section">
+    <div class="container">
+        <h2 class="section-title">Products You Explored</h2>
+        <p class="section-subtitle">Solutions that caught your attention</p>
+
+        <div class="products-grid">
+            {{#each productsExplored}}
+            <div class="product-card">
+                <div class="product-header">
+                    <h3 class="product-name">{{this.name}}</h3>
+                    <span class="product-company">{{this.company}}</span>
+                </div>
+                <div class="product-category">
+                    <span class="category-icon">🏷️</span>
+                    <span>{{this.category}}</span>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <p class="products-summary">
+            You explored <strong>{{productsExplored.length}}</strong> products across various categories
+        </p>
+    </div>
+</section>
+{{/if}}
