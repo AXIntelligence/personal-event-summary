@@ -1,0 +1,33 @@
+{
+  "eventId": "event-tech-live-2025",
+  "eventName": "Event Tech Live 2025",
+  "sourceUrl": "https://www.eventtechlive.com",
+  "colors": {
+    "primary": "#00b8d4",
+    "secondary": "#0097a7",
+    "accent": "#ff6f00",
+    "background": "#f5f5f5",
+    "text": "#263238"
+  },
+  "typography": {
+    "headingFont": "Montserrat, sans-serif",
+    "bodyFont": "Open Sans, sans-serif",
+    "headingSize": "2.25rem",
+    "bodySize": "1rem",
+    "lineHeight": "1.7"
+  },
+  "brandVoice": {
+    "tone": "energetic",
+    "keywords": ["innovation", "networking", "collaboration", "future-forward"],
+    "style": "conversational",
+    "personality": "dynamic and forward-thinking"
+  },
+  "layout": {
+    "gridSystem": "grid",
+    "spacingUnit": "12px",
+    "borderRadius": "12px",
+    "containerWidth": "1440px"
+  },
+  "logoUrl": "https://www.eventtechlive.com/logo.png",
+  "scrapedAt": "2025-11-06T18:00:00Z"
+}

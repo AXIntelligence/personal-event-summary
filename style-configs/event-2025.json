@@ -1,0 +1,34 @@
+{
+  "eventId": "event-2025",
+  "eventName": "TechConf 2025",
+  "sourceUrl": "https://techconf.example.com",
+  "colors": {
+    "primary": "#667eea",
+    "secondary": "#764ba2",
+    "accent": "#f56565",
+    "background": "#ffffff",
+    "text": "#1a202c"
+  },
+  "typography": {
+    "headingFont": "Inter, sans-serif",
+    "bodyFont": "system-ui, -apple-system, sans-serif",
+    "headingSize": "2.5rem",
+    "bodySize": "1rem",
+    "lineHeight": "1.6"
+  },
+  "brandVoice": {
+    "tone": "professional",
+    "keywords": ["innovation", "technology", "excellence", "community"],
+    "style": "formal",
+    "personality": "authoritative and inspiring"
+  },
+  "layout": {
+    "gridSystem": "flexbox",
+    "spacingUnit": "8px",
+    "borderRadius": "8px",
+    "containerWidth": "1200px"
+  },
+  "logoUrl": "https://techconf.example.com/logo.png",
+  "faviconUrl": "https://techconf.example.com/favicon.ico",
+  "scrapedAt": "2025-11-06T18:00:00Z"
+}
