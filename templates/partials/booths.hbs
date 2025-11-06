@@ -1,0 +1,37 @@
+<!-- Booths Visited Section -->
+{{#if boothsVisited}}
+<section class="booths-section">
+    <div class="container">
+        <h2 class="section-title">Booths You Visited</h2>
+        <p class="section-subtitle">Companies you engaged with on the show floor</p>
+
+        <div class="booths-list">
+            {{#each boothsVisited}}
+            <div class="booth-card">
+                <div class="booth-header">
+                    <h3 class="booth-company">{{this.company}}</h3>
+                    <span class="booth-time">
+                        <span class="meta-icon">⏱️</span>
+                        {{this.timeSpentMinutes}} min
+                    </span>
+                </div>
+                {{#if this.productsViewed.length}}
+                <div class="booth-products">
+                    <span class="products-label">Products viewed:</span>
+                    <ul class="products-list">
+                        {{#each this.productsViewed}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+                {{/if}}
+            </div>
+            {{/each}}
+        </div>
+
+        <p class="booths-summary">
+            You visited <strong>{{boothsVisited.length}}</strong> exhibitor booths
+        </p>
+    </div>
+</section>
+{{/if}}

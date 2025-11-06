@@ -54,6 +54,14 @@ export async function setupHandlebars(): Promise<typeof Handlebars> {
   const ctaPartial = await readFile(ctaPartialPath, 'utf-8');
   hbs.registerPartial('cta', ctaPartial);
 
+  const productsPartialPath = join(TEMPLATES_DIR, 'partials', 'products.hbs');
+  const productsPartial = await readFile(productsPartialPath, 'utf-8');
+  hbs.registerPartial('products', productsPartial);
+
+  const boothsPartialPath = join(TEMPLATES_DIR, 'partials', 'booths.hbs');
+  const boothsPartial = await readFile(boothsPartialPath, 'utf-8');
+  hbs.registerPartial('booths', boothsPartial);
+
   return hbs;
 }
 
