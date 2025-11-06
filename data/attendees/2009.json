@@ -1,0 +1,553 @@
+{
+  "id": "2009",
+  "firstName": "Olivia",
+  "lastName": "Williams",
+  "email": "olivia.williams@hybrideventsolutions.com",
+  "company": "Hybrid Event Solutions",
+  "title": "Head of Hybrid Production",
+  "eventId": "event-tech-live-2025",
+  "sessions": [
+    {
+      "id": "etl-901",
+      "title": "The Hybrid Playbook: Engaging Online and In-Person Audiences Simultaneously",
+      "description": "Master the art of hybrid events that deliver value to both physical and virtual attendees. Learn production techniques, engagement strategies, and technology integration for seamless experiences.",
+      "speakers": ["Michael O'Brien, Integration Specialist, Cvent", "James Chen, Product Director, Eventbase"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 60,
+      "track": "Hybrid & Virtual Events"
+    },
+    {
+      "id": "etl-902",
+      "title": "Virtual Events That Don't Suck: Lessons from 1000+ Webinars",
+      "description": "Create virtual events that attendees actually enjoy. Learn from Cvent's extensive experience with engagement tactics, platform selection, and content formats that work in virtual environments.",
+      "speakers": ["Michael O'Brien, Integration Specialist, Cvent"],
+      "dateTime": "2025-11-13T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Hybrid & Virtual Events"
+    },
+    {
+      "id": "etl-601",
+      "title": "Capturing and Monetizing Event Content",
+      "description": "Transform your event content into revenue streams. Learn video production strategies, content licensing, and on-demand platforms that extend event value beyond the live experience.",
+      "speakers": ["Sophie Martin, Account Director, First Sight Media"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-603",
+      "title": "Live Streaming Best Practices for Global Audiences",
+      "description": "Deliver professional-quality live streams to audiences worldwide. Cover encoding, CDN selection, multi-platform distribution, and engagement strategies for virtual attendees.",
+      "speakers": ["Sophie Martin, Account Director, First Sight Media"],
+      "dateTime": "2025-11-13T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-602",
+      "title": "Facial Recognition for Photo Distribution: Privacy and Possibilities",
+      "description": "Explore AI-powered photo distribution that respects privacy. Learn about consent management, data protection, and the technology that matches attendees with their event photos automatically.",
+      "speakers": ["Jessica Brown, Sales Director, PreMagic"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-203",
+      "title": "Live Q&A Done Right: Engaging Hybrid Audiences",
+      "description": "Master the art of inclusive Q&A sessions that engage both in-person and virtual attendees. Learn about moderation strategies, AI-powered translation, and real-time polling to keep everyone involved.",
+      "speakers": ["Lisa Romano, Partnership Manager, Pigeonhole"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-401",
+      "title": "Breaking Language Barriers: Real-Time Translation Technology",
+      "description": "Make your events truly global with real-time translation and interpretation. Learn about AI-powered translation, human interpretation services, and hybrid approaches for 6000+ language combinations.",
+      "speakers": ["Dr. Elena Rodriguez, Head of Language Services, TransPerfect Live", "Emma Thompson, Account Executive, Interprefy"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Accessibility & Inclusion"
+    },
+    {
+      "id": "etl-303",
+      "title": "The Rise of Extended Reality: Virtual Production Studios",
+      "description": "Explore how XR technology and virtual production studios are creating immersive event experiences. See live demonstrations of LED walls, real-time rendering, and mixed reality applications.",
+      "speakers": ["Chris Taylor, AV Specialist, 4Wall"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 60,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-702",
+      "title": "AV Excellence on Any Budget",
+      "description": "Deliver professional AV experiences without breaking the bank. Learn equipment selection, vendor negotiation, and creative solutions for small to mid-sized events.",
+      "speakers": ["Chris Taylor, AV Specialist, Novum Live"],
+      "dateTime": "2025-11-12T16:00:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-302",
+      "title": "Mobile-First Event Experiences",
+      "description": "Design event experiences that put mobile at the center. Learn from Eventbase's work with Olympics, SXSW, and CES on creating apps that attendees actually use.",
+      "speakers": ["James Chen, Product Director, Eventbase", "Patricia Moore, VP of Product, Eventbase"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Technology & Innovation"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Michael O'Brien",
+      "title": "Integration Specialist",
+      "company": "Cvent",
+      "linkedIn": "https://linkedin.com/in/michaelob-cvent"
+    },
+    {
+      "name": "James Chen",
+      "title": "Product Director",
+      "company": "Eventbase",
+      "linkedIn": "https://linkedin.com/in/jameschen-eventbase"
+    },
+    {
+      "name": "Sophie Martin",
+      "title": "Account Director",
+      "company": "First Sight Media",
+      "linkedIn": "https://linkedin.com/in/sophiemartin-fsm"
+    },
+    {
+      "name": "Jessica Brown",
+      "title": "Sales Director",
+      "company": "PreMagic"
+    },
+    {
+      "name": "Lisa Romano",
+      "title": "Partnership Manager",
+      "company": "Pigeonhole",
+      "linkedIn": "https://linkedin.com/in/lisaromano-pigeonhole"
+    },
+    {
+      "name": "Emma Thompson",
+      "title": "Account Executive",
+      "company": "Interprefy"
+    },
+    {
+      "name": "Dr. Elena Rodriguez",
+      "title": "Head of Language Services",
+      "company": "TransPerfect Live"
+    },
+    {
+      "name": "Chris Taylor",
+      "title": "AV Specialist",
+      "company": "4Wall"
+    },
+    {
+      "name": "Patricia Moore",
+      "title": "VP of Product",
+      "company": "Eventbase"
+    },
+    {
+      "name": "Rachel Foster",
+      "title": "Business Development",
+      "company": "Braindate"
+    },
+    {
+      "name": "David Kim",
+      "title": "Solutions Architect",
+      "company": "Komo"
+    },
+    {
+      "name": "Priya Patel",
+      "title": "Sales Manager",
+      "company": "ExpoPlatform"
+    },
+    {
+      "name": "Tom Hughes",
+      "title": "Product Manager",
+      "company": "Lineup Ninja"
+    },
+    {
+      "name": "Robert Mitchell",
+      "title": "Virtual Events Producer",
+      "company": "Digital Conference Group",
+      "linkedIn": "https://linkedin.com/in/rmitchell-dcg"
+    },
+    {
+      "name": "Amanda Parker",
+      "title": "Hybrid Event Manager",
+      "company": "Global Events Network"
+    },
+    {
+      "name": "Daniel Foster",
+      "title": "Streaming Specialist",
+      "company": "Live Event Productions"
+    },
+    {
+      "name": "Laura Schmidt",
+      "title": "Virtual Experience Lead",
+      "company": "Corporate Events International",
+      "linkedIn": "https://linkedin.com/in/lschmidt-cei"
+    },
+    {
+      "name": "Jonathan White",
+      "title": "Technical Producer",
+      "company": "Association Conferences"
+    },
+    {
+      "name": "Emma Davis",
+      "title": "Hybrid Solutions Manager",
+      "company": "Meeting Innovations Ltd"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 10,
+    "connectionsMade": 19,
+    "hoursAttended": 8.0,
+    "tracksExplored": 5,
+    "topAchievement": "Hybrid Master"
+  },
+  "callsToAction": [
+    {
+      "text": "Power Your Hybrid Events with Cvent",
+      "url": "https://cvent.com/hybrid-events?ref=etl2025-2009",
+      "type": "primary",
+      "trackingId": "cta-cvent-hybrid"
+    },
+    {
+      "text": "Professional Streaming with First Sight Media",
+      "url": "https://firstsightmedia.com/quote?ref=etl2025-2009",
+      "type": "secondary",
+      "trackingId": "cta-fsm-quote"
+    },
+    {
+      "text": "Save the Date: Event Tech Live 2026",
+      "url": "https://eventtechlive.com/2026?ref=etl2025-2009",
+      "type": "tertiary",
+      "trackingId": "cta-etl2026"
+    }
+  ],
+  "registeredAt": "2025-09-28T15:00:00Z",
+  "productsExplored": [
+    {
+      "name": "Cvent Virtual Attendee Hub",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Cvent Hybrid Event Solutions",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Cvent Virtual Lobby",
+      "company": "Cvent",
+      "category": "Virtual Event Platforms"
+    },
+    {
+      "name": "Cvent Engagement Tools",
+      "company": "Cvent",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Cvent Streaming Integration",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "First Sight Media Live Production",
+      "company": "First Sight Media",
+      "category": "Content & Media"
+    },
+    {
+      "name": "First Sight Media Multi-Camera Setup",
+      "company": "First Sight Media",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "First Sight Media CDN Streaming",
+      "company": "First Sight Media",
+      "category": "Content & Media"
+    },
+    {
+      "name": "Interprefy Remote Interpretation",
+      "company": "Interprefy",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "Interprefy Hybrid Platform",
+      "company": "Interprefy",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "Interprefy RSI (Remote Simultaneous Interpretation)",
+      "company": "Interprefy",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "Interprefy Language Console",
+      "company": "Interprefy",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "Pigeonhole Live Q&A",
+      "company": "Pigeonhole",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Pigeonhole Polls & Voting",
+      "company": "Pigeonhole",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Pigeonhole Hybrid Engagement",
+      "company": "Pigeonhole",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Pigeonhole Word Clouds",
+      "company": "Pigeonhole",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Eventbase Virtual Event App",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Eventbase Content Streaming",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Eventbase Hybrid Features",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "4Wall LED Video Walls",
+      "company": "4Wall",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "4Wall XR Production Studio",
+      "company": "4Wall",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "4Wall Virtual Production",
+      "company": "4Wall",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "Novum Live Hybrid AV Solutions",
+      "company": "Novum Live",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "Novum Live Streaming Services",
+      "company": "Novum Live",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "Novum Live Production Management",
+      "company": "Novum Live",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "TransPerfect Live Virtual Interpretation",
+      "company": "TransPerfect Live",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "PreMagic Event Photos & Advocacy",
+      "company": "PreMagic",
+      "category": "Content & Media"
+    },
+    {
+      "name": "PreMagic Facial Recognition",
+      "company": "PreMagic",
+      "category": "Content & Media"
+    },
+    {
+      "name": "Komo Virtual Engagement",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Komo Interactive Content",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "ExpoPlatform Virtual Exhibitor Booths",
+      "company": "ExpoPlatform",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Braindate Virtual Networking",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Lineup Ninja Virtual Programme",
+      "company": "Lineup Ninja",
+      "category": "Content Management Systems"
+    },
+    {
+      "name": "Choose 2 Rent - Streaming Equipment",
+      "company": "Choose 2 Rent",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "Choose 2 Rent - Camera Rentals",
+      "company": "Choose 2 Rent",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "Choose 2 Rent - Encoder Hardware",
+      "company": "Choose 2 Rent",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "Choose 2 Rent - Production Monitors",
+      "company": "Choose 2 Rent",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "One World Rental - Streaming WiFi",
+      "company": "One World Rental",
+      "category": "Event Infrastructure"
+    },
+    {
+      "name": "One World Rental - Backup Connectivity",
+      "company": "One World Rental",
+      "category": "Connectivity Solutions"
+    },
+    {
+      "name": "Cvent Check-in & Badging",
+      "company": "Cvent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "First Sight Media Recording Services",
+      "company": "First Sight Media",
+      "category": "Content & Media"
+    },
+    {
+      "name": "Interprefy Mobile App",
+      "company": "Interprefy",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "Pigeonhole Analytics Dashboard",
+      "company": "Pigeonhole",
+      "category": "Data & Analytics"
+    },
+    {
+      "name": "Eventbase Networking Features",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "4Wall Audio Systems",
+      "company": "4Wall",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "Novum Live Technical Support",
+      "company": "Novum Live",
+      "category": "Event Services"
+    },
+    {
+      "name": "TransPerfect Live Hybrid Events",
+      "company": "TransPerfect Live",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "PreMagic Ripple Networking",
+      "company": "PreMagic",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Komo Gamification Platform",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "ExpoPlatform Lead Capture",
+      "company": "ExpoPlatform",
+      "category": "Lead Retrieval & Analytics"
+    }
+  ],
+  "boothsVisited": [
+    {
+      "company": "Cvent",
+      "timeSpentMinutes": 32,
+      "productsViewed": ["Virtual Attendee Hub", "Hybrid Solutions", "Virtual Lobby", "Engagement Tools", "Streaming Integration"]
+    },
+    {
+      "company": "First Sight Media",
+      "timeSpentMinutes": 28,
+      "productsViewed": ["Live Production", "Multi-Camera Setup", "CDN Streaming", "Recording Services"]
+    },
+    {
+      "company": "Interprefy",
+      "timeSpentMinutes": 25,
+      "productsViewed": ["Remote Interpretation", "Hybrid Platform", "RSI", "Language Console", "Mobile App"]
+    },
+    {
+      "company": "Pigeonhole",
+      "timeSpentMinutes": 22,
+      "productsViewed": ["Live Q&A", "Polls & Voting", "Hybrid Engagement", "Word Clouds"]
+    },
+    {
+      "company": "Eventbase",
+      "timeSpentMinutes": 20,
+      "productsViewed": ["Virtual Event App", "Content Streaming", "Hybrid Features"]
+    },
+    {
+      "company": "4Wall",
+      "timeSpentMinutes": 18,
+      "productsViewed": ["LED Video Walls", "XR Production Studio", "Virtual Production", "Audio Systems"]
+    },
+    {
+      "company": "Novum Live",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Hybrid AV Solutions", "Streaming Services", "Production Management"]
+    },
+    {
+      "company": "Choose 2 Rent",
+      "timeSpentMinutes": 20,
+      "productsViewed": ["Streaming Equipment", "Camera Rentals", "Encoder Hardware", "Production Monitors"]
+    },
+    {
+      "company": "PreMagic",
+      "timeSpentMinutes": 12,
+      "productsViewed": ["Event Photos", "Facial Recognition", "Ripple Networking"]
+    },
+    {
+      "company": "Komo",
+      "timeSpentMinutes": 10,
+      "productsViewed": ["Virtual Engagement", "Interactive Content", "Gamification"]
+    }
+  ],
+  "sponsorInteractions": [
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "booth_visit",
+      "timestamp": "2025-11-12T13:30:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "demo_request",
+      "timestamp": "2025-11-12T14:00:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "meeting",
+      "timestamp": "2025-11-13T14:30:00Z"
+    }
+  ]
+}

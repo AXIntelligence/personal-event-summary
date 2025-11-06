@@ -1,0 +1,353 @@
+{
+  "id": "2001",
+  "firstName": "Aisha",
+  "lastName": "Patel",
+  "email": "aisha.patel@techinnovate.com",
+  "company": "TechInnovate Solutions",
+  "title": "Head of Event Technology",
+  "eventId": "event-tech-live-2025",
+  "sessions": [
+    {
+      "id": "etl-201",
+      "title": "From Random Encounters to Intentional Connections: AI-Powered Networking",
+      "description": "Transform your networking experience with AI-powered matchmaking. Learn how machine learning algorithms create meaningful connections based on interests, goals, and professional backgrounds.",
+      "speakers": ["Alex Zhang, Technical Lead, Erleah", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-301",
+      "title": "AI in Events: Beyond the Hype",
+      "description": "Separate AI fact from fiction in the events industry. Explore practical applications of artificial intelligence in registration, networking, content delivery, and analytics with real-world case studies.",
+      "speakers": ["Alex Zhang, Technical Lead, Erleah", "Simon Crawford, Head of Innovation, Erleah"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-101",
+      "title": "Streamlining Onsite Registration: From Kiosks to Mobile Check-In",
+      "description": "Learn how modern registration technology is transforming the attendee experience. Discover best practices for reducing wait times, improving data accuracy, and creating seamless check-in flows using kiosks, mobile apps, and self-service solutions.",
+      "speakers": ["Marcus Johnson, Senior Sales, Eventpack", "Sarah Mitchell, VP of Event Solutions, Choose 2 Rent"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-202",
+      "title": "Peer-to-Peer Learning: Creating Knowledge-Sharing Communities",
+      "description": "Discover how Braindate's crowdsourced knowledge platform enables attendees to become teachers and learners. See how peer-to-peer sessions drive deeper engagement and create lasting professional relationships.",
+      "speakers": ["Rachel Foster, Business Development, Braindate", "Jennifer Walsh, Chief Experience Officer, Braindate"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-302",
+      "title": "Mobile-First Event Experiences",
+      "description": "Design event experiences that put mobile at the center. Learn from Eventbase's work with Olympics, SXSW, and CES on creating apps that attendees actually use.",
+      "speakers": ["James Chen, Product Director, Eventbase", "Patricia Moore, VP of Product, Eventbase"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-802",
+      "title": "Measuring Event ROI: Beyond Attendance Numbers",
+      "description": "Define and track metrics that matter. Explore engagement scores, content consumption, network value, and other KPIs that demonstrate true event impact to stakeholders.",
+      "speakers": ["David Kim, Solutions Architect, Komo", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "etl-901",
+      "title": "The Hybrid Playbook: Engaging Online and In-Person Audiences Simultaneously",
+      "description": "Master the art of hybrid events that deliver value to both physical and virtual attendees. Learn production techniques, engagement strategies, and technology integration for seamless experiences.",
+      "speakers": ["Michael O'Brien, Integration Specialist, Cvent", "James Chen, Product Director, Eventbase"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 60,
+      "track": "Hybrid & Virtual Events"
+    },
+    {
+      "id": "etl-303",
+      "title": "The Rise of Extended Reality: Virtual Production Studios",
+      "description": "Explore how XR technology and virtual production studios are creating immersive event experiences. See live demonstrations of LED walls, real-time rendering, and mixed reality applications.",
+      "speakers": ["Chris Taylor, AV Specialist, 4Wall"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 60,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-204",
+      "title": "Gamification & ROI: Measuring Sponsor Engagement",
+      "description": "Learn how gamification drives attendee engagement while delivering measurable ROI for sponsors. Explore interactive content strategies, loyalty programs, and data capture techniques.",
+      "speakers": ["David Kim, Solutions Architect, Komo"],
+      "dateTime": "2025-11-13T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-304",
+      "title": "Event Tech Integration: Making Your Stack Work Together",
+      "description": "Stop fighting with incompatible systems. Learn integration strategies, API best practices, and middleware solutions that make your event tech stack work seamlessly together.",
+      "speakers": ["James Chen, Product Director, Eventbase", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-13T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Technology & Innovation"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Alex Zhang",
+      "title": "Technical Lead",
+      "company": "Erleah",
+      "linkedIn": "https://linkedin.com/in/alexzhang-erleah"
+    },
+    {
+      "name": "Priya Patel",
+      "title": "Sales Manager",
+      "company": "ExpoPlatform"
+    },
+    {
+      "name": "James Chen",
+      "title": "Product Director",
+      "company": "Eventbase",
+      "linkedIn": "https://linkedin.com/in/jameschen-eventbase"
+    },
+    {
+      "name": "David Kim",
+      "title": "Solutions Architect",
+      "company": "Komo"
+    },
+    {
+      "name": "Simon Crawford",
+      "title": "Head of Innovation",
+      "company": "Erleah",
+      "linkedIn": "https://linkedin.com/in/simoncrawford-erleah"
+    },
+    {
+      "name": "Rachel Foster",
+      "title": "Business Development",
+      "company": "Braindate"
+    },
+    {
+      "name": "Sarah Mitchell",
+      "title": "VP of Event Solutions",
+      "company": "Choose 2 Rent",
+      "linkedIn": "https://linkedin.com/in/sarahmitchell-c2r"
+    },
+    {
+      "name": "Michael O'Brien",
+      "title": "Integration Specialist",
+      "company": "Cvent"
+    },
+    {
+      "name": "Patricia Moore",
+      "title": "VP of Product",
+      "company": "Eventbase"
+    },
+    {
+      "name": "Emma Clarke",
+      "title": "Events Lead",
+      "company": "SaaS Startup Network"
+    },
+    {
+      "name": "David Zhang",
+      "title": "Head of Events",
+      "company": "TechCorp Global",
+      "linkedIn": "https://linkedin.com/in/davidzhang-techcorp"
+    },
+    {
+      "name": "Maya Singh",
+      "title": "Senior Planner",
+      "company": "Government Events Agency"
+    },
+    {
+      "name": "Robert Lee",
+      "title": "Event Tech Specialist",
+      "company": "University Events"
+    },
+    {
+      "name": "Tom Anderson",
+      "title": "Event Technology Manager",
+      "company": "Finance Events Ltd"
+    },
+    {
+      "name": "Jennifer Walsh",
+      "title": "Chief Experience Officer",
+      "company": "Braindate",
+      "linkedIn": "https://linkedin.com/in/jenniferwalsh-braindate"
+    },
+    {
+      "name": "Lisa Martinez",
+      "title": "Director of Events",
+      "company": "Healthcare Conferences"
+    },
+    {
+      "name": "Kevin Chen",
+      "title": "Event Producer",
+      "company": "Media Company"
+    },
+    {
+      "name": "Amanda White",
+      "title": "Events Coordinator",
+      "company": "Non-Profit Sector"
+    },
+    {
+      "name": "Marcus Johnson",
+      "title": "Senior Sales",
+      "company": "Eventpack"
+    },
+    {
+      "name": "Chris Taylor",
+      "title": "AV Specialist",
+      "company": "4Wall"
+    },
+    {
+      "name": "Daniel Garcia",
+      "title": "Conference Manager",
+      "company": "Industry Association"
+    },
+    {
+      "name": "Mark Stevens",
+      "title": "VP of Corporate Events",
+      "company": "Pharma Global"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 10,
+    "connectionsMade": 22,
+    "hoursAttended": 8.5,
+    "tracksExplored": 5,
+    "topAchievement": "Innovation Scout"
+  },
+  "callsToAction": [
+    {
+      "text": "AI-Powered Event Experiences Await",
+      "url": "https://erleah.com/demo?ref=etl2025-2001",
+      "type": "primary",
+      "trackingId": "cta-erleah-demo"
+    },
+    {
+      "text": "Create Your Smart Event Platform",
+      "url": "https://expoplatform.com/contact?ref=etl2025-2001",
+      "type": "secondary",
+      "trackingId": "cta-expoplatform"
+    },
+    {
+      "text": "Save the Date: Event Tech Live 2026",
+      "url": "https://eventtechlive.com/2026?ref=etl2025-2001",
+      "type": "tertiary",
+      "trackingId": "cta-etl2026"
+    }
+  ],
+  "registeredAt": "2025-09-15T14:22:00Z",
+  "productsExplored": [
+    {
+      "name": "Erleah AI Event Assistant",
+      "company": "Erleah",
+      "category": "AI & Innovation"
+    },
+    {
+      "name": "ExpoPlatform Matchmaking",
+      "company": "ExpoPlatform",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Eventbase Event App",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Komo Engagement OS",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Braindate Experience",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Cvent Attendee Hub",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "4Wall LED Screens",
+      "company": "4Wall",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "ExpoPlatform Lead Intelligence",
+      "company": "ExpoPlatform",
+      "category": "Lead Retrieval & Analytics"
+    },
+    {
+      "name": "Choose 2 Rent Event Kiosk Pro",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Eventpack Registration Platform",
+      "company": "Eventpack",
+      "category": "Registration & Check-In Technology"
+    }
+  ],
+  "boothsVisited": [
+    {
+      "company": "Erleah",
+      "timeSpentMinutes": 25,
+      "productsViewed": ["AI Event Assistant", "AI Networking"]
+    },
+    {
+      "company": "ExpoPlatform",
+      "timeSpentMinutes": 20,
+      "productsViewed": ["Matchmaking", "Lead Intelligence"]
+    },
+    {
+      "company": "Eventbase",
+      "timeSpentMinutes": 18,
+      "productsViewed": ["Event App Platform"]
+    },
+    {
+      "company": "Komo",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Engagement OS", "Interactive Quizzes"]
+    },
+    {
+      "company": "Braindate",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Braindate Experience"]
+    },
+    {
+      "company": "Cvent",
+      "timeSpentMinutes": 12,
+      "productsViewed": ["Attendee Hub", "Check-in & Badging"]
+    },
+    {
+      "company": "4Wall",
+      "timeSpentMinutes": 10,
+      "productsViewed": ["LED Screens", "AV Equipment"]
+    },
+    {
+      "company": "Choose 2 Rent",
+      "timeSpentMinutes": 10,
+      "productsViewed": ["Event Kiosk Pro", "Zebra Badge Printer"]
+    }
+  ],
+  "sponsorInteractions": [
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "booth_visit",
+      "timestamp": "2025-11-12T10:45:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "demo_request",
+      "timestamp": "2025-11-12T10:55:00Z"
+    }
+  ]
+}

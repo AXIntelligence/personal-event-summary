@@ -1,0 +1,556 @@
+{
+  "id": "2012",
+  "firstName": "Marcus",
+  "lastName": "Anderson",
+  "email": "marcus.anderson@connectionbuilders.com",
+  "company": "Connection Builders International",
+  "title": "Director of Community Engagement",
+  "eventId": "event-tech-live-2025",
+  "sessions": [
+    {
+      "id": "etl-201",
+      "title": "From Random Encounters to Intentional Connections: AI-Powered Networking",
+      "description": "Transform your networking experience with AI-powered matchmaking. Learn how machine learning algorithms create meaningful connections based on interests, goals, and professional backgrounds.",
+      "speakers": ["Alex Zhang, Technical Lead, Erleah", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-202",
+      "title": "Peer-to-Peer Learning: Creating Knowledge-Sharing Communities",
+      "description": "Discover how Braindate's crowdsourced knowledge platform enables attendees to become teachers and learners. See how peer-to-peer sessions drive deeper engagement and create lasting professional relationships.",
+      "speakers": ["Rachel Foster, Business Development, Braindate", "Jennifer Walsh, Chief Experience Officer, Braindate"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-203",
+      "title": "Live Q&A Done Right: Engaging Hybrid Audiences",
+      "description": "Master the art of inclusive Q&A sessions that engage both in-person and virtual attendees. Learn about moderation strategies, AI-powered translation, and real-time polling to keep everyone involved.",
+      "speakers": ["Lisa Romano, Partnership Manager, Pigeonhole"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-205",
+      "title": "Speed Networking 2.0: Quality Over Quantity",
+      "description": "Reimagine speed networking with structured formats that create meaningful connections. Learn how to facilitate productive conversations, track interactions, and provide follow-up tools.",
+      "speakers": ["Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-13T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-204",
+      "title": "Gamification & ROI: Measuring Sponsor Engagement",
+      "description": "Learn how gamification drives attendee engagement while delivering measurable ROI for sponsors. Explore interactive content strategies, loyalty programs, and data capture techniques.",
+      "speakers": ["David Kim, Solutions Architect, Komo"],
+      "dateTime": "2025-11-13T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Alex Zhang",
+      "title": "Technical Lead",
+      "company": "Erleah"
+    },
+    {
+      "name": "Priya Patel",
+      "title": "Sales Manager",
+      "company": "ExpoPlatform",
+      "linkedIn": "https://linkedin.com/in/priyapatel-expoplatform"
+    },
+    {
+      "name": "Rachel Foster",
+      "title": "Business Development",
+      "company": "Braindate"
+    },
+    {
+      "name": "Jennifer Walsh",
+      "title": "Chief Experience Officer",
+      "company": "Braindate",
+      "linkedIn": "https://linkedin.com/in/jenniferwalsh-braindate"
+    },
+    {
+      "name": "Lisa Romano",
+      "title": "Partnership Manager",
+      "company": "Pigeonhole"
+    },
+    {
+      "name": "David Kim",
+      "title": "Solutions Architect",
+      "company": "Komo",
+      "linkedIn": "https://linkedin.com/in/davidkim-komo"
+    },
+    {
+      "name": "Jessica Brown",
+      "title": "Sales Director",
+      "company": "PreMagic"
+    },
+    {
+      "name": "Simon Crawford",
+      "title": "Head of Innovation",
+      "company": "Erleah",
+      "linkedIn": "https://linkedin.com/in/simoncrawford-erleah"
+    },
+    {
+      "name": "James Chen",
+      "title": "Product Director",
+      "company": "Eventbase"
+    },
+    {
+      "name": "Patricia Moore",
+      "title": "VP of Product",
+      "company": "Eventbase",
+      "linkedIn": "https://linkedin.com/in/patriciamoore-eventbase"
+    },
+    {
+      "name": "Michael O'Brien",
+      "title": "Integration Specialist",
+      "company": "Cvent"
+    },
+    {
+      "name": "Tom Hughes",
+      "title": "Product Manager",
+      "company": "Lineup Ninja"
+    },
+    {
+      "name": "Sophie Martin",
+      "title": "Account Director",
+      "company": "First Sight Media"
+    },
+    {
+      "name": "Sarah Mitchell",
+      "title": "VP of Event Solutions",
+      "company": "Choose 2 Rent",
+      "linkedIn": "https://linkedin.com/in/sarahmitchell-c2r"
+    },
+    {
+      "name": "Marcus Johnson",
+      "title": "Senior Sales",
+      "company": "Eventpack"
+    },
+    {
+      "name": "Chris Taylor",
+      "title": "AV Specialist",
+      "company": "4Wall"
+    },
+    {
+      "name": "Emma Clarke",
+      "title": "Events Lead",
+      "company": "SaaS Startup Network"
+    },
+    {
+      "name": "David Zhang",
+      "title": "Head of Events",
+      "company": "TechCorp Global",
+      "linkedIn": "https://linkedin.com/in/davidzhang-techcorp"
+    },
+    {
+      "name": "Maya Singh",
+      "title": "Senior Planner",
+      "company": "Government Events Agency"
+    },
+    {
+      "name": "Robert Lee",
+      "title": "Event Tech Specialist",
+      "company": "University Events",
+      "linkedIn": "https://linkedin.com/in/robertlee-uevents"
+    },
+    {
+      "name": "Amanda White",
+      "title": "Events Coordinator",
+      "company": "Non-Profit Sector"
+    },
+    {
+      "name": "Lisa Martinez",
+      "title": "Director of Events",
+      "company": "Healthcare Conferences",
+      "linkedIn": "https://linkedin.com/in/lmartinez-healthcare"
+    },
+    {
+      "name": "Kevin Chen",
+      "title": "Event Producer",
+      "company": "Media Company"
+    },
+    {
+      "name": "Daniel Garcia",
+      "title": "Conference Manager",
+      "company": "Industry Association"
+    },
+    {
+      "name": "Thomas Wilson",
+      "title": "Networking Lead",
+      "company": "Business Events Group",
+      "linkedIn": "https://linkedin.com/in/twilson-beg"
+    },
+    {
+      "name": "Catherine Brown",
+      "title": "Community Director",
+      "company": "Tech Conference Alliance"
+    },
+    {
+      "name": "Mohammed Al-Rashid",
+      "title": "Engagement Manager",
+      "company": "Global Meetings Network"
+    },
+    {
+      "name": "Sophia Martinez",
+      "title": "Relationship Builder",
+      "company": "Association Events Ltd",
+      "linkedIn": "https://linkedin.com/in/smartinez-assocevents"
+    },
+    {
+      "name": "Jonathan White",
+      "title": "Partnership Manager",
+      "company": "Event Professionals International"
+    },
+    {
+      "name": "Victoria Chen",
+      "title": "Networking Strategist",
+      "company": "Corporate Conference Group"
+    },
+    {
+      "name": "Daniel Foster",
+      "title": "Community Manager",
+      "company": "Industry Events Network",
+      "linkedIn": "https://linkedin.com/in/dfoster-ien"
+    },
+    {
+      "name": "Elena Rodriguez",
+      "title": "Connection Specialist",
+      "company": "Professional Development Agency"
+    },
+    {
+      "name": "Andrew Phillips",
+      "title": "Engagement Lead",
+      "company": "Meeting Planners Association"
+    },
+    {
+      "name": "Laura Schmidt",
+      "title": "Social Events Coordinator",
+      "company": "Conference Innovations",
+      "linkedIn": "https://linkedin.com/in/lschmidt-conferenceinnov"
+    },
+    {
+      "name": "Mark Stevens",
+      "title": "Network Builder",
+      "company": "Business Connections Ltd"
+    },
+    {
+      "name": "Rebecca Taylor",
+      "title": "Community Engagement",
+      "company": "Event Marketing Group"
+    },
+    {
+      "name": "Christopher Lee",
+      "title": "Networking Director",
+      "company": "Trade Association Events",
+      "linkedIn": "https://linkedin.com/in/clee-tradeassoc"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 5,
+    "connectionsMade": 28,
+    "hoursAttended": 4.0,
+    "tracksExplored": 1,
+    "topAchievement": "Networking Maven"
+  },
+  "callsToAction": [
+    {
+      "text": "Build Your Event Community with Braindate",
+      "url": "https://braindate.co/pricing?ref=etl2025-2012",
+      "type": "primary",
+      "trackingId": "cta-braindate-pricing"
+    },
+    {
+      "text": "Smart Networking Solutions from ExpoPlatform",
+      "url": "https://expoplatform.com/solutions?ref=etl2025-2012",
+      "type": "secondary",
+      "trackingId": "cta-expoplatform-solutions"
+    },
+    {
+      "text": "Save the Date: Event Tech Live 2026",
+      "url": "https://eventtechlive.com/2026?ref=etl2025-2012",
+      "type": "tertiary",
+      "trackingId": "cta-etl2026"
+    }
+  ],
+  "registeredAt": "2025-09-30T10:15:00Z",
+  "productsExplored": [
+    {
+      "name": "Braindate Networking Platform",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Braindate Peer Matching",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Braindate Community Hub",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Braindate Conversation Tools",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "ExpoPlatform AI Matchmaking Engine",
+      "company": "ExpoPlatform",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "ExpoPlatform Smart Networking",
+      "company": "ExpoPlatform",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "ExpoPlatform Meeting Management",
+      "company": "ExpoPlatform",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "ExpoPlatform Attendee Profiles",
+      "company": "ExpoPlatform",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "ExpoPlatform Connection Tracking",
+      "company": "ExpoPlatform",
+      "category": "Lead Retrieval & Analytics"
+    },
+    {
+      "name": "ExpoPlatform Speed Networking",
+      "company": "ExpoPlatform",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Komo Social Engagement Platform",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Komo Networking Gamification",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Komo Interactive Challenges",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Komo Leaderboards",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Komo Social Sharing",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "PreMagic Ripple Social Networking",
+      "company": "PreMagic",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "PreMagic Event Advocacy Platform",
+      "company": "PreMagic",
+      "category": "Content & Media"
+    },
+    {
+      "name": "PreMagic Photo Sharing",
+      "company": "PreMagic",
+      "category": "Content & Media"
+    },
+    {
+      "name": "PreMagic Connection Cards",
+      "company": "PreMagic",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Erleah AI Conversation Matching",
+      "company": "Erleah",
+      "category": "AI & Innovation"
+    },
+    {
+      "name": "Erleah Smart Introductions",
+      "company": "Erleah",
+      "category": "AI & Innovation"
+    },
+    {
+      "name": "Erleah Networking Intelligence",
+      "company": "Erleah",
+      "category": "AI & Innovation"
+    },
+    {
+      "name": "Eventbase Attendee Networking",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Eventbase 1-on-1 Meetings",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Eventbase Profile Discovery",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Eventbase Contact Exchange",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Cvent Community Platform",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Cvent Networking Lounge",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Cvent Attendee Engagement",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Pigeonhole Social Q&A",
+      "company": "Pigeonhole",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Pigeonhole Live Engagement",
+      "company": "Pigeonhole",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Lineup Ninja Networking Tools",
+      "company": "Lineup Ninja",
+      "category": "Content Management Systems"
+    },
+    {
+      "name": "Choose 2 Rent - Networking Zone Tech",
+      "company": "Choose 2 Rent",
+      "category": "Event Infrastructure"
+    },
+    {
+      "name": "Choose 2 Rent - Digital Business Card Exchange",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Choose 2 Rent - Lead Capture Devices",
+      "company": "Choose 2 Rent",
+      "category": "Lead Retrieval & Analytics"
+    },
+    {
+      "name": "Eventpack Contact Management",
+      "company": "Eventpack",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "One World Rental - Networking Connectivity",
+      "company": "One World Rental",
+      "category": "Connectivity Solutions"
+    },
+    {
+      "name": "ExpoPlatform Group Networking",
+      "company": "ExpoPlatform",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Braindate Follow-Up Tools",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Komo Networking Analytics",
+      "company": "Komo",
+      "category": "Data & Analytics"
+    },
+    {
+      "name": "PreMagic Social Amplification",
+      "company": "PreMagic",
+      "category": "Content & Media"
+    },
+    {
+      "name": "Erleah Connection Insights",
+      "company": "Erleah",
+      "category": "AI & Innovation"
+    }
+  ],
+  "boothsVisited": [
+    {
+      "company": "Braindate",
+      "timeSpentMinutes": 30,
+      "productsViewed": ["Networking Platform", "Peer Matching", "Community Hub", "Conversation Tools", "Follow-Up Tools"]
+    },
+    {
+      "company": "ExpoPlatform",
+      "timeSpentMinutes": 28,
+      "productsViewed": ["AI Matchmaking", "Smart Networking", "Meeting Management", "Connection Tracking", "Speed Networking", "Group Networking"]
+    },
+    {
+      "company": "Komo",
+      "timeSpentMinutes": 25,
+      "productsViewed": ["Social Engagement", "Networking Gamification", "Interactive Challenges", "Leaderboards", "Networking Analytics"]
+    },
+    {
+      "company": "PreMagic",
+      "timeSpentMinutes": 22,
+      "productsViewed": ["Ripple Social Networking", "Event Advocacy", "Photo Sharing", "Connection Cards"]
+    },
+    {
+      "company": "Erleah",
+      "timeSpentMinutes": 20,
+      "productsViewed": ["AI Conversation Matching", "Smart Introductions", "Networking Intelligence", "Connection Insights"]
+    },
+    {
+      "company": "Eventbase",
+      "timeSpentMinutes": 18,
+      "productsViewed": ["Attendee Networking", "1-on-1 Meetings", "Profile Discovery", "Contact Exchange"]
+    },
+    {
+      "company": "Cvent",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Community Platform", "Networking Lounge", "Attendee Engagement"]
+    },
+    {
+      "company": "Pigeonhole",
+      "timeSpentMinutes": 12,
+      "productsViewed": ["Social Q&A", "Live Engagement"]
+    },
+    {
+      "company": "Choose 2 Rent",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Networking Zone Tech", "Digital Business Cards", "Lead Capture"]
+    }
+  ],
+  "sponsorInteractions": [
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "booth_visit",
+      "timestamp": "2025-11-12T12:00:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "demo_request",
+      "timestamp": "2025-11-13T13:00:00Z"
+    }
+  ]
+}

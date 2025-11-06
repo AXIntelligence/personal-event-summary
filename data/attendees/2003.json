@@ -1,0 +1,384 @@
+{
+  "id": "2003",
+  "firstName": "Elena",
+  "lastName": "Martinez",
+  "email": "elena.martinez@greeneventsconsulting.com",
+  "company": "Green Events Consulting",
+  "title": "Sustainability Director",
+  "eventId": "event-tech-live-2025",
+  "sessions": [
+    {
+      "id": "etl-501",
+      "title": "Measuring Event Carbon Footprint: Tools and Strategies",
+      "description": "Learn how to calculate, track, and reduce your event's environmental impact. Explore carbon calculators, offset programs, and sustainable vendor selection criteria.",
+      "speakers": ["Marcus Brown, Sustainability Director, One Tribe"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Sustainability"
+    },
+    {
+      "id": "etl-102",
+      "title": "The Death of Plastic Badges: Sustainable Solutions for 2025",
+      "description": "Explore eco-friendly alternatives to traditional plastic badges. From biodegradable materials to digital badges, learn how to reduce your event's environmental impact while maintaining professional standards.",
+      "speakers": ["Nina Patel, Regional Manager, enviricard", "Michael O'Brien, Integration Specialist, Cvent"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-502",
+      "title": "The Business Case for Sustainable Events",
+      "description": "Sustainability isn't just good ethics—it's good business. Discover how sustainable practices reduce costs, attract attendees, and differentiate your events in a competitive market.",
+      "speakers": ["Marcus Brown, Sustainability Director, One Tribe"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Sustainability"
+    },
+    {
+      "id": "etl-701",
+      "title": "Conference Programme Management: From Chaos to Control",
+      "description": "Streamline speaker management and agenda planning with smart scheduling tools. Learn about auto-clash detection, speaker communication workflows, and last-minute change management.",
+      "speakers": ["Tom Hughes, Product Manager, Lineup Ninja"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-702",
+      "title": "AV Excellence on Any Budget",
+      "description": "Deliver professional AV experiences without breaking the bank. Learn equipment selection, vendor negotiation, and creative solutions for small to mid-sized events.",
+      "speakers": ["Chris Taylor, AV Specialist, Novum Live"],
+      "dateTime": "2025-11-12T16:00:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-503",
+      "title": "Tech Rental vs. Purchase: The Environmental Impact",
+      "description": "Compare the carbon footprint of purchasing versus renting event technology. Learn how equipment rental reduces e-waste and supports circular economy principles.",
+      "speakers": ["Sarah Mitchell, VP of Event Solutions, Choose 2 Rent", "Nina Patel, Regional Manager, One World Rental"],
+      "dateTime": "2025-11-13T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Sustainability"
+    },
+    {
+      "id": "etl-703",
+      "title": "Event WiFi: Ensuring Connectivity for 1000+ Attendees",
+      "description": "Plan and deploy robust WiFi networks that handle high-density crowds. Learn about bandwidth requirements, access point placement, and troubleshooting strategies.",
+      "speakers": ["Nina Patel, Regional Manager, One World Rental"],
+      "dateTime": "2025-11-13T09:30:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Marcus Brown",
+      "title": "Sustainability Director",
+      "company": "One Tribe",
+      "linkedIn": "https://linkedin.com/in/marcusbrown-onetribe"
+    },
+    {
+      "name": "Nina Patel",
+      "title": "Regional Manager",
+      "company": "enviricard"
+    },
+    {
+      "name": "Michael O'Brien",
+      "title": "Integration Specialist",
+      "company": "Cvent"
+    },
+    {
+      "name": "Tom Hughes",
+      "title": "Product Manager",
+      "company": "Lineup Ninja"
+    },
+    {
+      "name": "Chris Taylor",
+      "title": "AV Specialist",
+      "company": "Novum Live"
+    },
+    {
+      "name": "Sarah Mitchell",
+      "title": "VP of Event Solutions",
+      "company": "Choose 2 Rent",
+      "linkedIn": "https://linkedin.com/in/sarahmitchell-c2r"
+    },
+    {
+      "name": "Laura Thompson",
+      "title": "Sustainability Manager",
+      "company": "BeCause",
+      "linkedIn": "https://linkedin.com/in/laurathompson-because"
+    },
+    {
+      "name": "James Murphy",
+      "title": "Operations Director",
+      "company": "Association Events"
+    },
+    {
+      "name": "Sophie Chen",
+      "title": "Event Manager",
+      "company": "Eco Conference Group"
+    },
+    {
+      "name": "Robert Wilson",
+      "title": "Sustainability Lead",
+      "company": "Corporate Events Ltd"
+    },
+    {
+      "name": "Amanda Lewis",
+      "title": "Director of Events",
+      "company": "Nonprofit Alliance",
+      "linkedIn": "https://linkedin.com/in/amandalewis-nonprofit"
+    },
+    {
+      "name": "David Foster",
+      "title": "Green Events Specialist",
+      "company": "University Conferences"
+    },
+    {
+      "name": "Maria Gonzalez",
+      "title": "Event Planner",
+      "company": "Sustainable Meetings Co"
+    },
+    {
+      "name": "Kevin Park",
+      "title": "Operations Manager",
+      "company": "Tech Conference Network"
+    },
+    {
+      "name": "Rachel Adams",
+      "title": "Environmental Officer",
+      "company": "Government Events"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 7,
+    "connectionsMade": 15,
+    "hoursAttended": 5.25,
+    "tracksExplored": 3,
+    "topAchievement": "Green Champion"
+  },
+  "callsToAction": [
+    {
+      "text": "Offset Your Event Carbon Footprint Today",
+      "url": "https://onetribe.nu/contact?ref=etl2025-2003",
+      "type": "primary",
+      "trackingId": "cta-onetribe"
+    },
+    {
+      "text": "Sustainable Badge Solutions from enviricard",
+      "url": "https://enviricard.co.uk/demo?ref=etl2025-2003",
+      "type": "secondary",
+      "trackingId": "cta-enviricard"
+    },
+    {
+      "text": "Save the Date: Event Tech Live 2026",
+      "url": "https://eventtechlive.com/2026?ref=etl2025-2003",
+      "type": "tertiary",
+      "trackingId": "cta-etl2026"
+    }
+  ],
+  "registeredAt": "2025-09-18T10:30:00Z",
+  "productsExplored": [
+    {
+      "name": "One Tribe Carbon Offsetting",
+      "company": "One Tribe",
+      "category": "Sustainability Solutions"
+    },
+    {
+      "name": "enviricard Biodegradable Badges",
+      "company": "enviricard",
+      "category": "Sustainable Materials"
+    },
+    {
+      "name": "BeCause Impact Platform",
+      "company": "BeCause",
+      "category": "Sustainability Management"
+    },
+    {
+      "name": "Choose 2 Rent Green Equipment",
+      "company": "Choose 2 Rent",
+      "category": "Sustainable Event Tech Rental"
+    },
+    {
+      "name": "One World Rental WiFi Solutions",
+      "company": "One World Rental",
+      "category": "Event Infrastructure"
+    },
+    {
+      "name": "Cvent Sustainable Events Module",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Novum Live Energy-Efficient AV",
+      "company": "Novum Live",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "Lineup Ninja Digital Programme",
+      "company": "Lineup Ninja",
+      "category": "Content Management Systems"
+    },
+    {
+      "name": "One Tribe Forest Protection",
+      "company": "One Tribe",
+      "category": "Carbon Offset Programs"
+    },
+    {
+      "name": "Choose 2 Rent LED Signage",
+      "company": "Choose 2 Rent",
+      "category": "Digital Signage"
+    },
+    {
+      "name": "One World Rental Power Distribution",
+      "company": "One World Rental",
+      "category": "Event Infrastructure"
+    },
+    {
+      "name": "One Tribe Carbon Calculator",
+      "company": "One Tribe",
+      "category": "Sustainability Tools"
+    },
+    {
+      "name": "enviricard Wood Badges",
+      "company": "enviricard",
+      "category": "Sustainable Materials"
+    },
+    {
+      "name": "Novum Live Hybrid Solutions",
+      "company": "Novum Live",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "Choose 2 Rent Tablet Rentals",
+      "company": "Choose 2 Rent",
+      "category": "Mobile Devices"
+    },
+    {
+      "name": "One World Rental Data Connectivity",
+      "company": "One World Rental",
+      "category": "Event Infrastructure"
+    },
+    {
+      "name": "BeCause Reporting Dashboard",
+      "company": "BeCause",
+      "category": "Sustainability Analytics"
+    },
+    {
+      "name": "One Tribe Reforestation",
+      "company": "One Tribe",
+      "category": "Environmental Programs"
+    },
+    {
+      "name": "Cvent Digital Check-in",
+      "company": "Cvent",
+      "category": "Registration Technology"
+    },
+    {
+      "name": "Choose 2 Rent Eco Kiosks",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "One World Rental Mobile Hotspots",
+      "company": "One World Rental",
+      "category": "Connectivity Solutions"
+    },
+    {
+      "name": "One Tribe Corporate Partnerships",
+      "company": "One Tribe",
+      "category": "Sustainability Consulting"
+    },
+    {
+      "name": "enviricard Recycled Materials",
+      "company": "enviricard",
+      "category": "Sustainable Materials"
+    },
+    {
+      "name": "Novum Live Streaming Services",
+      "company": "Novum Live",
+      "category": "AV & Production Equipment"
+    },
+    {
+      "name": "BeCause Supply Chain Tracking",
+      "company": "BeCause",
+      "category": "Sustainability Management"
+    },
+    {
+      "name": "Choose 2 Rent Green Data Centers",
+      "company": "Choose 2 Rent",
+      "category": "Event Infrastructure"
+    },
+    {
+      "name": "One World Rental Sustainable Logistics",
+      "company": "One World Rental",
+      "category": "Operations Services"
+    },
+    {
+      "name": "One Tribe Education Resources",
+      "company": "One Tribe",
+      "category": "Sustainability Training"
+    }
+  ],
+  "boothsVisited": [
+    {
+      "company": "One Tribe",
+      "timeSpentMinutes": 30,
+      "productsViewed": ["Carbon Offsetting", "Forest Protection", "Carbon Calculator", "Reforestation"]
+    },
+    {
+      "company": "enviricard",
+      "timeSpentMinutes": 20,
+      "productsViewed": ["Biodegradable Badges", "Wood Badges", "Recycled Materials"]
+    },
+    {
+      "company": "BeCause",
+      "timeSpentMinutes": 18,
+      "productsViewed": ["Impact Platform", "Reporting Dashboard", "Supply Chain Tracking"]
+    },
+    {
+      "company": "Choose 2 Rent",
+      "timeSpentMinutes": 25,
+      "productsViewed": ["Green Equipment", "LED Signage", "Eco Kiosks", "Tablet Rentals"]
+    },
+    {
+      "company": "One World Rental",
+      "timeSpentMinutes": 22,
+      "productsViewed": ["WiFi Solutions", "Power Distribution", "Data Connectivity"]
+    },
+    {
+      "company": "Cvent",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Sustainable Events Module", "Digital Check-in"]
+    },
+    {
+      "company": "Novum Live",
+      "timeSpentMinutes": 12,
+      "productsViewed": ["Energy-Efficient AV", "Hybrid Solutions"]
+    },
+    {
+      "company": "Lineup Ninja",
+      "timeSpentMinutes": 10,
+      "productsViewed": ["Digital Programme"]
+    }
+  ],
+  "sponsorInteractions": [
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "booth_visit",
+      "timestamp": "2025-11-12T11:00:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "demo_request",
+      "timestamp": "2025-11-12T11:20:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "meeting",
+      "timestamp": "2025-11-13T10:00:00Z"
+    }
+  ]
+}

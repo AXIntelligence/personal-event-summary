@@ -1,0 +1,407 @@
+{
+  "id": "2007",
+  "firstName": "Sarah",
+  "lastName": "Chen",
+  "email": "sarah.chen@learningfirstevents.com",
+  "company": "Learning First Events",
+  "title": "Professional Development Manager",
+  "eventId": "event-tech-live-2025",
+  "sessions": [
+    {
+      "id": "etl-201",
+      "title": "From Random Encounters to Intentional Connections: AI-Powered Networking",
+      "description": "Transform your networking experience with AI-powered matchmaking. Learn how machine learning algorithms create meaningful connections based on interests, goals, and professional backgrounds.",
+      "speakers": ["Alex Zhang, Technical Lead, Erleah", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-301",
+      "title": "AI in Events: Beyond the Hype",
+      "description": "Separate AI fact from fiction in the events industry. Explore practical applications of artificial intelligence in registration, networking, content delivery, and analytics with real-world case studies.",
+      "speakers": ["Alex Zhang, Technical Lead, Erleah", "Simon Crawford, Head of Innovation, Erleah"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-801",
+      "title": "Lead Intelligence: Turning Scans into Sales",
+      "description": "Help exhibitors convert badge scans into revenue. Learn lead scoring, qualification workflows, CRM integration, and ROI measurement that proves event value to sponsors.",
+      "speakers": ["Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "etl-101",
+      "title": "Streamlining Onsite Registration: From Kiosks to Mobile Check-In",
+      "description": "Learn how modern registration technology is transforming the attendee experience. Discover best practices for reducing wait times, improving data accuracy, and creating seamless check-in flows using kiosks, mobile apps, and self-service solutions.",
+      "speakers": ["Marcus Johnson, Senior Sales, Eventpack", "Sarah Mitchell, VP of Event Solutions, Choose 2 Rent"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-501",
+      "title": "Measuring Event Carbon Footprint: Tools and Strategies",
+      "description": "Learn how to calculate, track, and reduce your event's environmental impact. Explore carbon calculators, offset programs, and sustainable vendor selection criteria.",
+      "speakers": ["Marcus Brown, Sustainability Director, One Tribe"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Sustainability"
+    },
+    {
+      "id": "etl-701",
+      "title": "Conference Programme Management: From Chaos to Control",
+      "description": "Streamline speaker management and agenda planning with smart scheduling tools. Learn about auto-clash detection, speaker communication workflows, and last-minute change management.",
+      "speakers": ["Tom Hughes, Product Manager, Lineup Ninja"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-102",
+      "title": "The Death of Plastic Badges: Sustainable Solutions for 2025",
+      "description": "Explore eco-friendly alternatives to traditional plastic badges. From biodegradable materials to digital badges, learn how to reduce your event's environmental impact while maintaining professional standards.",
+      "speakers": ["Nina Patel, Regional Manager, enviricard", "Michael O'Brien, Integration Specialist, Cvent"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-202",
+      "title": "Peer-to-Peer Learning: Creating Knowledge-Sharing Communities",
+      "description": "Discover how Braindate's crowdsourced knowledge platform enables attendees to become teachers and learners. See how peer-to-peer sessions drive deeper engagement and create lasting professional relationships.",
+      "speakers": ["Rachel Foster, Business Development, Braindate", "Jennifer Walsh, Chief Experience Officer, Braindate"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-601",
+      "title": "Capturing and Monetizing Event Content",
+      "description": "Transform your event content into revenue streams. Learn video production strategies, content licensing, and on-demand platforms that extend event value beyond the live experience.",
+      "speakers": ["Sophie Martin, Account Director, First Sight Media"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-302",
+      "title": "Mobile-First Event Experiences",
+      "description": "Design event experiences that put mobile at the center. Learn from Eventbase's work with Olympics, SXSW, and CES on creating apps that attendees actually use.",
+      "speakers": ["James Chen, Product Director, Eventbase", "Patricia Moore, VP of Product, Eventbase"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-502",
+      "title": "The Business Case for Sustainable Events",
+      "description": "Sustainability isn't just good ethics—it's good business. Discover how sustainable practices reduce costs, attract attendees, and differentiate your events in a competitive market.",
+      "speakers": ["Marcus Brown, Sustainability Director, One Tribe"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Sustainability"
+    },
+    {
+      "id": "etl-802",
+      "title": "Measuring Event ROI: Beyond Attendance Numbers",
+      "description": "Define and track metrics that matter. Explore engagement scores, content consumption, network value, and other KPIs that demonstrate true event impact to stakeholders.",
+      "speakers": ["David Kim, Solutions Architect, Komo", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "etl-401",
+      "title": "Breaking Language Barriers: Real-Time Translation Technology",
+      "description": "Make your events truly global with real-time translation and interpretation. Learn about AI-powered translation, human interpretation services, and hybrid approaches for 6000+ language combinations.",
+      "speakers": ["Dr. Elena Rodriguez, Head of Language Services, TransPerfect Live", "Emma Thompson, Account Executive, Interprefy"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Accessibility & Inclusion"
+    },
+    {
+      "id": "etl-901",
+      "title": "The Hybrid Playbook: Engaging Online and In-Person Audiences Simultaneously",
+      "description": "Master the art of hybrid events that deliver value to both physical and virtual attendees. Learn production techniques, engagement strategies, and technology integration for seamless experiences.",
+      "speakers": ["Michael O'Brien, Integration Specialist, Cvent", "James Chen, Product Director, Eventbase"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 60,
+      "track": "Hybrid & Virtual Events"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Alex Zhang",
+      "title": "Technical Lead",
+      "company": "Erleah",
+      "linkedIn": "https://linkedin.com/in/alexzhang-erleah"
+    },
+    {
+      "name": "Rachel Foster",
+      "title": "Business Development",
+      "company": "Braindate"
+    },
+    {
+      "name": "Jennifer Walsh",
+      "title": "Chief Experience Officer",
+      "company": "Braindate",
+      "linkedIn": "https://linkedin.com/in/jenniferwalsh-braindate"
+    },
+    {
+      "name": "Dr. Elena Rodriguez",
+      "title": "Head of Language Services",
+      "company": "TransPerfect Live"
+    },
+    {
+      "name": "Tom Hughes",
+      "title": "Product Manager",
+      "company": "Lineup Ninja",
+      "linkedIn": "https://linkedin.com/in/tomhughes-lineupninja"
+    },
+    {
+      "name": "Marcus Brown",
+      "title": "Sustainability Director",
+      "company": "One Tribe"
+    },
+    {
+      "name": "Sophie Martin",
+      "title": "Account Director",
+      "company": "First Sight Media"
+    },
+    {
+      "name": "Patricia Moore",
+      "title": "VP of Product",
+      "company": "Eventbase"
+    },
+    {
+      "name": "Rebecca Walsh",
+      "title": "Learning & Development Manager",
+      "company": "Professional Conference Network"
+    },
+    {
+      "name": "Jonathan Davies",
+      "title": "Training Coordinator",
+      "company": "Association Learning Institute",
+      "linkedIn": "https://linkedin.com/in/jdavies-ali"
+    },
+    {
+      "name": "Maya Singh",
+      "title": "Conference Attendee",
+      "company": "Education Events Ltd"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 14,
+    "connectionsMade": 11,
+    "hoursAttended": 11.75,
+    "tracksExplored": 8,
+    "topAchievement": "Session Marathon"
+  },
+  "callsToAction": [
+    {
+      "text": "Start Peer-to-Peer Learning with Braindate",
+      "url": "https://braindate.co/demo?ref=etl2025-2007",
+      "type": "primary",
+      "trackingId": "cta-braindate-demo"
+    },
+    {
+      "text": "Streamline Your Agenda with Lineup Ninja",
+      "url": "https://lineupninja.com/trial?ref=etl2025-2007",
+      "type": "secondary",
+      "trackingId": "cta-lineupninja-trial"
+    },
+    {
+      "text": "Save the Date: Event Tech Live 2026",
+      "url": "https://eventtechlive.com/2026?ref=etl2025-2007",
+      "type": "tertiary",
+      "trackingId": "cta-etl2026"
+    }
+  ],
+  "registeredAt": "2025-09-12T16:30:00Z",
+  "productsExplored": [
+    {
+      "name": "Braindate Experience Platform",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Braindate Knowledge Sharing",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Lineup Ninja Programme Management",
+      "company": "Lineup Ninja",
+      "category": "Content Management Systems"
+    },
+    {
+      "name": "Lineup Ninja Speaker Portal",
+      "company": "Lineup Ninja",
+      "category": "Content Management Systems"
+    },
+    {
+      "name": "TransPerfect Live Translation Services",
+      "company": "TransPerfect Live",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "TransPerfect Live Interpretation",
+      "company": "TransPerfect Live",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "Erleah AI Event Assistant",
+      "company": "Erleah",
+      "category": "AI & Innovation"
+    },
+    {
+      "name": "Erleah AI Networking",
+      "company": "Erleah",
+      "category": "AI & Innovation"
+    },
+    {
+      "name": "ExpoPlatform Matchmaking",
+      "company": "ExpoPlatform",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "Eventbase Event App",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "First Sight Media Content Services",
+      "company": "First Sight Media",
+      "category": "Content & Media"
+    },
+    {
+      "name": "One Tribe Carbon Offsetting",
+      "company": "One Tribe",
+      "category": "Sustainability Solutions"
+    },
+    {
+      "name": "Komo Engagement OS",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Cvent Attendee Hub",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "enviricard Sustainable Badges",
+      "company": "enviricard",
+      "category": "Sustainable Materials"
+    },
+    {
+      "name": "Choose 2 Rent Event Technology",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Interprefy Language Platform",
+      "company": "Interprefy",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "Pigeonhole Live Q&A",
+      "company": "Pigeonhole",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Lineup Ninja Session Management",
+      "company": "Lineup Ninja",
+      "category": "Content Management Systems"
+    },
+    {
+      "name": "Braindate Peer Conversations",
+      "company": "Braindate",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "TransPerfect Live Captioning",
+      "company": "TransPerfect Live",
+      "category": "Accessibility Tools"
+    },
+    {
+      "name": "Eventbase Content Delivery",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "ExpoPlatform Learning Hub",
+      "company": "ExpoPlatform",
+      "category": "Networking Platforms"
+    },
+    {
+      "name": "First Sight Media Recordings",
+      "company": "First Sight Media",
+      "category": "Content & Media"
+    },
+    {
+      "name": "One Tribe Educational Resources",
+      "company": "One Tribe",
+      "category": "Sustainability Training"
+    },
+    {
+      "name": "Komo Interactive Quizzes",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    }
+  ],
+  "boothsVisited": [
+    {
+      "company": "Braindate",
+      "timeSpentMinutes": 25,
+      "productsViewed": ["Experience Platform", "Knowledge Sharing", "Peer Conversations"]
+    },
+    {
+      "company": "Lineup Ninja",
+      "timeSpentMinutes": 20,
+      "productsViewed": ["Programme Management", "Speaker Portal", "Session Management"]
+    },
+    {
+      "company": "TransPerfect Live",
+      "timeSpentMinutes": 18,
+      "productsViewed": ["Translation Services", "Interpretation", "Captioning"]
+    },
+    {
+      "company": "Erleah",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["AI Event Assistant", "AI Networking"]
+    },
+    {
+      "company": "ExpoPlatform",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Matchmaking", "Learning Hub"]
+    },
+    {
+      "company": "Eventbase",
+      "timeSpentMinutes": 12,
+      "productsViewed": ["Event App", "Content Delivery"]
+    },
+    {
+      "company": "First Sight Media",
+      "timeSpentMinutes": 10,
+      "productsViewed": ["Content Services", "Recordings"]
+    },
+    {
+      "company": "One Tribe",
+      "timeSpentMinutes": 8,
+      "productsViewed": ["Carbon Offsetting", "Educational Resources"]
+    }
+  ],
+  "sponsorInteractions": [
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "booth_visit",
+      "timestamp": "2025-11-12T15:00:00Z"
+    }
+  ]
+}
