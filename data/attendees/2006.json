@@ -1,0 +1,545 @@
+{
+  "id": "2006",
+  "firstName": "Carlos",
+  "lastName": "Rodriguez",
+  "email": "carlos.rodriguez@eventregistrationservices.co.uk",
+  "company": "Event Registration Services UK",
+  "title": "Registration Technology Specialist",
+  "eventId": "event-tech-live-2025",
+  "sessions": [
+    {
+      "id": "etl-101",
+      "title": "Streamlining Onsite Registration: From Kiosks to Mobile Check-In",
+      "description": "Learn how modern registration technology is transforming the attendee experience. Discover best practices for reducing wait times, improving data accuracy, and creating seamless check-in flows using kiosks, mobile apps, and self-service solutions.",
+      "speakers": ["Marcus Johnson, Senior Sales, Eventpack", "Sarah Mitchell, VP of Event Solutions, Choose 2 Rent"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-103",
+      "title": "RFID & UHF Technology: The Future of Attendee Tracking",
+      "description": "Discover how RFID and UHF technology enables real-time attendee tracking, session analytics, and personalized experiences. See live demonstrations of the latest hardware and learn implementation best practices.",
+      "speakers": ["Sarah Mitchell, VP of Event Solutions, Choose 2 Rent"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-104",
+      "title": "Reducing Wait Times: Self-Service Check-In Strategies",
+      "description": "Practical strategies for implementing self-service check-in that attendees love. Learn about kiosk placement, user interface design, backup procedures, and staff training for smooth operations.",
+      "speakers": ["Marcus Johnson, Senior Sales, Eventpack", "Tom Hughes, Product Manager, Lineup Ninja"],
+      "dateTime": "2025-11-13T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-102",
+      "title": "The Death of Plastic Badges: Sustainable Solutions for 2025",
+      "description": "Explore eco-friendly alternatives to traditional plastic badges. From biodegradable materials to digital badges, learn how to reduce your event's environmental impact while maintaining professional standards.",
+      "speakers": ["Nina Patel, Regional Manager, enviricard", "Michael O'Brien, Integration Specialist, Cvent"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-801",
+      "title": "Lead Intelligence: Turning Scans into Sales",
+      "description": "Help exhibitors convert badge scans into revenue. Learn lead scoring, qualification workflows, CRM integration, and ROI measurement that proves event value to sponsors.",
+      "speakers": ["Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "etl-701",
+      "title": "Conference Programme Management: From Chaos to Control",
+      "description": "Streamline speaker management and agenda planning with smart scheduling tools. Learn about auto-clash detection, speaker communication workflows, and last-minute change management.",
+      "speakers": ["Tom Hughes, Product Manager, Lineup Ninja"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-703",
+      "title": "Event WiFi: Ensuring Connectivity for 1000+ Attendees",
+      "description": "Plan and deploy robust WiFi networks that handle high-density crowds. Learn about bandwidth requirements, access point placement, and troubleshooting strategies.",
+      "speakers": ["Nina Patel, Regional Manager, One World Rental"],
+      "dateTime": "2025-11-13T09:30:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-304",
+      "title": "Event Tech Integration: Making Your Stack Work Together",
+      "description": "Stop fighting with incompatible systems. Learn integration strategies, API best practices, and middleware solutions that make your event tech stack work seamlessly together.",
+      "speakers": ["James Chen, Product Director, Eventbase", "Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-13T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-803",
+      "title": "Attendee Data Privacy in 2025: GDPR and Beyond",
+      "description": "Navigate the complex landscape of data privacy regulations. Learn GDPR compliance, consent management, data retention policies, and emerging privacy laws globally.",
+      "speakers": ["James Chen, Product Director, Eventbase", "David Kim, Solutions Architect, Komo"],
+      "dateTime": "2025-11-13T16:00:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Marcus Johnson",
+      "title": "Senior Sales",
+      "company": "Eventpack",
+      "linkedIn": "https://linkedin.com/in/marcusjohnson-eventpack"
+    },
+    {
+      "name": "Sarah Mitchell",
+      "title": "VP of Event Solutions",
+      "company": "Choose 2 Rent",
+      "linkedIn": "https://linkedin.com/in/sarahmitchell-c2r"
+    },
+    {
+      "name": "Tom Hughes",
+      "title": "Product Manager",
+      "company": "Lineup Ninja"
+    },
+    {
+      "name": "Nina Patel",
+      "title": "Regional Manager",
+      "company": "enviricard"
+    },
+    {
+      "name": "Michael O'Brien",
+      "title": "Integration Specialist",
+      "company": "Cvent",
+      "linkedIn": "https://linkedin.com/in/michaelob-cvent"
+    },
+    {
+      "name": "Priya Patel",
+      "title": "Sales Manager",
+      "company": "ExpoPlatform"
+    },
+    {
+      "name": "James Chen",
+      "title": "Product Director",
+      "company": "Eventbase",
+      "linkedIn": "https://linkedin.com/in/jameschen-eventbase"
+    },
+    {
+      "name": "David Kim",
+      "title": "Solutions Architect",
+      "company": "Komo"
+    },
+    {
+      "name": "Victoria Harris",
+      "title": "Sales Lead",
+      "company": "Fenix Event Tech"
+    },
+    {
+      "name": "Mohammed Al-Rashid",
+      "title": "Account Executive",
+      "company": "One World Rental",
+      "linkedIn": "https://linkedin.com/in/malrashid-owr"
+    },
+    {
+      "name": "Jessica Brown",
+      "title": "Sales Director",
+      "company": "PreMagic"
+    },
+    {
+      "name": "Lisa Romano",
+      "title": "Partnership Manager",
+      "company": "Pigeonhole"
+    },
+    {
+      "name": "Emma Williams",
+      "title": "Registration Manager",
+      "company": "National Conference Centre"
+    },
+    {
+      "name": "Thomas Anderson",
+      "title": "Check-In Operations Lead",
+      "company": "Exhibition Services Group",
+      "linkedIn": "https://linkedin.com/in/tanderson-esg"
+    },
+    {
+      "name": "Sophie Martin",
+      "title": "Event Tech Specialist",
+      "company": "Corporate Events International"
+    },
+    {
+      "name": "Daniel Lee",
+      "title": "Technology Manager",
+      "company": "Association Conference Services"
+    },
+    {
+      "name": "Rebecca Taylor",
+      "title": "Operations Director",
+      "company": "Trade Show Logistics"
+    },
+    {
+      "name": "Ahmed Hassan",
+      "title": "Registration Lead",
+      "company": "Conference Management Ltd"
+    },
+    {
+      "name": "Catherine Wright",
+      "title": "Event Technology Consultant",
+      "company": "Meeting Professionals Network",
+      "linkedIn": "https://linkedin.com/in/cwright-mpn"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 9,
+    "connectionsMade": 19,
+    "hoursAttended": 6.75,
+    "tracksExplored": 4,
+    "topAchievement": "Registration Expert"
+  },
+  "callsToAction": [
+    {
+      "text": "Explore Registration Solutions with Choose 2 Rent",
+      "url": "https://choose2rent.co.uk/registration-tech?ref=etl2025-2006",
+      "type": "primary",
+      "trackingId": "cta-c2r-registration"
+    },
+    {
+      "text": "Request Eventpack Platform Demo",
+      "url": "https://eventpack.io/request-demo?ref=etl2025-2006",
+      "type": "secondary",
+      "trackingId": "cta-eventpack-request"
+    },
+    {
+      "text": "Save the Date: Event Tech Live 2026",
+      "url": "https://eventtechlive.com/2026?ref=etl2025-2006",
+      "type": "tertiary",
+      "trackingId": "cta-etl2026"
+    }
+  ],
+  "registeredAt": "2025-10-05T08:45:00Z",
+  "productsExplored": [
+    {
+      "name": "Choose 2 Rent - Zebra ZD621 Badge Printer",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Choose 2 Rent - Zebra ZC350 Card Printer",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Choose 2 Rent - Zebra ZC100 Printer",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Choose 2 Rent - Event Kiosk Pro",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Choose 2 Rent - Self-Service Check-In Kiosks",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Choose 2 Rent - iPad Pro Registration Stations",
+      "company": "Choose 2 Rent",
+      "category": "Mobile Devices"
+    },
+    {
+      "name": "Choose 2 Rent - iPad Air Check-In Stands",
+      "company": "Choose 2 Rent",
+      "category": "Mobile Devices"
+    },
+    {
+      "name": "Choose 2 Rent - RFID Badge Solutions",
+      "company": "Choose 2 Rent",
+      "category": "Tracking Technology"
+    },
+    {
+      "name": "Choose 2 Rent - UHF Reader Systems",
+      "company": "Choose 2 Rent",
+      "category": "Tracking Technology"
+    },
+    {
+      "name": "Choose 2 Rent - Badge Accessories Complete Kit",
+      "company": "Choose 2 Rent",
+      "category": "Event Supplies"
+    },
+    {
+      "name": "Choose 2 Rent - Thermal Badge Printers",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Choose 2 Rent - Registration Desk Setup",
+      "company": "Choose 2 Rent",
+      "category": "Event Furniture"
+    },
+    {
+      "name": "Eventpack Registration Platform",
+      "company": "Eventpack",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Eventpack Mobile Check-In App",
+      "company": "Eventpack",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Eventpack Badge Designer Pro",
+      "company": "Eventpack",
+      "category": "Design Tools"
+    },
+    {
+      "name": "Eventpack Attendee Management",
+      "company": "Eventpack",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Eventpack Lead Retrieval System",
+      "company": "Eventpack",
+      "category": "Lead Retrieval & Analytics"
+    },
+    {
+      "name": "Fenix Event Tech Check-In Platform",
+      "company": "Fenix Event Tech",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Fenix Event Tech Badge Printing Solutions",
+      "company": "Fenix Event Tech",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Fenix Event Tech Lead Capture",
+      "company": "Fenix Event Tech",
+      "category": "Lead Retrieval & Analytics"
+    },
+    {
+      "name": "Fenix Event Tech Queue Management",
+      "company": "Fenix Event Tech",
+      "category": "Operations Technology"
+    },
+    {
+      "name": "Fenix Event Tech Access Control",
+      "company": "Fenix Event Tech",
+      "category": "Security Technology"
+    },
+    {
+      "name": "Cvent Attendee Hub",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Cvent Check-in & Badging Solution",
+      "company": "Cvent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Cvent OnArrival",
+      "company": "Cvent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Cvent Mobile Check-In",
+      "company": "Cvent",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Cvent Digital Badges",
+      "company": "Cvent",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Cvent Registration Management",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "enviricard Biodegradable Badge Materials",
+      "company": "enviricard",
+      "category": "Sustainable Materials"
+    },
+    {
+      "name": "enviricard Wood Badge Collection",
+      "company": "enviricard",
+      "category": "Sustainable Materials"
+    },
+    {
+      "name": "enviricard Custom Eco Badges",
+      "company": "enviricard",
+      "category": "Sustainable Materials"
+    },
+    {
+      "name": "ExpoPlatform Lead Intelligence",
+      "company": "ExpoPlatform",
+      "category": "Lead Retrieval & Analytics"
+    },
+    {
+      "name": "ExpoPlatform Badge Scanning System",
+      "company": "ExpoPlatform",
+      "category": "Lead Retrieval & Analytics"
+    },
+    {
+      "name": "ExpoPlatform Check-In Module",
+      "company": "ExpoPlatform",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "ExpoPlatform RFID Integration",
+      "company": "ExpoPlatform",
+      "category": "Tracking Technology"
+    },
+    {
+      "name": "Lineup Ninja Registration Integration",
+      "company": "Lineup Ninja",
+      "category": "Content Management Systems"
+    },
+    {
+      "name": "Lineup Ninja Badge Management Tools",
+      "company": "Lineup Ninja",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "Lineup Ninja Attendee Portal",
+      "company": "Lineup Ninja",
+      "category": "Content Management Systems"
+    },
+    {
+      "name": "One World Rental WiFi Infrastructure",
+      "company": "One World Rental",
+      "category": "Event Infrastructure"
+    },
+    {
+      "name": "One World Rental Tablet Rentals",
+      "company": "One World Rental",
+      "category": "Mobile Devices"
+    },
+    {
+      "name": "One World Rental Power Distribution",
+      "company": "One World Rental",
+      "category": "Event Infrastructure"
+    },
+    {
+      "name": "One World Rental Mobile Connectivity",
+      "company": "One World Rental",
+      "category": "Connectivity Solutions"
+    },
+    {
+      "name": "One World Rental Network Support",
+      "company": "One World Rental",
+      "category": "Event Infrastructure"
+    },
+    {
+      "name": "Eventbase Event App Platform",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Eventbase Mobile Check-In",
+      "company": "Eventbase",
+      "category": "Registration Technology"
+    },
+    {
+      "name": "Eventbase Badge Scanning",
+      "company": "Eventbase",
+      "category": "Lead Retrieval & Analytics"
+    },
+    {
+      "name": "Komo Data Capture Platform",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Komo Registration Gamification",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "PreMagic Event Photo Distribution",
+      "company": "PreMagic",
+      "category": "Content & Media"
+    },
+    {
+      "name": "Pigeonhole Check-In Integration",
+      "company": "Pigeonhole",
+      "category": "Audience Engagement Tools"
+    }
+  ],
+  "boothsVisited": [
+    {
+      "company": "Choose 2 Rent",
+      "timeSpentMinutes": 40,
+      "productsViewed": ["Zebra Badge Printers", "Event Kiosks", "RFID Solutions", "UHF Readers", "iPad Stations", "Badge Accessories"]
+    },
+    {
+      "company": "Eventpack",
+      "timeSpentMinutes": 32,
+      "productsViewed": ["Registration Platform", "Mobile Check-In", "Badge Designer", "Lead Retrieval", "Attendee Management"]
+    },
+    {
+      "company": "Fenix Event Tech",
+      "timeSpentMinutes": 28,
+      "productsViewed": ["Check-In Platform", "Badge Printing", "Lead Capture", "Queue Management", "Access Control"]
+    },
+    {
+      "company": "Cvent",
+      "timeSpentMinutes": 30,
+      "productsViewed": ["Attendee Hub", "Check-in & Badging", "OnArrival", "Mobile Check-In", "Digital Badges"]
+    },
+    {
+      "company": "ExpoPlatform",
+      "timeSpentMinutes": 22,
+      "productsViewed": ["Lead Intelligence", "Badge Scanning", "Check-In Module", "RFID Integration"]
+    },
+    {
+      "company": "enviricard",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Biodegradable Badges", "Wood Badges", "Custom Eco Badges"]
+    },
+    {
+      "company": "One World Rental",
+      "timeSpentMinutes": 20,
+      "productsViewed": ["WiFi Infrastructure", "Tablet Rentals", "Power Distribution", "Mobile Connectivity"]
+    },
+    {
+      "company": "Lineup Ninja",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Registration Integration", "Badge Management", "Attendee Portal"]
+    },
+    {
+      "company": "Eventbase",
+      "timeSpentMinutes": 12,
+      "productsViewed": ["Event App Platform", "Mobile Check-In", "Badge Scanning"]
+    }
+  ],
+  "sponsorInteractions": [
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "booth_visit",
+      "timestamp": "2025-11-12T10:45:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "demo_request",
+      "timestamp": "2025-11-12T11:00:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "meeting",
+      "timestamp": "2025-11-13T10:30:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "quote_request",
+      "timestamp": "2025-11-13T14:00:00Z"
+    }
+  ]
+}

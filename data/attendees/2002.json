@@ -1,0 +1,351 @@
+{
+  "id": "2002",
+  "firstName": "Marcus",
+  "lastName": "Rodriguez",
+  "email": "marcus.rodriguez@eventinnovations.com",
+  "company": "Event Innovations Group",
+  "title": "Director of Technology Strategy",
+  "eventId": "event-tech-live-2025",
+  "sessions": [
+    {
+      "id": "etl-801",
+      "title": "Lead Intelligence: Turning Scans into Sales",
+      "description": "Help exhibitors convert badge scans into revenue. Learn lead scoring, qualification workflows, CRM integration, and ROI measurement that proves event value to sponsors.",
+      "speakers": ["Priya Patel, Sales Manager, ExpoPlatform"],
+      "dateTime": "2025-11-12T09:30:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "etl-701",
+      "title": "Conference Programme Management: From Chaos to Control",
+      "description": "Streamline speaker management and agenda planning with smart scheduling tools. Learn about auto-clash detection, speaker communication workflows, and last-minute change management.",
+      "speakers": ["Tom Hughes, Product Manager, Lineup Ninja"],
+      "dateTime": "2025-11-12T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Operations & Logistics"
+    },
+    {
+      "id": "etl-601",
+      "title": "Capturing and Monetizing Event Content",
+      "description": "Transform your event content into revenue streams. Learn video production strategies, content licensing, and on-demand platforms that extend event value beyond the live experience.",
+      "speakers": ["Sophie Martin, Account Director, First Sight Media"],
+      "dateTime": "2025-11-12T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-302",
+      "title": "Mobile-First Event Experiences",
+      "description": "Design event experiences that put mobile at the center. Learn from Eventbase's work with Olympics, SXSW, and CES on creating apps that attendees actually use.",
+      "speakers": ["James Chen, Product Director, Eventbase", "Patricia Moore, VP of Product, Eventbase"],
+      "dateTime": "2025-11-12T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Technology & Innovation"
+    },
+    {
+      "id": "etl-103",
+      "title": "RFID & UHF Technology: The Future of Attendee Tracking",
+      "description": "Discover how RFID and UHF technology enables real-time attendee tracking, session analytics, and personalized experiences. See live demonstrations of the latest hardware and learn implementation best practices.",
+      "speakers": ["Sarah Mitchell, VP of Event Solutions, Choose 2 Rent"],
+      "dateTime": "2025-11-12T14:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-203",
+      "title": "Live Q&A Done Right: Engaging Hybrid Audiences",
+      "description": "Master the art of inclusive Q&A sessions that engage both in-person and virtual attendees. Learn about moderation strategies, AI-powered translation, and real-time polling to keep everyone involved.",
+      "speakers": ["Lisa Romano, Partnership Manager, Pigeonhole"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 45,
+      "track": "Engagement & Networking"
+    },
+    {
+      "id": "etl-602",
+      "title": "Facial Recognition for Photo Distribution: Privacy and Possibilities",
+      "description": "Explore AI-powered photo distribution that respects privacy. Learn about consent management, data protection, and the technology that matches attendees with their event photos automatically.",
+      "speakers": ["Jessica Brown, Sales Director, PreMagic"],
+      "dateTime": "2025-11-12T15:00:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-104",
+      "title": "Reducing Wait Times: Self-Service Check-In Strategies",
+      "description": "Practical strategies for implementing self-service check-in that attendees love. Learn about kiosk placement, user interface design, backup procedures, and staff training for smooth operations.",
+      "speakers": ["Marcus Johnson, Senior Sales, Eventpack", "Tom Hughes, Product Manager, Lineup Ninja"],
+      "dateTime": "2025-11-13T10:00:00Z",
+      "durationMinutes": 45,
+      "track": "Registration & Check-In"
+    },
+    {
+      "id": "etl-603",
+      "title": "Live Streaming Best Practices for Global Audiences",
+      "description": "Deliver professional-quality live streams to audiences worldwide. Cover encoding, CDN selection, multi-platform distribution, and engagement strategies for virtual attendees.",
+      "speakers": ["Sophie Martin, Account Director, First Sight Media"],
+      "dateTime": "2025-11-13T11:15:00Z",
+      "durationMinutes": 45,
+      "track": "Content & Media"
+    },
+    {
+      "id": "etl-902",
+      "title": "Virtual Events That Don't Suck: Lessons from 1000+ Webinars",
+      "description": "Create virtual events that attendees actually enjoy. Learn from Cvent's extensive experience with engagement tactics, platform selection, and content formats that work in virtual environments.",
+      "speakers": ["Michael O'Brien, Integration Specialist, Cvent"],
+      "dateTime": "2025-11-13T13:00:00Z",
+      "durationMinutes": 45,
+      "track": "Hybrid & Virtual Events"
+    },
+    {
+      "id": "etl-803",
+      "title": "Attendee Data Privacy in 2025: GDPR and Beyond",
+      "description": "Navigate the complex landscape of data privacy regulations. Learn GDPR compliance, consent management, data retention policies, and emerging privacy laws globally.",
+      "speakers": ["James Chen, Product Director, Eventbase", "David Kim, Solutions Architect, Komo"],
+      "dateTime": "2025-11-13T16:00:00Z",
+      "durationMinutes": 45,
+      "track": "Data & Analytics"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Priya Patel",
+      "title": "Sales Manager",
+      "company": "ExpoPlatform",
+      "linkedIn": "https://linkedin.com/in/priyapatel-expoplatform"
+    },
+    {
+      "name": "Tom Hughes",
+      "title": "Product Manager",
+      "company": "Lineup Ninja"
+    },
+    {
+      "name": "Sophie Martin",
+      "title": "Account Director",
+      "company": "First Sight Media",
+      "linkedIn": "https://linkedin.com/in/sophiemartin-fsm"
+    },
+    {
+      "name": "James Chen",
+      "title": "Product Director",
+      "company": "Eventbase"
+    },
+    {
+      "name": "Sarah Mitchell",
+      "title": "VP of Event Solutions",
+      "company": "Choose 2 Rent"
+    },
+    {
+      "name": "Lisa Romano",
+      "title": "Partnership Manager",
+      "company": "Pigeonhole"
+    },
+    {
+      "name": "Jessica Brown",
+      "title": "Sales Director",
+      "company": "PreMagic"
+    },
+    {
+      "name": "Marcus Johnson",
+      "title": "Senior Sales",
+      "company": "Eventpack",
+      "linkedIn": "https://linkedin.com/in/marcusjohnson-eventpack"
+    },
+    {
+      "name": "Michael O'Brien",
+      "title": "Integration Specialist",
+      "company": "Cvent"
+    },
+    {
+      "name": "David Kim",
+      "title": "Solutions Architect",
+      "company": "Komo"
+    },
+    {
+      "name": "Rachel Williams",
+      "title": "Conference Producer",
+      "company": "Innovation Summit"
+    },
+    {
+      "name": "Sarah O'Connor",
+      "title": "Event Operations Manager",
+      "company": "Tech Conferences Ltd",
+      "linkedIn": "https://linkedin.com/in/sarahoconnor-techconf"
+    },
+    {
+      "name": "James Wilson",
+      "title": "Head of Conferences",
+      "company": "Professional Association"
+    },
+    {
+      "name": "Caroline Brown",
+      "title": "Director of Meetings",
+      "company": "Consulting Firm"
+    },
+    {
+      "name": "Alex Johnson",
+      "title": "Senior Event Planner",
+      "company": "Association Management Co."
+    },
+    {
+      "name": "Emma Clarke",
+      "title": "Events Lead",
+      "company": "SaaS Startup Network"
+    },
+    {
+      "name": "Tom Anderson",
+      "title": "Event Technology Manager",
+      "company": "Finance Events Ltd"
+    },
+    {
+      "name": "Robert Lee",
+      "title": "Event Tech Specialist",
+      "company": "University Events",
+      "linkedIn": "https://linkedin.com/in/robertlee-uevents"
+    },
+    {
+      "name": "Patricia Moore",
+      "title": "VP of Product",
+      "company": "Eventbase"
+    },
+    {
+      "name": "David Zhang",
+      "title": "Head of Events",
+      "company": "TechCorp Global"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 11,
+    "connectionsMade": 20,
+    "hoursAttended": 8.75,
+    "tracksExplored": 7,
+    "topAchievement": "Tech Explorer"
+  },
+  "callsToAction": [
+    {
+      "text": "Build Your Event App with Industry Leaders",
+      "url": "https://eventbase.com/contact?ref=etl2025-2002",
+      "type": "primary",
+      "trackingId": "cta-eventbase"
+    },
+    {
+      "text": "Power Your Event Engagement and Sponsor ROI",
+      "url": "https://komo.tech/trial?ref=etl2025-2002",
+      "type": "secondary",
+      "trackingId": "cta-komo-trial"
+    },
+    {
+      "text": "Save the Date: Event Tech Live 2026",
+      "url": "https://eventtechlive.com/2026?ref=etl2025-2002",
+      "type": "tertiary",
+      "trackingId": "cta-etl2026"
+    }
+  ],
+  "registeredAt": "2025-09-22T09:15:00Z",
+  "productsExplored": [
+    {
+      "name": "Lineup Ninja Programme Management",
+      "company": "Lineup Ninja",
+      "category": "Content Management Systems"
+    },
+    {
+      "name": "First Sight Media Streaming",
+      "company": "First Sight Media",
+      "category": "Content & Media"
+    },
+    {
+      "name": "Eventbase Event App",
+      "company": "Eventbase",
+      "category": "Mobile Event Apps"
+    },
+    {
+      "name": "Pigeonhole Live Q&A",
+      "company": "Pigeonhole",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "PreMagic Event Posters",
+      "company": "PreMagic",
+      "category": "Content & Media"
+    },
+    {
+      "name": "Eventpack Registration Platform",
+      "company": "Eventpack",
+      "category": "Registration & Check-In Technology"
+    },
+    {
+      "name": "ExpoPlatform Lead Intelligence",
+      "company": "ExpoPlatform",
+      "category": "Lead Retrieval & Analytics"
+    },
+    {
+      "name": "Cvent Attendee Hub",
+      "company": "Cvent",
+      "category": "Event Management Platforms"
+    },
+    {
+      "name": "Komo Interactive Quizzes",
+      "company": "Komo",
+      "category": "Audience Engagement Tools"
+    },
+    {
+      "name": "Choose 2 Rent - Zebra ZD621 Badge Printer",
+      "company": "Choose 2 Rent",
+      "category": "Registration & Check-In Technology"
+    }
+  ],
+  "boothsVisited": [
+    {
+      "company": "Lineup Ninja",
+      "timeSpentMinutes": 20,
+      "productsViewed": ["Programme Management", "Web App"]
+    },
+    {
+      "company": "First Sight Media",
+      "timeSpentMinutes": 18,
+      "productsViewed": ["Streaming Services", "Recording"]
+    },
+    {
+      "company": "Eventbase",
+      "timeSpentMinutes": 22,
+      "productsViewed": ["Event App Platform"]
+    },
+    {
+      "company": "Pigeonhole",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Live Q&A", "Polls", "Word Clouds"]
+    },
+    {
+      "company": "PreMagic",
+      "timeSpentMinutes": 12,
+      "productsViewed": ["Event Advocacy Posters", "Ripple Networking"]
+    },
+    {
+      "company": "ExpoPlatform",
+      "timeSpentMinutes": 17,
+      "productsViewed": ["Lead Intelligence", "Matchmaking"]
+    },
+    {
+      "company": "Cvent",
+      "timeSpentMinutes": 15,
+      "productsViewed": ["Attendee Hub", "Check-in & Badging"]
+    },
+    {
+      "company": "Choose 2 Rent",
+      "timeSpentMinutes": 12,
+      "productsViewed": ["Badge Printers", "Registration Kiosks"]
+    }
+  ],
+  "sponsorInteractions": [
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "booth_visit",
+      "timestamp": "2025-11-12T14:30:00Z"
+    },
+    {
+      "sponsor": "Choose 2 Rent",
+      "type": "meeting",
+      "timestamp": "2025-11-13T09:00:00Z"
+    }
+  ]
+}
