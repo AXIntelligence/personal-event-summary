@@ -1,0 +1,143 @@
+scrape_website:
+  description: >
+    Scrape the event website at {url} to extract:
+    - Raw HTML structure and content
+    - All CSS stylesheets (inline and external)
+    - Computed styles for key elements (headers, body, buttons, links)
+    - Logo and favicon URLs
+    - Page metadata and structure
+
+    Use Playwright to handle JavaScript-rendered content. Ensure all network requests
+    complete before extracting styles. Capture both light and dark mode styles if
+    present.
+
+    Security requirements:
+    - Validate URL before scraping (no localhost, private IPs)
+    - Respect robots.txt
+    - Use appropriate User-Agent
+    - Implement rate limiting (minimum 1 second between requests)
+  expected_output: >
+    A structured report containing:
+    1. Raw HTML content (relevant sections only, not entire page)
+    2. Extracted CSS rules and computed styles
+    3. List of all color values found
+    4. List of all font-family declarations
+    5. Logo URL and favicon URL
+    6. Page structure (header, nav, main sections)
+  agent: web_scraper_agent
+
+extract_styles:
+  description: >
+    Analyze the scraped HTML and CSS from the previous task to extract:
+
+    Color Palette:
+    - Primary brand color (most prominent, usually in headers/CTA buttons)
+    - Secondary color (supporting color, often in subheadings)
+    - Accent color (highlights, links, interactive elements)
+    - Background color (page background, typically white or off-white)
+    - Text color (body text, typically dark gray or black)
+
+    Typography:
+    - Heading font family (h1, h2, h3 elements)
+    - Body font family (p, div, main text)
+    - Heading size (base h1 size)
+    - Body size (base paragraph size)
+    - Line height (text readability setting)
+
+    Layout:
+    - Grid system (flexbox, CSS Grid, or column-based)
+    - Spacing unit (base unit for margins/padding, usually 4px or 8px)
+    - Border radius (roundness of elements)
+    - Container max-width
+
+    Use CSS specificity and frequency analysis to identify the most important values.
+    Ignore inline styles that appear to be overrides or exceptions.
+  expected_output: >
+    A structured style analysis containing:
+    1. ColorPalette with 5 colors (hex or rgb format)
+    2. Typography settings with font families and sizes
+    3. LayoutConfig with grid system and spacing
+    4. Logo URL and favicon URL
+    5. Confidence scores for each extracted value (0-100%)
+  agent: style_analyst_agent
+  context:
+    - scrape_website
+
+analyze_voice:
+  description: >
+    Analyze the website content from the scraping task to identify brand voice and tone:
+
+    Tone Analysis:
+    - Overall tone: professional, casual, energetic, sophisticated, friendly, technical
+    - Can be multiple tones (e.g., "professional, energetic")
+
+    Keywords:
+    - Extract 5-10 key brand keywords that appear frequently
+    - Focus on action words, industry terms, and brand-specific vocabulary
+
+    Style:
+    - Writing style: formal, conversational, technical, storytelling
+
+    Personality:
+    - Brand personality descriptor: innovative, traditional, bold, caring, authoritative
+
+    Analyze:
+    - Headlines and hero section copy
+    - Call-to-action button text
+    - Navigation and menu labels
+    - Body content and descriptions
+    - Microcopy and error messages (if present)
+
+    Look for patterns in:
+    - Sentence structure (short vs. long, simple vs. complex)
+    - Word choice (technical jargon vs. plain language)
+    - Use of first-person vs. third-person
+    - Active vs. passive voice
+    - Emotional language vs. factual statements
+  expected_output: >
+    A brand voice analysis containing:
+    1. Tone (comma-separated string of tone descriptors)
+    2. Keywords (list of 5-10 brand keywords)
+    3. Style (writing style descriptor)
+    4. Personality (optional personality descriptor)
+    5. Confidence score (0-100%)
+    6. Supporting evidence (quotes from the website)
+  agent: voice_analyst_agent
+  context:
+    - scrape_website
+
+compile_config:
+  description: >
+    Compile the style extraction and voice analysis into a complete EventStyleConfig
+    JSON object that matches the Pydantic schema.
+
+    Required fields:
+    - event_id: Generate from the URL (e.g., "example-com" from "example.com")
+    - event_name: Extract from page title or h1, or derive from domain
+    - source_url: The original URL that was scraped
+    - colors: ColorPalette object from style extraction
+    - typography: Typography object from style extraction
+    - brand_voice: BrandVoice object from voice analysis
+    - layout: LayoutConfig object from style extraction (optional, has defaults)
+    - logo_url: Logo URL from scraping (optional)
+    - favicon_url: Favicon URL from scraping (optional)
+    - scraped_at: Current ISO 8601 timestamp
+
+    Validation requirements:
+    - All color values must be valid CSS colors (hex, rgb, or hsl)
+    - Font families should be complete with fallbacks (e.g., "Inter, sans-serif")
+    - All required fields must be present
+    - No extra fields beyond the schema
+
+    If any required data is missing, use sensible defaults:
+    - Colors: Use web-safe defaults (e.g., #000000 for text)
+    - Fonts: Use system font stacks
+    - Tone: Default to "professional"
+  expected_output: >
+    A complete, valid EventStyleConfig JSON object ready for export.
+    The JSON must pass Pydantic validation without errors.
+  agent: compiler_agent
+  context:
+    - scrape_website
+    - extract_styles
+    - analyze_voice
