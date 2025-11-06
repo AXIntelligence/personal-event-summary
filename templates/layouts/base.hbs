@@ -18,6 +18,13 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="../../static/css/styles.css">
 
+    {{#if eventCSS}}
+    <!-- Event-Specific Dynamic Styles (Plan 003) -->
+    <style>
+{{{eventCSS}}}
+    </style>
+    {{/if}}
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,6 +79,11 @@
             <div class="footer-bottom">
                 <p>&copy; {{currentYear}} {{event.name}}. All rights reserved.</p>
                 <p class="powered-by">Generated with ❤️ for our amazing community</p>
+                {{#if eventCSS}}
+                <p class="markus-attribution">
+                    Powered by <a href="https://dearmarkus.ai" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Markus AI</a>
+                </p>
+                {{/if}}
             </div>
         </div>
     </footer>
