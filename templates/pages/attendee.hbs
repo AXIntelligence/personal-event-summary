@@ -1,0 +1,162 @@
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Welcome back, <span class="highlight">{{attendee.firstName}}</span>! 🎉
+            </h1>
+            <p class="hero-subtitle">
+                Here's your personalized {{event.name}} experience wrapped up
+            </p>
+            {{#if attendee.stats.topAchievement}}
+            <div class="achievement-badge">
+                <span class="badge-icon">🏆</span>
+                <span class="badge-text">{{attendee.stats.topAchievement}}</span>
+            </div>
+            {{/if}}
+        </div>
+    </div>
+</section>
+
+<!-- Stats Overview -->
+<section class="stats-overview">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-number">{{attendee.stats.sessionsAttended}}</div>
+                <div class="stat-label">Sessions Attended</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🤝</div>
+                <div class="stat-number">{{attendee.stats.connectionsMade}}</div>
+                <div class="stat-label">Connections Made</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⏰</div>
+                <div class="stat-number">{{attendee.stats.hoursAttended}}</div>
+                <div class="stat-label">Hours Invested</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+                <div class="stat-number">{{attendee.stats.tracksExplored}}</div>
+                <div class="stat-label">Tracks Explored</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sessions Section -->
+<section class="sessions-section">
+    <div class="container">
+        <h2 class="section-title">Your Learning Journey</h2>
+        <p class="section-subtitle">The sessions that shaped your {{event.name}} experience</p>
+
+        <div class="sessions-list">
+            {{#each attendee.sessions}}
+            <div class="session-card">
+                <div class="session-header">
+                    <h3 class="session-title">{{this.title}}</h3>
+                    {{#if this.track}}
+                    <span class="session-track">{{this.track}}</span>
+                    {{/if}}
+                </div>
+                <p class="session-description">{{this.description}}</p>
+                <div class="session-meta">
+                    <div class="session-speakers">
+                        <span class="meta-icon">🎤</span>
+                        <span>{{#each this.speakers}}{{this}}{{#unless @last}}, {{/unless}}{{/each}}</span>
+                    </div>
+                    <div class="session-duration">
+                        <span class="meta-icon">⏱️</span>
+                        <span>{{this.durationMinutes}} min</span>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+<!-- Connections Section -->
+{{#if attendee.connections.length}}
+<section class="connections-section">
+    <div class="container">
+        <h2 class="section-title">Your Network Grew</h2>
+        <p class="section-subtitle">Amazing people you connected with</p>
+
+        <div class="connections-grid">
+            {{#each attendee.connections}}
+            <div class="connection-card">
+                <div class="connection-avatar">
+                    {{substring this.name 0 1}}
+                </div>
+                <div class="connection-info">
+                    <h4 class="connection-name">{{this.name}}</h4>
+                    <p class="connection-title">{{this.title}}</p>
+                    <p class="connection-company">{{this.company}}</p>
+                    {{#if this.linkedIn}}
+                    <a href="{{this.linkedIn}}" class="connection-link" target="_blank" rel="noopener noreferrer">
+                        Connect on LinkedIn →
+                    </a>
+                    {{/if}}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
+{{/if}}
+
+<!-- Impact Section -->
+<section class="impact-section">
+    <div class="container">
+        <div class="impact-content">
+            <h2 class="section-title">Your Impact</h2>
+            <div class="impact-stats">
+                <p class="impact-text">
+                    You were one of <strong>{{event.totalAttendees}}</strong> attendees who made {{event.name}} an incredible success.
+                </p>
+                <p class="impact-text">
+                    Together, we explored <strong>{{event.totalSessions}}</strong> sessions across multiple tracks,
+                    creating a vibrant community of learning and innovation.
+                </p>
+                {{#if attendee.stats.topAchievement}}
+                <p class="impact-text highlight-text">
+                    Your dedication earned you the <strong>{{attendee.stats.topAchievement}}</strong> recognition! 🌟
+                </p>
+                {{/if}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Actions -->
+<section class="cta-section">
+    <div class="container">
+        <h2 class="section-title">Keep the Momentum Going</h2>
+        <p class="section-subtitle">Your journey doesn't end here</p>
+
+        <div class="cta-grid">
+            {{#each attendee.callsToAction}}
+                {{> cta this}}
+            {{/each}}
+        </div>
+    </div>
+</section>
+
+<!-- Thank You Section -->
+<section class="thank-you-section">
+    <div class="container">
+        <div class="thank-you-content">
+            <h2>Thank You, {{attendee.firstName}}!</h2>
+            <p>
+                We're grateful you chose to spend your time with us at {{event.name}}.
+                Your participation and energy helped make this event truly special.
+            </p>
+            <p class="thank-you-signature">
+                See you next year! 🚀
+            </p>
+        </div>
+    </div>
+</section>

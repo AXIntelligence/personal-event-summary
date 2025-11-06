@@ -1,0 +1,95 @@
+{
+  "id": "1007",
+  "firstName": "Aisha",
+  "lastName": "Johnson",
+  "email": "aisha.johnson@frontend.dev",
+  "company": "Frontend Masters",
+  "title": "Frontend Developer",
+  "eventId": "event-2025",
+  "sessions": [
+    {
+      "id": "session-1001",
+      "title": "Modern Web Development with React",
+      "description": "Building performant React applications in 2025",
+      "speakers": ["Tyler Moore"],
+      "dateTime": "2025-03-15T11:00:00Z",
+      "durationMinutes": 90,
+      "track": "Web Development"
+    },
+    {
+      "id": "session-1002",
+      "title": "CSS Grid and Flexbox Mastery",
+      "description": "Advanced layout techniques for modern web design",
+      "speakers": ["Emma Davis"],
+      "dateTime": "2025-03-16T14:00:00Z",
+      "durationMinutes": 75,
+      "track": "Web Development"
+    },
+    {
+      "id": "session-505",
+      "title": "Design Systems That Scale",
+      "description": "Building and maintaining design systems across large organizations",
+      "speakers": ["Sophie Lee"],
+      "dateTime": "2025-03-16T15:00:00Z",
+      "durationMinutes": 75,
+      "track": "Design"
+    },
+    {
+      "id": "session-1003",
+      "title": "Web Accessibility Fundamentals",
+      "description": "Creating inclusive web experiences for all users",
+      "speakers": ["Jordan Hill"],
+      "dateTime": "2025-03-17T10:00:00Z",
+      "durationMinutes": 60,
+      "track": "Web Development"
+    },
+    {
+      "id": "session-1004",
+      "title": "Performance Optimization Techniques",
+      "description": "Making web applications blazingly fast",
+      "speakers": ["Alex Rivera"],
+      "dateTime": "2025-03-17T16:00:00Z",
+      "durationMinutes": 90,
+      "track": "Web Development"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Kevin Wright",
+      "title": "UI Engineer",
+      "company": "Design Systems Co"
+    },
+    {
+      "name": "Lisa Anderson",
+      "title": "Frontend Lead",
+      "company": "WebApp Creators"
+    },
+    {
+      "name": "Nathan Cooper",
+      "title": "Full Stack Developer",
+      "company": "Code Factory",
+      "linkedIn": "https://linkedin.com/in/nathancooper"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 5,
+    "connectionsMade": 3,
+    "hoursAttended": 6.5,
+    "tracksExplored": 2,
+    "topAchievement": "Frontend Fanatic"
+  },
+  "callsToAction": [
+    {
+      "text": "Register for TechConf 2026",
+      "url": "https://techconf2026.example.com/register?ref=summary-1007",
+      "type": "primary",
+      "trackingId": "cta-register-2026"
+    },
+    {
+      "text": "Join Web Dev Community",
+      "url": "https://community.techconf.example.com/webdev?ref=summary-1007",
+      "type": "secondary"
+    }
+  ],
+  "registeredAt": "2025-01-10T13:20:00Z"
+}

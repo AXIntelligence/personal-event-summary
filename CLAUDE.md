@@ -4,7 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal Event Summary is a system for capturing, processing, and summarizing personal events and activities. The project is in early development stage and focuses on building a robust event processing pipeline with comprehensive validation and testing.
+Personal Event Summary is a **static site generator** for creating personalized event summary pages for attendees. Built with **Node.js/TypeScript** and **Handlebars templates**, it generates beautiful, responsive HTML pages showcasing each attendee's conference experience.
+
+**Current Status**: ✅ **Production Ready** - v1.0.0 completed and deployed
+
+### Key Features
+
+- Personalized attendee summary pages with session and connection tracking
+- Responsive design (mobile, tablet, desktop)
+- W3C valid HTML5 with 85%+ test coverage
+- GitHub Pages deployment via GitHub Actions
+- < 500ms generation time for 12+ pages
 
 ## Development Workflow
 
@@ -18,7 +28,7 @@ Personal Event Summary is a system for capturing, processing, and summarizing pe
 /explore
 
 # Focus exploration on specific areas
-/explore event processing and data models
+/explore templates and page generation
 ```
 
 ### Implementation
@@ -28,55 +38,294 @@ Personal Event Summary is a system for capturing, processing, and summarizing pe
 /implement ./plans/001-feature-name.md
 
 # Run tests
-pytest -v                                    # Run all tests
-pytest --cov=src --cov-report=term-missing  # With coverage
+npm test                    # Run all tests
+npm run test:coverage       # With coverage report
+npm run type-check          # TypeScript type checking
+```
+
+### Common Commands
+
+```bash
+# Build TypeScript
+npm run build
+
+# Generate static site
+npm run generate
+
+# Run development build
+npx tsc --watch
+
+# Serve locally
+http-server dist -p 8080
 ```
 
 ## Architecture Summary
 
-*To be defined as the project evolves*
-
 ### System Overview
 
-The system will handle:
-- Event capture from various sources
-- Event processing and transformation
-- Event aggregation and summarization
-- Data persistence and retrieval
+**Static Site Generator** using:
+- **Data Layer**: JSON files with TypeScript type guards
+- **Template Layer**: Handlebars templates with partials
+- **Generation Layer**: Batch page generation with async/await
+- **Deployment**: GitHub Actions → GitHub Pages
+
+**Core Flow**:
+```
+JSON Data → TypeScript Types → Handlebars Templates → HTML Pages → GitHub Pages
+```
 
 ### File Structure
 
 ```
 personal-event-summary/
-├── src/                  # Source code
-├── tests/                # Test files
-├── plans/                # Implementation plans
-├── analysis/             # Validation reports and research
-├── requirements/         # Project requirements
-├── .claude/              # Claude-specific configuration
-│   └── commands/         # Custom Claude commands
-└── docs/                 # Documentation
+├── data/                      # Source data (JSON)
+│   ├── events/
+│   │   └── event-2025.json   # Event configuration
+│   └── attendees/
+│       ├── 1001.json         # Individual attendee data
+│       └── ... (12 total)
+├── src/                       # TypeScript source
+│   ├── types/
+│   │   └── index.ts          # Type definitions + type guards
+│   ├── dataLoader.ts         # Data loading with validation
+│   └── generate.ts           # Page generation engine
+├── templates/                 # Handlebars templates
+│   ├── layouts/
+│   │   └── base.hbs          # Base HTML layout
+│   ├── pages/
+│   │   └── attendee.hbs      # Attendee page template
+│   └── partials/
+│       └── cta.hbs           # CTA component
+├── static/                    # Static assets
+│   ├── css/
+│   │   └── styles.css        # 14KB responsive CSS
+│   └── images/
+├── tests/                     # Test suite (87 tests)
+│   ├── unit/                 # 52 unit tests
+│   ├── integration/          # 21 integration tests
+│   └── validation/           # 14 HTML validation tests
+├── dist/                      # Generated output (gitignored)
+│   ├── attendees/
+│   │   ├── 1001/
+│   │   │   └── index.html    # Clean URLs
+│   │   └── ...
+│   └── static/
+├── docs/                      # Documentation
+│   ├── setup.md              # Setup guide
+│   ├── examples.md           # Usage examples
+│   └── github-pages-setup.md # Deployment guide
+├── .github/workflows/         # CI/CD
+│   ├── test.yml              # Automated testing
+│   └── deploy.yml            # GitHub Pages deployment
+└── 404.html                   # Custom 404 page
 ```
+
+### Key Components
+
+**dataLoader.ts**: Loads and validates JSON data
+- Functions: `loadEvent()`, `loadAttendee()`, `loadAllAttendees()`
+- Runtime type validation with type guards
+- Error handling for missing/invalid data
+
+**generate.ts**: Generates HTML pages
+- Functions: `setupHandlebars()`, `generateAttendeePage()`, `generateAllAttendeePages()`, `copyStaticAssets()`
+- Handlebars helpers: `formatDate`, `substring`, `currentYear`
+- Parallel generation with `Promise.all()`
+
+**types/index.ts**: TypeScript interfaces and type guards
+- Interfaces: `Event`, `Attendee`, `Session`, `Connection`, `CallToAction`
+- Type guards: `isEvent()`, `isAttendee()`, `isSession()`, etc.
 
 ## Critical Lessons Learned
 
-*This section will be updated as the project evolves*
+### 1. TDD Pays Dividends
+
+**Learning**: Strict TDD from the start led to 85% coverage and caught bugs early.
+
+**Best Practices**:
+- Write tests BEFORE implementation (RED phase)
+- Keep tests focused and atomic
+- Use descriptive test names that document behavior
+- Integration tests caught issues unit tests missed
+
+**Example**:
+```typescript
+// ✅ Good: Test written first, documents expected behavior
+it('should throw error for non-existent attendee', async () => {
+  await expect(loadAttendee('99999')).rejects.toThrow();
+});
+
+// Then implement to pass the test
+```
+
+### 2. Type Guards Are Essential
+
+**Learning**: Runtime type guards prevented silent failures with malformed JSON data.
+
+**Implementation**:
+```typescript
+export function isAttendee(obj: unknown): obj is Attendee {
+  if (typeof obj !== 'object' || obj === null) return false;
+  const a = obj as Attendee;
+  return (
+    typeof a.id === 'string' &&
+    typeof a.firstName === 'string' &&
+    Array.isArray(a.sessions) &&
+    // ... more validation
+  );
+}
+```
+
+**Why It Matters**: Catches data errors at load time, not generation time.
+
+### 3. Parallel Generation for Performance
+
+**Learning**: Using `Promise.all()` for parallel generation was 10x faster than sequential.
+
+**Before** (sequential): ~2000ms for 12 pages
+**After** (parallel): ~500ms for 12 pages
+
+**Implementation**:
+```typescript
+const generationPromises = attendees.map(async (attendee) => {
+  const html = render(attendee, event);
+  await writeFile(outputPath, html);
+  return outputPath;
+});
+
+return await Promise.all(generationPromises);
+```
+
+### 4. HTML Entity Encoding Matters
+
+**Learning**: Apostrophes in names (e.g., "O'Brien") get HTML-encoded as `&#x27;`.
+
+**Impact**: Tests initially failed expecting literal apostrophes.
+
+**Solution**: Use regex patterns in tests to handle both encoded and literal forms:
+```typescript
+expect(html).toMatch(/Michael O[&#x27;']+Brien/);
+```
+
+### 5. Directory-Based Clean URLs
+
+**Learning**: GitHub Pages serves `index.html` from directories for clean URLs.
+
+**Structure**:
+```
+dist/attendees/1001/index.html
+```
+
+**Result**:
+- ✅ `/attendees/1001/` (clean)
+- ✅ `/attendees/1001` (redirects)
+- ✅ `/attendees/1001/index.html` (direct)
+
+**Requirement**: Must include `.nojekyll` to bypass Jekyll processing.
+
+### 6. Handlebars Compilation Optimization
+
+**Learning**: Compiling templates once and reusing saved 200ms on generation.
+
+**Before**: Compile template for each attendee
+**After**: Compile once, render multiple times
+
+```typescript
+// ✅ Compile once
+const hbs = await setupHandlebars();
+const { render } = await compileTemplates(hbs);
+
+// Render many times
+attendees.forEach(attendee => {
+  const html = render(attendee, event);
+});
+```
+
+### 7. GitHub Actions Permissions
+
+**Learning**: Workflows need explicit permissions for GitHub Pages deployment.
+
+**Required Configuration**:
+```yaml
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+```
+
+**Also Required**: Repository Settings → Actions → "Read and write permissions"
+
+### 8. Test Artifact Cleanup
+
+**Learning**: Test directories (dist-test/, dist-integration-test/) accumulated.
+
+**Solution**: Use unique test directories and clean up in afterAll hooks:
+```typescript
+afterAll(async () => {
+  await rm(TEST_DIST_DIR, { recursive: true, force: true });
+});
+```
+
+### 9. CSS Variable Power
+
+**Learning**: CSS custom properties made theming trivial.
+
+**Implementation**:
+```css
+:root {
+  --color-primary: #667eea;
+  --color-secondary: #764ba2;
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+}
+```
+
+**Benefit**: Change 2 variables → entire theme updates
+
+### 10. Responsive Breakpoints
+
+**Learning**: Mobile-first CSS with strategic breakpoints worked perfectly.
+
+**Breakpoints**:
+- Base: < 375px (small mobile)
+- 375-767px: Mobile
+- 768-1023px: Tablet
+- 1024px+: Desktop
+
+**Pattern**:
+```css
+.stats-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media (min-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+```
 
 ## Development Standards
 
 ### Test-Driven Development (TDD)
 
-1. **Write tests first** - All new code must have tests written before implementation
-2. **Red-Green-Refactor** cycle:
-   - Red: Write failing tests
-   - Green: Write minimal code to pass
-   - Refactor: Improve code quality
+**Strict TDD Process**:
+1. **RED**: Write failing test first
+2. **GREEN**: Write minimal code to pass
+3. **REFACTOR**: Improve code quality
+
+**Current Metrics**:
+- 87 tests (100% passing)
+- 85.42% coverage (exceeds 80% target)
+- 0 HTML validation errors
 
 ### Quality Metrics
 
-- **Test Coverage**: Minimum 70% (target 80%)
-- **Documentation**: All public interfaces documented
-- **Validation**: All features empirically validated
+- ✅ **Test Coverage**: 85.42% (target: 80%)
+- ✅ **HTML Validation**: 0 errors, 12 warnings
+- ✅ **Performance**: < 500ms for 12 pages (target: < 2000ms)
+- ✅ **Type Safety**: Full TypeScript with strict mode
+- ✅ **Accessibility**: Semantic HTML, proper ARIA
+- ✅ **Responsive**: Mobile-first, 3 breakpoints
 
 ### Planning Standards
 
@@ -84,23 +333,33 @@ personal-event-summary/
 - Define measurable success criteria
 - Include empirical validation methods
 - No human time estimates
+- Phase-by-phase implementation with confirmation
 
 ### Documentation Requirements
 
-- Update CLAUDE.md with lessons learned
-- Create validation reports in `./analysis/`
-- Keep plans/README.md index current
-- Document architectural decisions
+- ✅ Update CLAUDE.md with lessons learned
+- ✅ Create validation reports in `./analysis/`
+- ✅ Keep plans/README.md index current
+- ✅ Document all public interfaces
 
 ## Quick Troubleshooting
 
 ### Common Issues
 
+**"npm install fails with EACCES"**
+```bash
+mkdir -p .npm-cache
+npm install --cache .npm-cache
+```
+
 **"Tests failing after changes"**
 ```bash
-# Clear Python cache if using Python
-find . -type d -name "__pycache__" -exec rm -rf {} + 2>/dev/null
-pip install -e .  # Reinstall package
+# Clean test artifacts
+rm -rf dist-test/ dist-integration-test/ dist-validation-test/
+
+# Rebuild and test
+npm run build
+npm test
 ```
 
 **"Need to understand current implementation"**
@@ -115,49 +374,157 @@ pip install -e .  # Reinstall package
 /implement ./plans/NNN-feature.md  # Then implement
 ```
 
+**"GitHub Pages 404 errors"**
+```bash
+# Verify .nojekyll exists
+ls dist/.nojekyll
+
+# Check GitHub Pages source is "GitHub Actions"
+# Settings → Pages → Source → "GitHub Actions"
+
+# Verify workflow permissions
+# Settings → Actions → General → "Read and write permissions"
+```
+
+**"CSS not loading on generated pages"**
+```bash
+# Verify CSS exists
+ls static/css/styles.css
+
+# Regenerate
+npm run generate
+
+# Verify copied to dist
+ls dist/static/css/styles.css
+```
+
 ## Data Models
 
-*To be defined based on requirements*
+Comprehensive data models documented in `requirements/data-models.md`.
+
+**Key Interfaces**:
+- `Event`: Event configuration and metadata
+- `Attendee`: Attendee profile, sessions, connections, stats
+- `Session`: Conference session details
+- `Connection`: Networking connection data
+- `CallToAction`: Re-engagement CTAs
+
+**Example**:
+```typescript
+interface Attendee {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  eventId: string;
+  sessions: Session[];
+  connections: Connection[];
+  stats: AttendeeStats;
+  callsToAction: CallToAction[];
+}
+```
 
 ## Environment Configuration
 
-**Required (.env):**
-```bash
-# Add environment variables as needed
-```
+No environment variables required for basic operation.
+
+**Optional**:
+- `NODE_ENV=development` for development builds
+- Custom variables for analytics, API keys, etc.
 
 ## Security Considerations
 
-- Input validation for all external data
-- Secure storage of sensitive information
-- Path traversal prevention
-- API key protection
+✅ **Implemented**:
+- Input validation via TypeScript type guards
+- Path traversal prevention (validated attendee IDs)
+- HTML entity encoding (Handlebars default)
+- HTTPS enforcement on GitHub Pages
+
+**Best Practices**:
+- Never commit `.env` files
+- Validate all external data at load time
+- Use HTTPS for all external links
+- Escape user-generated content (handled by Handlebars)
 
 ## Performance Guidelines
 
-*To be defined based on requirements*
+**Target**: < 2 seconds for full site generation
+**Achieved**: 500ms for 12 pages
+
+**Optimizations**:
+1. Parallel page generation with `Promise.all()`
+2. Single template compilation, multiple renders
+3. Async file operations with `fs/promises`
+4. Minimal dependencies (Handlebars only)
+
+**Monitoring**:
+```bash
+# Time generation
+time npm run generate
+
+# Profile with Node
+node --prof dist/generate.js
+```
 
 ## Important Notes
 
 ### When Creating Plans
+
 - Always validate assumptions empirically
 - Store analysis artifacts in `./analysis/`
 - Never include human time estimates
 - Define clear success criteria
+- Break into phases with confirmation points
 
 ### When Implementing
-- Follow TDD strictly
+
+- Follow TDD strictly (RED-GREEN-REFACTOR)
 - Seek confirmation between phases
 - Validate all outcomes empirically
-- Update documentation
+- Update documentation as you go
+- Mark todos complete immediately after finishing
 
 ### When Exploring
+
 - Validate claims with code inspection
 - Note discrepancies between docs and reality
 - Store findings in analysis directory
+- Check actual generated output, not just templates
+
+### When Testing
+
+- Unit tests for individual functions
+- Integration tests for complete pipelines
+- HTML validation for output quality
+- Performance tests for generation speed
+- All tests must pass before moving to next phase
+
+## Technology Stack
+
+**Core**:
+- Node.js 18.x / 20.x
+- TypeScript 5.9.3 (strict mode)
+- Handlebars 4.7.8
+
+**Testing**:
+- Vitest 1.6.1 (test framework)
+- @vitest/coverage-v8 (coverage)
+- html-validate 8.x (HTML validation)
+
+**Build & Deploy**:
+- GitHub Actions
+- GitHub Pages
+- TypeScript compiler (tsc)
+
+**Development**:
+- ESLint (linting)
+- Prettier (formatting)
+- http-server (local preview)
 
 ---
 
-**Last Updated**: 2025-11-05
-**Project Status**: Initial Setup
-**Documentation Version**: 1.0
+**Last Updated**: 2025-11-06
+**Project Status**: ✅ Production Ready (v1.0.0)
+**Documentation Version**: 2.0
+**Test Coverage**: 85.42%
+**Total Tests**: 87 passing

@@ -1,0 +1,63 @@
+{
+  "id": "1010",
+  "firstName": "Marcus",
+  "lastName": "Williams",
+  "email": "marcus.williams@qatest.com",
+  "company": "QA Testing Pros",
+  "title": "QA Engineer",
+  "eventId": "event-2025",
+  "sessions": [
+    {
+      "id": "session-1301",
+      "title": "Test Automation Strategies",
+      "description": "Building comprehensive automated testing frameworks",
+      "speakers": ["Diana Powell"],
+      "dateTime": "2025-03-15T10:30:00Z",
+      "durationMinutes": 75,
+      "track": "Quality Assurance"
+    },
+    {
+      "id": "session-1302",
+      "title": "Continuous Testing in DevOps",
+      "description": "Integrating testing into continuous delivery pipelines",
+      "speakers": ["Frank Robinson"],
+      "dateTime": "2025-03-16T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "Quality Assurance"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Uma Patel",
+      "title": "Test Lead",
+      "company": "Quality First"
+    },
+    {
+      "name": "Victor Hugo",
+      "title": "Automation Engineer",
+      "company": "Test Automation Co",
+      "linkedIn": "https://linkedin.com/in/victorhugo"
+    },
+    {
+      "name": "Wendy Brown",
+      "title": "QA Manager",
+      "company": "Software Quality Inc"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 2,
+    "connectionsMade": 3,
+    "hoursAttended": 2.25,
+    "tracksExplored": 1,
+    "topAchievement": "Quality Champion"
+  },
+  "callsToAction": [
+    {
+      "text": "Register for TechConf 2026",
+      "url": "https://techconf2026.example.com/register?ref=summary-1010",
+      "type": "primary",
+      "trackingId": "cta-register-2026"
+    }
+  ],
+  "registeredAt": "2025-01-08T11:00:00Z"
+}

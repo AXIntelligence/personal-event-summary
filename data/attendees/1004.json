@@ -1,0 +1,92 @@
+{
+  "id": "1004",
+  "firstName": "James",
+  "lastName": "Taylor",
+  "email": "james.taylor@datasci.ai",
+  "company": "DataSci AI",
+  "title": "Machine Learning Engineer",
+  "eventId": "event-2025",
+  "sessions": [
+    {
+      "id": "session-101",
+      "title": "Future of AI and Machine Learning",
+      "description": "Exploring cutting-edge developments in artificial intelligence and their practical applications",
+      "speakers": ["Dr. Jane Smith", "Prof. Michael Zhang"],
+      "dateTime": "2025-03-15T10:00:00Z",
+      "durationMinutes": 60,
+      "track": "Artificial Intelligence"
+    },
+    {
+      "id": "session-102",
+      "title": "Deep Learning for Computer Vision",
+      "description": "State-of-the-art techniques in image recognition and analysis",
+      "speakers": ["Dr. Sarah Johnson"],
+      "dateTime": "2025-03-16T13:00:00Z",
+      "durationMinutes": 90,
+      "track": "Artificial Intelligence"
+    },
+    {
+      "id": "session-103",
+      "title": "Natural Language Processing Advances",
+      "description": "Latest developments in NLP and large language models",
+      "speakers": ["Prof. Andrew Chen", "Dr. Rebecca Miller"],
+      "dateTime": "2025-03-17T09:00:00Z",
+      "durationMinutes": 75,
+      "track": "Artificial Intelligence"
+    },
+    {
+      "id": "session-904",
+      "title": "MLOps and Model Deployment",
+      "description": "Best practices for deploying machine learning models in production",
+      "speakers": ["Daniel Park"],
+      "dateTime": "2025-03-17T15:00:00Z",
+      "durationMinutes": 60,
+      "track": "Data Science"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Nina Gupta",
+      "title": "Data Scientist",
+      "company": "Analytics Pro",
+      "linkedIn": "https://linkedin.com/in/ninagupta"
+    },
+    {
+      "name": "Robert Lee",
+      "title": "AI Research Lead",
+      "company": "Research Institute",
+      "linkedIn": "https://linkedin.com/in/robertlee"
+    },
+    {
+      "name": "Sofia Martinez",
+      "title": "ML Engineer",
+      "company": "AI Innovations"
+    },
+    {
+      "name": "Thomas Wang",
+      "title": "Chief Data Officer",
+      "company": "DataDriven Corp"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 4,
+    "connectionsMade": 4,
+    "hoursAttended": 4.75,
+    "tracksExplored": 2,
+    "topAchievement": "AI Enthusiast"
+  },
+  "callsToAction": [
+    {
+      "text": "Register for TechConf 2026",
+      "url": "https://techconf2026.example.com/register?ref=summary-1004",
+      "type": "primary",
+      "trackingId": "cta-register-2026"
+    },
+    {
+      "text": "Explore AI Workshops",
+      "url": "https://techconf.example.com/workshops/ai?ref=summary-1004",
+      "type": "secondary"
+    }
+  ],
+  "registeredAt": "2025-01-05T11:45:00Z"
+}

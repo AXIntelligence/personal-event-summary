@@ -1,0 +1,94 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build Site
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20.x'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm ci
+
+    - name: Build TypeScript
+      run: npm run build
+
+    - name: Generate static site
+      run: npm run generate
+
+    - name: Add .nojekyll file
+      run: touch dist/.nojekyll
+
+    - name: Copy 404.html to dist
+      run: cp 404.html dist/404.html
+
+    - name: Verify build
+      run: |
+        echo "Verifying build outputs..."
+        test -d dist || (echo "❌ dist directory not found" && exit 1)
+        test -f dist/.nojekyll || (echo "❌ .nojekyll not found" && exit 1)
+        test -f dist/404.html || (echo "❌ 404.html not found" && exit 1)
+        test -f dist/static/css/styles.css || (echo "❌ CSS not found" && exit 1)
+        test -d dist/attendees || (echo "❌ attendees directory not found" && exit 1)
+
+        # Count generated pages
+        PAGE_COUNT=$(find dist/attendees -name "index.html" | wc -l)
+        echo "✓ Generated $PAGE_COUNT attendee pages"
+
+        if [ "$PAGE_COUNT" -lt 10 ]; then
+          echo "❌ Expected at least 10 pages, found $PAGE_COUNT"
+          exit 1
+        fi
+
+        echo "✅ Build verification passed"
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: './dist'
+
+  deploy:
+    name: Deploy to GitHub Pages
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+    - name: Deployment summary
+      run: |
+        echo "🚀 Deployment successful!"
+        echo "📄 Site URL: ${{ steps.deployment.outputs.page_url }}"

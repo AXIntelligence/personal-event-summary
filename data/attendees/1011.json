@@ -1,0 +1,101 @@
+{
+  "id": "1011",
+  "firstName": "Elena",
+  "lastName": "Popescu",
+  "email": "elena.popescu@dataviz.io",
+  "company": "DataViz Studio",
+  "title": "Data Visualization Specialist",
+  "eventId": "event-2025",
+  "sessions": [
+    {
+      "id": "session-1401",
+      "title": "Data Storytelling with D3.js",
+      "description": "Creating compelling data visualizations for the web",
+      "speakers": ["Henry Clarke"],
+      "dateTime": "2025-03-16T10:00:00Z",
+      "durationMinutes": 90,
+      "track": "Data Science"
+    },
+    {
+      "id": "session-1402",
+      "title": "Dashboard Design Principles",
+      "description": "Best practices for effective data dashboards",
+      "speakers": ["Iris Morgan"],
+      "dateTime": "2025-03-17T09:00:00Z",
+      "durationMinutes": 75,
+      "track": "Data Science"
+    },
+    {
+      "id": "session-505",
+      "title": "Design Systems That Scale",
+      "description": "Building and maintaining design systems across large organizations",
+      "speakers": ["Sophie Lee"],
+      "dateTime": "2025-03-16T15:00:00Z",
+      "durationMinutes": 75,
+      "track": "Design"
+    },
+    {
+      "id": "session-1001",
+      "title": "Modern Web Development with React",
+      "description": "Building performant React applications in 2025",
+      "speakers": ["Tyler Moore"],
+      "dateTime": "2025-03-15T11:00:00Z",
+      "durationMinutes": 90,
+      "track": "Web Development"
+    },
+    {
+      "id": "session-904",
+      "title": "MLOps and Model Deployment",
+      "description": "Best practices for deploying machine learning models in production",
+      "speakers": ["Daniel Park"],
+      "dateTime": "2025-03-17T15:00:00Z",
+      "durationMinutes": 60,
+      "track": "Data Science"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Xavier Santos",
+      "title": "Analytics Lead",
+      "company": "Insights Corp",
+      "linkedIn": "https://linkedin.com/in/xaviersantos"
+    },
+    {
+      "name": "Yvonne Baker",
+      "title": "BI Developer",
+      "company": "Business Intelligence Ltd"
+    },
+    {
+      "name": "Zachary White",
+      "title": "Data Analyst",
+      "company": "Analytics Pro"
+    },
+    {
+      "name": "Angela Martinez",
+      "title": "Visualization Designer",
+      "company": "Chart Masters",
+      "linkedIn": "https://linkedin.com/in/angelamartinez"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 5,
+    "connectionsMade": 4,
+    "hoursAttended": 6.5,
+    "tracksExplored": 3,
+    "topAchievement": "Data Storyteller"
+  },
+  "callsToAction": [
+    {
+      "text": "Register for TechConf 2026",
+      "url": "https://techconf2026.example.com/register?ref=summary-1011",
+      "type": "primary",
+      "trackingId": "cta-register-2026"
+    },
+    {
+      "text": "Explore Visualization Tools",
+      "url": "https://techconf.example.com/tools/dataviz?ref=summary-1011",
+      "type": "secondary"
+    }
+  ],
+  "registeredAt": "2024-12-20T15:45:00Z"
+}

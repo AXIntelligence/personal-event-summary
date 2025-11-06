@@ -129,7 +129,7 @@ When referencing plans in code comments or documentation:
 
 | Number | Name | Status | Completion Date | Priority | Description |
 |--------|------|--------|-----------------|----------|-------------|
-| | | | | | *No plans yet - use `/plan` to create the first one* |
+| 001 | [GitHub Pages Attendee Summary](001-github-pages-attendee-summary.md) | 📝 Draft | - | 🔴 Critical | Implement personalized attendee pages on GitHub Pages |
 
 ## Status Legend
 - ✅ **Completed**: Implementation done, all tests passing
@@ -149,7 +149,7 @@ When referencing plans in code comments or documentation:
 
 ## Recent Updates
 
-*No updates yet - this section will track plan progress as they are created and implemented*
+- **2025-11-05**: Created Plan 001 - GitHub Pages Attendee Summary System (Draft)
 
 ---
 

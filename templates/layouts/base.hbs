@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{#if description}}{{description}}{{else}}Your personalized event summary{{/if}}">
+    <meta name="author" content="{{event.name}}">
+    <title>{{#if pageTitle}}{{pageTitle}}{{else}}{{event.name}} - Attendee Summary{{/if}}</title>
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{#if pageTitle}}{{pageTitle}}{{else}}{{event.name}} - Attendee Summary{{/if}}">
+    <meta property="og:description" content="{{#if description}}{{description}}{{else}}Your personalized event summary{{/if}}">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                {{#if event.logoUrl}}
+                <img src="{{event.logoUrl}}" alt="{{event.name}} Logo" class="event-logo">
+                {{else}}
+                <h1 class="event-name">{{event.name}}</h1>
+                {{/if}}
+                <div class="event-details">
+                    <span class="event-location">{{event.location}}</span>
+                    <span class="event-dates">{{formatDate event.startDate}} - {{formatDate event.endDate}}</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        {{{body}}}
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>{{event.name}}</h3>
+                    <p>{{event.description}}</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <ul class="footer-links">
+                        <li><a href="{{event.websiteUrl}}" target="_blank" rel="noopener noreferrer">Official Website</a></li>
+                        <li><a href="{{event.websiteUrl}}/contact" target="_blank" rel="noopener noreferrer">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Event Stats</h4>
+                    <ul class="event-stats">
+                        <li><strong>{{event.totalAttendees}}</strong> Attendees</li>
+                        <li><strong>{{event.totalSessions}}</strong> Sessions</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{currentYear}} {{event.name}}. All rights reserved.</p>
+                <p class="powered-by">Generated with ❤️ for our amazing community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts (if needed) -->
+    <script>
+        // Simple analytics tracking (can be replaced with actual analytics)
+        console.log('Page loaded:', document.title);
+    </script>
+</body>
+</html>

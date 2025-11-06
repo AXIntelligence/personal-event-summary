@@ -1,0 +1,94 @@
+{
+  "id": "1006",
+  "firstName": "Diego",
+  "lastName": "Fernandez",
+  "email": "diego.fernandez@startup.io",
+  "company": "NextGen Startup",
+  "title": "Founder & CEO",
+  "eventId": "event-2025",
+  "sessions": [
+    {
+      "id": "session-608",
+      "title": "Leadership in Tech Organizations",
+      "description": "Building and leading high-performing technical teams",
+      "speakers": ["James Carter"],
+      "dateTime": "2025-03-17T11:00:00Z",
+      "durationMinutes": 60,
+      "track": "Leadership"
+    },
+    {
+      "id": "session-609",
+      "title": "Startup Fundraising Strategies",
+      "description": "Navigating the venture capital landscape in 2025",
+      "speakers": ["Victoria Reynolds", "Mark Stevens"],
+      "dateTime": "2025-03-15T16:00:00Z",
+      "durationMinutes": 75,
+      "track": "Business"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Alexandra Hunt",
+      "title": "Venture Partner",
+      "company": "Growth Capital VC",
+      "linkedIn": "https://linkedin.com/in/alexandrahunt"
+    },
+    {
+      "name": "Benjamin Foster",
+      "title": "CEO",
+      "company": "Innovation Labs",
+      "linkedIn": "https://linkedin.com/in/benjaminfoster"
+    },
+    {
+      "name": "Catherine Moore",
+      "title": "Co-Founder",
+      "company": "TechStart Ventures"
+    },
+    {
+      "name": "Eric Palmer",
+      "title": "Angel Investor",
+      "company": "Independent"
+    },
+    {
+      "name": "Fiona Zhang",
+      "title": "VP Business Development",
+      "company": "Enterprise Partners"
+    },
+    {
+      "name": "George Williams",
+      "title": "Startup Advisor",
+      "company": "Advisory Board"
+    },
+    {
+      "name": "Hannah Brooks",
+      "title": "Managing Partner",
+      "company": "Seed Ventures"
+    },
+    {
+      "name": "Ian Scott",
+      "title": "CTO",
+      "company": "Emerging Tech Co"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 2,
+    "connectionsMade": 8,
+    "hoursAttended": 2.25,
+    "tracksExplored": 2,
+    "topAchievement": "Master Networker"
+  },
+  "callsToAction": [
+    {
+      "text": "Register for TechConf 2026",
+      "url": "https://techconf2026.example.com/register?ref=summary-1006",
+      "type": "primary",
+      "trackingId": "cta-register-2026"
+    },
+    {
+      "text": "Explore Sponsorship Opportunities",
+      "url": "https://techconf.example.com/sponsors?ref=summary-1006",
+      "type": "secondary"
+    }
+  ],
+  "registeredAt": "2024-12-28T10:00:00Z"
+}
