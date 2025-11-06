@@ -8,8 +8,8 @@
 import { readFile, readdir } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
-import type { Event, Attendee } from './types/index.js';
-import { isEvent, isAttendee } from './types/index.js';
+import type { Event, Attendee, EventStyleConfig } from './types/index.js';
+import { isEvent, isAttendee, isEventStyleConfig } from './types/index.js';
 
 // Get directory name for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -19,6 +19,7 @@ const __dirname = dirname(__filename);
 const DATA_DIR = join(__dirname, '..', 'data');
 const EVENTS_DIR = join(DATA_DIR, 'events');
 const ATTENDEES_DIR = join(DATA_DIR, 'attendees');
+const STYLE_CONFIGS_DIR = join(__dirname, '..', 'style-configs');
 
 /**
  * Loads and validates event data from JSON file
@@ -136,6 +137,52 @@ export async function attendeeExists(attendeeId: string): Promise<boolean> {
   try {
     await loadAttendee(attendeeId);
     return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Loads and validates event style configuration from JSON file (Plan 003)
+ *
+ * @param eventId - The event identifier (e.g., "event-2025")
+ * @returns Promise resolving to validated EventStyleConfig object, or null if not found
+ * @throws Error if file exists but data is invalid
+ */
+export async function loadStyleConfig(eventId: string): Promise<EventStyleConfig | null> {
+  try {
+    const filePath = join(STYLE_CONFIGS_DIR, `${eventId}.json`);
+    const fileContent = await readFile(filePath, 'utf-8');
+    const data = JSON.parse(fileContent);
+
+    if (!isEventStyleConfig(data)) {
+      throw new Error(`Invalid style config data structure in ${filePath}`);
+    }
+
+    return data;
+  } catch (error) {
+    if (error instanceof Error) {
+      // Return null if file doesn't exist (style config is optional)
+      if ('code' in error && error.code === 'ENOENT') {
+        return null;
+      }
+      // Re-throw validation errors and other errors
+      throw error;
+    }
+    throw new Error(`Failed to load style config: ${eventId}`);
+  }
+}
+
+/**
+ * Checks if a style config exists for an event (Plan 003)
+ *
+ * @param eventId - The event identifier to check
+ * @returns Promise resolving to boolean indicating existence
+ */
+export async function styleConfigExists(eventId: string): Promise<boolean> {
+  try {
+    const config = await loadStyleConfig(eventId);
+    return config !== null;
   } catch {
     return false;
   }

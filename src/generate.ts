@@ -9,7 +9,8 @@ import { readFile, writeFile, mkdir, cp } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import Handlebars from 'handlebars';
-import { loadEvent, loadAttendee, loadAllAttendees } from './dataLoader.js';
+import { loadEvent, loadAttendee, loadAllAttendees, loadStyleConfig } from './dataLoader.js';
+import { generateEventCSS } from './cssGenerator.js';
 import type { Event, Attendee } from './types/index.js';
 
 // Get directory name for ES modules
@@ -82,7 +83,11 @@ async function compileTemplates(hbs: typeof Handlebars) {
   const attendeeTemplate = hbs.compile(attendeePage);
 
   // Create a function that renders content into base layout
-  const render = (attendee: Attendee, event: Event) => {
+  const render = async (attendee: Attendee, event: Event) => {
+    // Load style config if available (Plan 003)
+    const styleConfig = await loadStyleConfig(event.id);
+    const eventCSS = styleConfig ? generateEventCSS(styleConfig) : null;
+
     // First render the attendee page content
     const pageContent = attendeeTemplate({ attendee, event });
 
@@ -92,6 +97,7 @@ async function compileTemplates(hbs: typeof Handlebars) {
       body: pageContent,
       attendee,
       event,
+      eventCSS,
       pageTitle: `${attendee.firstName} ${attendee.lastName} - ${event.name}`,
       description: `${attendee.firstName}'s personalized ${event.name} experience summary`
     });
@@ -120,8 +126,8 @@ export async function generateAttendeePage(
     const hbs = await setupHandlebars();
     const { render } = await compileTemplates(hbs);
 
-    // Render HTML
-    const html = render(attendee, event);
+    // Render HTML (now async due to style config loading)
+    const html = await render(attendee, event);
 
     // Create output directory
     const outputDir = join(distDir, 'attendees', attendeeId);
@@ -172,8 +178,8 @@ export async function generateAllAttendeePages(
     // Generate all pages in parallel
     const generationPromises = attendees.map(async (attendee) => {
       try {
-        // Render HTML
-        const html = render(attendee, event);
+        // Render HTML (now async due to style config loading)
+        const html = await render(attendee, event);
 
         // Create output directory
         const outputDir = join(distDir, 'attendees', attendee.id);
