@@ -169,15 +169,15 @@ export async function generateAllAttendeePages(
     // Setup Handlebars once for all attendees (more efficient)
     const hbs = await setupHandlebars();
 
-    // Load event data (assuming all attendees are for same event)
-    const event = await loadEvent(attendees[0].eventId);
-
     // Compile templates once
     const { render } = await compileTemplates(hbs);
 
     // Generate all pages in parallel
     const generationPromises = attendees.map(async (attendee) => {
       try {
+        // Load event data for this attendee (supports multi-event scenarios)
+        const event = await loadEvent(attendee.eventId);
+
         // Render HTML (now async due to style config loading)
         const html = await render(attendee, event);
 
