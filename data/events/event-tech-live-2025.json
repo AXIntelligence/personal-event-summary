@@ -1,0 +1,12 @@
+{
+  "id": "event-tech-live-2025",
+  "name": "Event Tech Live 2025",
+  "description": "Europe's only show dedicated to event technology. Discover the latest innovations in registration, engagement, sustainability, and hybrid event solutions from 28 leading companies showcasing 214 cutting-edge products. Connect with industry pioneers, explore AI-powered tools, and learn how to create unforgettable event experiences.",
+  "location": "London, United Kingdom",
+  "startDate": "2025-11-12T09:00:00Z",
+  "endDate": "2025-11-13T18:00:00Z",
+  "totalAttendees": 1500,
+  "totalSessions": 30,
+  "websiteUrl": "https://eventtechlive.com",
+  "logoUrl": "/static/images/event-tech-live-logo.png"
+}
