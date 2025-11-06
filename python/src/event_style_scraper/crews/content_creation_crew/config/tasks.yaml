@@ -1,0 +1,127 @@
+analyze_attendee:
+  description: >
+    Analyze the attendee's event experience data:
+
+    Attendee: {attendee_name}
+    Sessions attended: {session_count}
+    Connections made: {connection_count}
+
+    Review:
+    - Which sessions this attendee chose (topics, themes, speakers)
+    - Networking patterns (who they connected with, relationship types)
+    - Engagement level (number of sessions, connections, interactions)
+    - Unique aspects that make their experience special
+
+    Identify:
+    - Top 3 themes from their session choices
+    - Most valuable connections or networking patterns
+    - Notable achievements or milestones (most sessions, diverse topics, etc.)
+    - Personalization opportunities for content
+
+    Output a detailed analysis of this attendee's unique experience with specific
+    examples and data points that can be used for personalized content.
+
+  expected_output: >
+    A comprehensive attendee experience analysis including:
+    1. Key themes from session attendance
+    2. Networking patterns and valuable connections
+    3. Notable achievements or standout metrics
+    4. Specific personalization opportunities with examples
+    5. Recommended content angles and talking points
+  agent: personalization_agent
+
+generate_content:
+  description: >
+    Create personalized content for the attendee based on the analysis.
+
+    Write engaging copy that:
+    - Opens with a personalized greeting
+    - Highlights their most relevant sessions and key takeaways
+    - Celebrates their networking success and connections
+    - Calls out any notable achievements or milestones
+    - Uses specific examples and data from their experience
+    - Maintains an authentic, conversational tone
+    - Ends with a forward-looking call-to-action
+
+    Content sections to create:
+    1. Personal greeting (2-3 sentences)
+    2. Session highlights (4-5 sentences covering top sessions)
+    3. Networking celebration (3-4 sentences about connections)
+    4. Achievement recognition (2-3 sentences if applicable)
+    5. Call-to-action (2 sentences looking forward)
+
+    Keep the total length under 300 words for readability.
+
+  expected_output: >
+    Personalized attendee content with all five sections, written in an engaging
+    style with specific details from their experience. Content should feel personal
+    and celebratory while being concise and scannable.
+  agent: content_writer_agent
+  context:
+    - analyze_attendee
+
+apply_brand_voice:
+  description: >
+    Adapt the generated content to match the event's brand voice and style.
+
+    Event brand voice:
+    - Tone: {brand_tone}
+    - Style: {brand_style}
+    - Keywords: {brand_keywords}
+
+    Adjust the content to:
+    - Match the specified tone (e.g., professional, casual, energetic)
+    - Incorporate brand keywords naturally where appropriate
+    - Align with the brand's writing style and personality
+    - Maintain consistency with event messaging
+    - Keep the personalization intact while applying brand voice
+
+    Do NOT:
+    - Force keywords where they don't fit naturally
+    - Change factual information or data points
+    - Lose the personal touch in favor of brand messaging
+    - Make the content sound robotic or templated
+
+    The goal is to enhance the content with brand voice, not replace personalization.
+
+  expected_output: >
+    Brand-aligned content that maintains all personalization while matching the
+    event's tone, style, and voice. The content should feel both personal and
+    on-brand, with natural keyword integration and consistent messaging.
+  agent: brand_voice_agent
+  context:
+    - analyze_attendee
+    - generate_content
+
+quality_check:
+  description: >
+    Review and refine the content for quality, accuracy, and readability.
+
+    Check for:
+    1. Grammar and spelling errors
+    2. Factual accuracy (names, numbers, session titles)
+    3. Clarity and flow
+    4. Consistent formatting
+    5. Appropriate length (under 300 words)
+    6. Engaging language and variety
+    7. Proper capitalization and punctuation
+
+    Verify:
+    - Attendee name is correctly formatted
+    - All session titles are accurate
+    - Numbers and statistics are correct
+    - Brand voice is consistently applied
+    - Content flows naturally from section to section
+
+    Make corrections and improvements while preserving the core message and
+    personalization. If major issues are found, flag them for revision.
+
+  expected_output: >
+    Final, polished content ready for publication. Content should be error-free,
+    accurate, engaging, and professionally formatted. Include a quality score
+    (1-10) and brief notes on any corrections made or concerns remaining.
+  agent: quality_editor_agent
+  context:
+    - analyze_attendee
+    - generate_content
+    - apply_brand_voice
