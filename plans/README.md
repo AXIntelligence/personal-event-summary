@@ -129,7 +129,8 @@ When referencing plans in code comments or documentation:
 
 | Number | Name | Status | Completion Date | Priority | Description |
 |--------|------|--------|-----------------|----------|-------------|
-| 001 | [GitHub Pages Attendee Summary](001-github-pages-attendee-summary.md) | 📝 Draft | - | 🔴 Critical | Implement personalized attendee pages on GitHub Pages |
+| 001 | [GitHub Pages Attendee Summary](001-github-pages-attendee-summary.md) | ✅ Completed | 2025-11-06 | 🔴 Critical | Implement personalized attendee pages on GitHub Pages |
+| 002 | [Event Tech Live Sample Data](002-event-tech-live-sample-data.md) | ✅ Completed | 2025-11-06 | 🟡 High | Enhance sample data with Event Tech Live real event insights |
 
 ## Status Legend
 - ✅ **Completed**: Implementation done, all tests passing
@@ -149,6 +150,14 @@ When referencing plans in code comments or documentation:
 
 ## Recent Updates
 
+- **2025-11-06**: Completed Plan 002 - Event Tech Live Sample Data Enhancement
+  - Added B2B data model with optional fields (productsExplored, boothsVisited, sponsorInteractions)
+  - Created Event Tech Live 2025 event with 30 sessions and 12 attendees
+  - Achieved 89.93% test coverage (105 tests passing)
+  - Zero breaking changes, full backward compatibility maintained
+  - Validation report: [analysis/plan-002-validation-report.md](../analysis/plan-002-validation-report.md)
+- **2025-11-06**: Completed Plan 001 - GitHub Pages Attendee Summary System
+- **2025-11-06**: Created Plan 002 - Event Tech Live Sample Data Enhancement (Draft)
 - **2025-11-05**: Created Plan 001 - GitHub Pages Attendee Summary System (Draft)
 
 ---

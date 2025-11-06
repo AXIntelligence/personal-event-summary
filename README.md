@@ -15,17 +15,26 @@ A static site generator for creating personalized event summary pages for attend
 - 🤝 **Connection Highlights**: Showcase networking connections made during the event
 - 📈 **Engagement Stats**: Visual statistics showing attendance metrics
 - 🎯 **Call-to-Actions**: Drive re-engagement with customizable CTAs
+- 🏢 **B2B Event Support**: Optional fields for products explored, booth visits, and sponsor interactions
 - 📱 **Responsive Design**: Mobile-first CSS with breakpoints for tablet and desktop
-- ⚡ **Fast Generation**: Generates 12+ pages in under 500ms
+- ⚡ **Fast Generation**: Generates 24+ pages in under 1 second
 - 🔒 **Type-Safe**: Full TypeScript implementation with runtime type guards
 - ✅ **W3C Valid HTML5**: All pages pass HTML validation
 - ♿ **Accessible**: Semantic HTML with proper ARIA attributes
+- 🔄 **Multi-Event**: Support for multiple concurrent events with different configurations
 
 ## 🚀 Live Demo
 
-View example attendee pages:
+### Original Event Examples (TechConf 2025)
 - [Attendee 1001 - Sarah Chen](https://USERNAME.github.io/personal-event-summary/attendees/1001/)
 - [Attendee 1002 - Michael O'Brien](https://USERNAME.github.io/personal-event-summary/attendees/1002/)
+
+### B2B Event Examples (Event Tech Live 2025)
+- [Attendee 2001 - Aisha Patel (Tech Scout)](https://USERNAME.github.io/personal-event-summary/attendees/2001/) - 10 sessions, 22 connections
+- [Attendee 2009 - Olivia Williams (Hybrid Producer)](https://USERNAME.github.io/personal-event-summary/attendees/2009/) - 10 sessions, 19 connections
+- [Attendee 2012 - Marcus Anderson (Networking Maven)](https://USERNAME.github.io/personal-event-summary/attendees/2012/) - 5 sessions, 28 connections
+
+*B2B examples include real company names, products explored, booth visits, and sponsor interactions*
 
 ## 📋 Requirements
 
@@ -56,13 +65,16 @@ npm run generate
 personal-event-summary/
 ├── data/                      # Event and attendee data
 │   ├── events/
-│   │   └── event-2025.json   # Event configuration
+│   │   ├── event-2025.json            # Original event config
+│   │   └── event-tech-live-2025.json  # Event Tech Live config
+│   ├── sessions/
+│   │   └── event-tech-live-2025-sessions.json  # 30 B2B sessions
 │   └── attendees/
-│       ├── 1001.json         # Individual attendee data
-│       └── ...
+│       ├── 1001-1012.json    # Original attendees (12)
+│       └── 2001-2012.json    # Event Tech Live attendees (12)
 ├── src/                       # TypeScript source code
 │   ├── types/
-│   │   └── index.ts          # Type definitions
+│   │   └── index.ts          # Type definitions + B2B interfaces
 │   ├── dataLoader.ts         # Data loading with validation
 │   └── generate.ts           # Page generation engine
 ├── templates/                 # Handlebars templates
@@ -71,16 +83,19 @@ personal-event-summary/
 │   ├── pages/
 │   │   └── attendee.hbs      # Attendee page template
 │   └── partials/
-│       └── cta.hbs           # CTA component
+│       ├── cta.hbs           # CTA component
+│       ├── products.hbs      # Products explored (B2B)
+│       └── booths.hbs        # Booths visited (B2B)
 ├── static/                    # Static assets
 │   ├── css/
 │   │   └── styles.css        # Responsive styles (14KB)
 │   └── images/
-├── tests/                     # Test suite (87 tests)
-│   ├── unit/                 # Unit tests
-│   ├── integration/          # End-to-end tests
-│   └── validation/           # HTML validation tests
-├── dist/                      # Generated static site
+├── tests/                     # Test suite (105 tests)
+│   ├── unit/                 # Unit tests (52)
+│   ├── integration/          # End-to-end tests (21)
+│   └── validation/           # HTML validation tests (14)
+├── dist/                      # Generated static site (24 pages)
+├── analysis/                  # Validation reports
 ├── docs/                      # Documentation
 │   └── github-pages-setup.md # Deployment guide
 └── .github/workflows/         # CI/CD pipelines
@@ -130,15 +145,16 @@ npm run type-check
 
 ## 📊 Test Coverage
 
-**Overall Coverage**: 85.42% (exceeds 80% target)
+**Overall Coverage**: 89.93% (exceeds 85% target)
 
 | File | Statements | Branches | Functions | Lines |
 |------|------------|----------|-----------|-------|
 | dataLoader.ts | 73.94% | 64.70% | 60% | 73.94% |
-| generate.ts | 88.37% | 59.09% | 100% | 88.37% |
-| types/index.ts | 89.84% | 50% | 50% | 89.84% |
+| generate.ts | 88.72% | 59.09% | 100% | 88.72% |
+| types/index.ts | 100% | 93.18% | 100% | 100% |
 
-**Test Suite**: 87 tests passing
+**Test Suite**: 105 tests passing
+- 18 unit tests (types - includes B2B validation)
 - 21 unit tests (dataLoader)
 - 31 unit tests (generate)
 - 21 integration tests (end-to-end)
@@ -172,24 +188,50 @@ Create a JSON file in `data/attendees/` following this structure:
       "name": "Marcus Rodriguez",
       "title": "CTO",
       "company": "StartupXYZ",
-      "linkedinUrl": "https://linkedin.com/in/marcusrodriguez"
+      "linkedIn": "https://linkedin.com/in/marcusrodriguez"
     }
   ],
   "stats": {
     "sessionsAttended": 3,
     "connectionsMade": 3,
-    "hoursInvested": 3.75,
+    "hoursAttended": 3.75,
     "tracksExplored": 3
   },
   "callsToAction": [
     {
       "text": "Register for TechConf 2026",
       "url": "https://techconf2026.example.com",
-      "type": "primary"
+      "type": "primary",
+      "trackingId": "cta-techconf-2026"
+    }
+  ],
+
+  // Optional B2B fields (for trade shows, conferences with exhibitors)
+  "productsExplored": [
+    {
+      "name": "AI Platform Pro",
+      "company": "TechVendor Inc",
+      "category": "Artificial Intelligence"
+    }
+  ],
+  "boothsVisited": [
+    {
+      "company": "TechVendor Inc",
+      "timeSpentMinutes": 25,
+      "productsViewed": ["AI Platform Pro", "Data Analytics Suite"]
+    }
+  ],
+  "sponsorInteractions": [
+    {
+      "sponsor": "TechVendor Inc",
+      "type": "demo_request",
+      "timestamp": "2025-11-12T14:30:00Z"
     }
   ]
 }
 ```
+
+**Note**: `productsExplored`, `boothsVisited`, and `sponsorInteractions` are optional fields for B2B events with exhibitors.
 
 ### Modifying Templates
 
@@ -255,19 +297,22 @@ Available Handlebars helpers:
 - [GitHub Pages Setup Guide](docs/github-pages-setup.md)
 - [Data Models Reference](requirements/data-models.md)
 - [Development Workflow](CLAUDE.md)
-- [Implementation Plan](plans/001-github-pages-attendee-summary.md)
+- [Plan 001: Initial Implementation](plans/001-github-pages-attendee-summary.md) ✅ Completed
+- [Plan 002: Event Tech Live Sample Data](plans/002-event-tech-live-sample-data.md) ✅ Completed
+- [Validation Report: Plan 002](analysis/plan-002-validation-report.md)
 
 ## 🧪 Quality Standards
 
 This project follows strict quality standards:
 
-- ✅ **Test-Driven Development**: All code written test-first
-- ✅ **85%+ Test Coverage**: Exceeds 80% target
-- ✅ **W3C Valid HTML5**: Zero validation errors
-- ✅ **Type Safety**: Full TypeScript with strict mode
-- ✅ **Accessibility**: WCAG 2.1 AA compliant
-- ✅ **Performance**: < 2s generation for 12+ pages
-- ✅ **Responsive Design**: Mobile-first approach
+- ✅ **Test-Driven Development**: All code written test-first (RED-GREEN-REFACTOR)
+- ✅ **89.93% Test Coverage**: Exceeds 85% target (105 tests passing)
+- ✅ **W3C Valid HTML5**: Zero validation errors across 24 pages
+- ✅ **Type Safety**: Full TypeScript with strict mode (100% types coverage)
+- ✅ **Accessibility**: WCAG 2.1 AA compliant with semantic HTML
+- ✅ **Performance**: < 1s generation for 24+ pages
+- ✅ **Responsive Design**: Mobile-first with 3 breakpoints
+- ✅ **Backward Compatibility**: Optional B2B fields don't break existing data
 
 ## 🛣️ Roadmap
 
@@ -343,6 +388,6 @@ For issues and questions:
 
 ---
 
-**Built with TDD** • **85% Test Coverage** • **W3C Valid HTML5** • **Fully Responsive**
+**Built with TDD** • **89.93% Test Coverage** • **105 Tests Passing** • **W3C Valid HTML5** • **24 Pages Generated** • **Fully Responsive**
 
-Last Updated: 2025-11-06 • Version: 1.0.0
+Last Updated: 2025-11-06 • Version: 1.1.0 (Plan 002 Completed)
