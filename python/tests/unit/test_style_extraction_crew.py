@@ -91,3 +91,20 @@ class TestStyleExtractionCrew:
         """Test crew has default timeout."""
         crew = StyleExtractionCrew(url="https://example.com")
         assert crew.timeout == 60  # Default 60 seconds
+
+    def test_web_scraper_agent_has_playwright_tool(self):
+        """Test that web scraper agent has PlaywrightStyleExtractorTool assigned."""
+        from event_style_scraper.tools import PlaywrightStyleExtractorTool
+
+        crew_instance = StyleExtractionCrew("https://example.com", timeout=30)
+        agent = crew_instance.web_scraper_agent()
+
+        # Verify agent has tools
+        assert hasattr(agent, 'tools')
+        assert len(agent.tools) == 1
+
+        # Verify tool is PlaywrightStyleExtractorTool
+        assert isinstance(agent.tools[0], PlaywrightStyleExtractorTool)
+
+        # Verify timeout is correctly converted (30s * 1000 = 30000ms)
+        assert agent.tools[0].timeout == 30000
