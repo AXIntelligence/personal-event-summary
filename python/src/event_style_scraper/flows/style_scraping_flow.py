@@ -83,8 +83,8 @@ class StyleScrapingFlow:
             self._state.status = "scraping"
 
             # Initialize and run crew
-            crew = StyleExtractionCrew(url=self.url, timeout=self.timeout)
-            result = crew.kickoff()
+            crew_instance = StyleExtractionCrew(url=self.url, timeout=self.timeout)
+            result = crew_instance.crew().kickoff()
 
             # Parse result JSON
             config_data = json.loads(result.raw)
