@@ -17,16 +17,16 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
   });
 
   describe('Style Config Loading', () => {
-    it('should load event-2025 style config successfully', async () => {
-      const config = await loadStyleConfig('event-2025');
+    it('should load event-tech-live-2025 style config successfully', async () => {
+      const config = await loadStyleConfig('event-tech-live-2025');
 
       expect(config).not.toBeNull();
-      expect(config?.eventId).toBe('event-2025');
-      expect(config?.eventName).toBe('TechConf 2025');
-      expect(config?.colors.primary).toBe('#667eea');
-      expect(config?.typography.headingFont).toBe('Inter, sans-serif');
+      expect(config?.eventId).toBe('event-tech-live-2025');
+      expect(config?.eventName).toBe('Event Tech Live 2024');
+      expect(config?.colors.primary).toBe('#160822');
+      expect(config?.typography.headingFont).toBe("'Helvetica Neue', Helvetica, Arial, sans-serif");
       expect(config?.brandVoice.tone).toBe('professional');
-      expect(config?.layout.containerWidth).toBe('1200px');
+      expect(config?.layout.containerWidth).toBe('1140px');
     });
 
     it('should load event-tech-live-2025 style config successfully', async () => {
@@ -46,7 +46,7 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
     });
 
     it('should correctly identify existing style configs', async () => {
-      const exists1 = await styleConfigExists('event-2025');
+      const exists1 = await styleConfigExists('event-tech-live-2025');
       const exists2 = await styleConfigExists('event-tech-live-2025');
       const exists3 = await styleConfigExists('non-existent');
 
@@ -57,8 +57,8 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
   });
 
   describe('CSS Generation from Style Configs', () => {
-    it('should generate CSS from event-2025 style config', async () => {
-      const config = await loadStyleConfig('event-2025');
+    it('should generate CSS from event-tech-live-2025 style config', async () => {
+      const config = await loadStyleConfig('event-tech-live-2025');
       expect(config).not.toBeNull();
 
       const css = generateEventCSS(config!);
@@ -69,25 +69,25 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
       expect(css).toContain('}');
 
       // Verify colors
-      expect(css).toContain('--color-primary: #667eea');
-      expect(css).toContain('--color-secondary: #764ba2');
-      expect(css).toContain('--color-accent: #f56565');
+      expect(css).toContain('--color-primary: #160822');
+      expect(css).toContain('--color-secondary: #0a2540');
+      expect(css).toContain('--color-accent: #005bb5');
 
       // Verify typography
-      expect(css).toContain('--font-heading: Inter, sans-serif');
-      expect(css).toContain('--font-body: system-ui, -apple-system, sans-serif');
+      expect(css).toContain("--font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif");
+      expect(css).toContain("--font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif");
 
       // Verify layout
-      expect(css).toContain('--spacing-unit: 8px');
-      expect(css).toContain('--border-radius: 8px');
-      expect(css).toContain('--container-width: 1200px');
+      expect(css).toContain('--spacing-unit: 4px');
+      expect(css).toContain('--border-radius: 4px');
+      expect(css).toContain('--container-width: 1140px');
 
       // Verify gradient
       expect(css).toContain('--gradient-primary:');
       expect(css).toContain('linear-gradient');
 
       // Verify metadata comments
-      expect(css).toContain('Event: TechConf 2025');
+      expect(css).toContain('Event: Event Tech Live 2024');
       expect(css).toContain('Brand Voice: professional');
     });
 
@@ -117,10 +117,10 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
   });
 
   describe('Page Generation with Styles', () => {
-    it('should generate page with event-2025 styles for attendee 1001', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+    it('should generate page with event-tech-live-2025 styles for attendee 2001', async () => {
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
 
-      expect(outputPath).toContain('1001');
+      expect(outputPath).toContain('2001');
 
       // Read generated HTML
       const html = await readFile(outputPath, 'utf-8');
@@ -128,8 +128,8 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
       // Verify dynamic CSS is injected
       expect(html).toContain('Event-Specific Dynamic Styles');
       expect(html).toContain(':root');
-      expect(html).toContain('--color-primary: #667eea');
-      expect(html).toContain('--font-heading: Inter, sans-serif');
+      expect(html).toContain('--color-primary: #160822');
+      expect(html).toContain("--font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif");
 
       // Verify Markus AI attribution appears
       expect(html).toContain('Powered by');
@@ -137,8 +137,8 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
       expect(html).toContain('https://dearmarkus.ai');
 
       // Verify base content still exists
-      expect(html).toContain('TechConf 2025');
-      expect(html).toContain('John'); // First name from attendee 1001
+      expect(html).toContain('Event Tech Live 2025');
+      expect(html).toContain('Aisha'); // First name from attendee 2001
     });
 
     it('should generate page with event-tech-live styles for attendee 2001', async () => {
@@ -163,7 +163,7 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
       // (This would be an event that doesn't have a style-configs/{eventId}.json file)
       // For now, all our events have style configs, so this tests the fallback behavior
 
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const html = await readFile(outputPath, 'utf-8');
 
       // Should still have base HTML structure
@@ -195,23 +195,23 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
   describe('Style Variation Validation', () => {
     it('should apply different styles to different events', async () => {
       // Generate pages for both events
-      const page1 = await generateAttendeePage('1001', TEST_DIST_DIR); // event-2025
-      const page2 = await generateAttendeePage('2001', TEST_DIST_DIR); // event-tech-live-2025
+      const page1 = await generateAttendeePage('2001', TEST_DIST_DIR); // Event Tech Live
+      const page2 = await generateAttendeePage('3001', TEST_DIST_DIR); // AWS re:Invent
 
       const html1 = await readFile(page1, 'utf-8');
       const html2 = await readFile(page2, 'utf-8');
 
       // Verify different primary colors
-      expect(html1).toContain('--color-primary: #667eea'); // TechConf purple
-      expect(html2).toContain('--color-primary: #160822'); // Event Tech Live blue (scraped)
+      expect(html1).toContain('--color-primary: #160822'); // Event Tech Live purple (scraped)
+      expect(html2).toContain('--color-primary: #232f3e'); // AWS re:Invent dark blue-gray (manual)
 
       // Verify different fonts
-      expect(html1).toContain('Inter, sans-serif');
-      expect(html2).toContain("'Helvetica Neue', Helvetica, Arial, sans-serif"); // Updated from scraped data
+      expect(html1).toContain("'Helvetica Neue', Helvetica, Arial, sans-serif"); // Event Tech Live (scraped)
+      expect(html2).toContain("'Amazon Ember'"); // AWS re:Invent (manual)
 
       // Verify different brand voices in comments
       expect(html1).toContain('professional');
-      expect(html2).toContain('professional'); // Updated from scraped data (both events are professional)
+      expect(html2).toContain('professional'); // Both events are professional
     });
   });
 
@@ -231,7 +231,7 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
 
   describe('HTML Validation with Dynamic Styles', () => {
     it('should produce valid HTML with injected CSS', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const html = await readFile(outputPath, 'utf-8');
 
       // Verify style tag is properly closed

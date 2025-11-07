@@ -112,7 +112,7 @@ describe('HTML Validation Tests', () => {
 
   describe('Semantic HTML Structure', () => {
     it('should have proper document structure', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       // Check for semantic HTML5 elements
@@ -128,7 +128,7 @@ describe('HTML Validation Tests', () => {
     });
 
     it('should use semantic HTML5 elements appropriately', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       // Should use semantic elements
@@ -151,7 +151,7 @@ describe('HTML Validation Tests', () => {
 
   describe('Accessibility Validation', () => {
     it('should have proper meta tags', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       // Check for essential meta tags
@@ -162,7 +162,7 @@ describe('HTML Validation Tests', () => {
     });
 
     it('should have proper alt attributes for images', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       // All img tags should have alt attributes
@@ -174,7 +174,7 @@ describe('HTML Validation Tests', () => {
     });
 
     it('should have proper link attributes for external links', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       // External links should have target="_blank" and rel="noopener noreferrer"
@@ -188,7 +188,7 @@ describe('HTML Validation Tests', () => {
     });
 
     it('should have proper lang attribute', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       expect(html).toMatch(/<html[^>]*lang=["'][^"']+["'][^>]*>/);
@@ -197,7 +197,7 @@ describe('HTML Validation Tests', () => {
 
   describe('Performance Best Practices', () => {
     it('should have resource hints for external resources', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       // Should have preconnect for external fonts
@@ -206,7 +206,7 @@ describe('HTML Validation Tests', () => {
     });
 
     it('should have CSS in head and minimal inline styles', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       // Should have external stylesheet link
@@ -218,7 +218,7 @@ describe('HTML Validation Tests', () => {
     });
 
     it('should defer or async non-critical JavaScript', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       // If there are external scripts, they should be deferred or async
@@ -258,7 +258,7 @@ describe('HTML Validation Tests', () => {
     });
 
     it('should not have duplicate IDs', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const html = await readFile(htmlPath, 'utf-8');
 
       const report = await htmlvalidate.validateString(html);

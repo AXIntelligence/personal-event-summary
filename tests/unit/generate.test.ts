@@ -85,10 +85,10 @@ describe('generate', () => {
 
   describe('generateAttendeePage', () => {
     it('should generate HTML page for an attendee', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
 
       expect(outputPath).toBeTruthy();
-      expect(outputPath).toContain('1001');
+      expect(outputPath).toContain('2001');
       expect(outputPath).toContain('index.html');
 
       // Verify file was created
@@ -96,14 +96,14 @@ describe('generate', () => {
     });
 
     it('should create nested directory structure', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
 
-      // Path should be dist/attendees/1001/index.html
-      expect(outputPath).toMatch(/attendees\/1001\/index\.html$/);
+      // Path should be dist/attendees/2001/index.html
+      expect(outputPath).toMatch(/attendees\/2001\/index\.html$/);
     });
 
     it('should generate valid HTML content', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const content = await readFile(outputPath, 'utf-8');
 
       // Check for basic HTML structure
@@ -117,25 +117,25 @@ describe('generate', () => {
     });
 
     it('should include attendee personalization', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const content = await readFile(outputPath, 'utf-8');
 
-      // Should contain attendee's first name and achievement (Sarah from mock data)
-      expect(content).toContain('Sarah');
-      expect(content).toContain('Early Bird Attendee');
+      // Should contain attendee's first name and achievement (Aisha from mock data)
+      expect(content).toContain('Aisha');
+      expect(content).toContain('Innovation Scout');
     });
 
     it('should include event information', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const content = await readFile(outputPath, 'utf-8');
 
       // Should contain event name
-      expect(content).toContain('TechConf 2025');
-      expect(content).toContain('San Francisco');
+      expect(content).toContain('Event Tech Live 2025');
+      expect(content).toContain('London');
     });
 
     it('should include attendee stats', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const content = await readFile(outputPath, 'utf-8');
 
       // Should show stats from mock data
@@ -145,24 +145,24 @@ describe('generate', () => {
     });
 
     it('should include sessions attended', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const content = await readFile(outputPath, 'utf-8');
 
       // Should include session titles from mock data
-      expect(content).toContain('Future of AI');
-      expect(content).toContain('Building Scalable Microservices');
+      expect(content).toContain('AI-Powered Networking');
+      expect(content).toContain('AI in Events');
     });
 
     it('should include call-to-actions', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const content = await readFile(outputPath, 'utf-8');
 
       // Should include CTAs
-      expect(content).toMatch(/Register for TechConf 2026/i);
+      expect(content).toMatch(/Save the Date: Event Tech Live 2026/i);
     });
 
     it('should link to CSS stylesheet', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const content = await readFile(outputPath, 'utf-8');
 
       expect(content).toContain('/static/css/styles.css');
@@ -175,8 +175,8 @@ describe('generate', () => {
     });
 
     it('should generate unique content for different attendees', async () => {
-      const output1 = await generateAttendeePage('1001', TEST_DIST_DIR);
-      const output2 = await generateAttendeePage('1002', TEST_DIST_DIR);
+      const output1 = await generateAttendeePage('2001', TEST_DIST_DIR);
+      const output2 = await generateAttendeePage('2002', TEST_DIST_DIR);
 
       const content1 = await readFile(output1, 'utf-8');
       const content2 = await readFile(output2, 'utf-8');
@@ -191,7 +191,7 @@ describe('generate', () => {
 
     it('should handle attendees with different engagement levels', async () => {
       // Attendee 1002 has more sessions/connections
-      const output = await generateAttendeePage('1002', TEST_DIST_DIR);
+      const output = await generateAttendeePage('2002', TEST_DIST_DIR);
       const content = await readFile(output, 'utf-8');
 
       // Should show higher stats
@@ -293,7 +293,7 @@ describe('generate', () => {
   describe('Performance', () => {
     it('should generate single page in under 100ms', async () => {
       const start = Date.now();
-      await generateAttendeePage('1001', TEST_DIST_DIR);
+      await generateAttendeePage('2001', TEST_DIST_DIR);
       const duration = Date.now() - start;
 
       expect(duration).toBeLessThan(100);
@@ -311,7 +311,7 @@ describe('generate', () => {
 
   describe('File Size', () => {
     it('should generate HTML files larger than 1KB', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const content = await readFile(outputPath, 'utf-8');
 
       const sizeInBytes = Buffer.byteLength(content, 'utf-8');
@@ -319,7 +319,7 @@ describe('generate', () => {
     });
 
     it('should generate reasonable file sizes under 500KB', async () => {
-      const outputPath = await generateAttendeePage('1001', TEST_DIST_DIR);
+      const outputPath = await generateAttendeePage('2001', TEST_DIST_DIR);
       const content = await readFile(outputPath, 'utf-8');
 
       const sizeInBytes = Buffer.byteLength(content, 'utf-8');
