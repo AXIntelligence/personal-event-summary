@@ -69,3 +69,4 @@ temp/
 analysis/*.log
 analysis/temp-*
 analysis/draft-*
+.claude/settings.local.json
