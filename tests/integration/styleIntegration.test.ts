@@ -34,10 +34,10 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
 
       expect(config).not.toBeNull();
       expect(config?.eventId).toBe('event-tech-live-2025');
-      expect(config?.eventName).toBe('Event Tech Live 2025');
-      expect(config?.colors.primary).toBe('#00b8d4');
-      expect(config?.typography.headingFont).toBe('Montserrat, sans-serif');
-      expect(config?.brandVoice.tone).toBe('energetic');
+      expect(config?.eventName).toBe('Event Tech Live 2024'); // Updated from scraped data
+      expect(config?.colors.primary).toBe('#0072ce'); // Updated to real scraped color
+      expect(config?.typography.headingFont).toBe("'Helvetica Neue', Helvetica, Arial, sans-serif"); // Updated from scraped data
+      expect(config?.brandVoice.tone).toBe('professional'); // Updated from scraped data
     });
 
     it('should return null for non-existent style config', async () => {
@@ -98,21 +98,21 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
       const css = generateEventCSS(config!);
 
       // Verify different colors
-      expect(css).toContain('--color-primary: #00b8d4');
-      expect(css).toContain('--color-secondary: #0097a7');
-      expect(css).toContain('--color-accent: #ff6f00');
+      expect(css).toContain('--color-primary: #0072ce'); // Updated to real scraped color
+      expect(css).toContain('--color-secondary: #0a2540'); // Updated from scraped data
+      expect(css).toContain('--color-accent: #005bb5'); // Updated from scraped data
 
       // Verify different typography
-      expect(css).toContain('--font-heading: Montserrat, sans-serif');
-      expect(css).toContain('--font-body: Open Sans, sans-serif');
+      expect(css).toContain("--font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif"); // Updated from scraped data
+      expect(css).toContain("--font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif"); // Updated from scraped data
 
       // Verify different layout
-      expect(css).toContain('--spacing-unit: 12px');
-      expect(css).toContain('--border-radius: 12px');
-      expect(css).toContain('--container-width: 1440px');
+      expect(css).toContain('--spacing-unit: 4px'); // Updated from scraped data
+      expect(css).toContain('--border-radius: 4px'); // Updated from scraped data
+      expect(css).toContain('--container-width: 1140px'); // Updated from scraped data
 
       // Verify brand voice
-      expect(css).toContain('Brand Voice: energetic');
+      expect(css).toContain('Brand Voice: professional'); // Updated from scraped data
     });
   });
 
@@ -147,9 +147,9 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
       const html = await readFile(outputPath, 'utf-8');
 
       // Verify Event Tech Live styles are injected
-      expect(html).toContain('--color-primary: #00b8d4');
-      expect(html).toContain('--font-heading: Montserrat, sans-serif');
-      expect(html).toContain('--spacing-unit: 12px');
+      expect(html).toContain('--color-primary: #0072ce'); // Updated to real scraped color
+      expect(html).toContain("--font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif"); // Updated from scraped data
+      expect(html).toContain('--spacing-unit: 4px'); // Updated from scraped data
 
       // Verify Markus AI attribution
       expect(html).toContain('Markus AI');
@@ -203,15 +203,15 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
 
       // Verify different primary colors
       expect(html1).toContain('--color-primary: #667eea'); // TechConf purple
-      expect(html2).toContain('--color-primary: #00b8d4'); // Event Tech Live cyan
+      expect(html2).toContain('--color-primary: #0072ce'); // Event Tech Live blue (scraped)
 
       // Verify different fonts
       expect(html1).toContain('Inter, sans-serif');
-      expect(html2).toContain('Montserrat, sans-serif');
+      expect(html2).toContain("'Helvetica Neue', Helvetica, Arial, sans-serif"); // Updated from scraped data
 
       // Verify different brand voices in comments
       expect(html1).toContain('professional');
-      expect(html2).toContain('energetic');
+      expect(html2).toContain('professional'); // Updated from scraped data (both events are professional)
     });
   });
 

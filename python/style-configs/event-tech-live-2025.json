@@ -1,0 +1,45 @@
+{
+  "event_id": "eventtechlive-com",
+  "event_name": "Event Tech Live",
+  "source_url": "https://eventtechlive.com",
+  "colors": {
+    "primary": "#0073e6",
+    "secondary": "#e1f0ff",
+    "accent": "#005bb5",
+    "background": "#ffffff",
+    "text": "#222222"
+  },
+  "typography": {
+    "heading_font": "'Open Sans', sans-serif",
+    "body_font": "'Open Sans', sans-serif",
+    "heading_size": "2rem",
+    "body_size": "1rem",
+    "line_height": "1.5"
+  },
+  "brand_voice": {
+    "tone": "professional",
+    "keywords": [
+      "Event Tech Live",
+      "event technology",
+      "conference",
+      "exhibition",
+      "innovation",
+      "register",
+      "agenda",
+      "speakers",
+      "contact",
+      "Europe"
+    ],
+    "style": "formal-conversational",
+    "personality": "authoritative, innovative, approachable"
+  },
+  "layout": {
+    "grid_system": "flexbox",
+    "spacing_unit": "4px",
+    "border_radius": "4px",
+    "container_width": "1200px"
+  },
+  "logo_url": "https://eventtechlive.com/assets/logo-event-tech-live.svg",
+  "favicon_url": "https://eventtechlive.com/favicon.ico",
+  "scraped_at": "2024-06-04T00:00:00Z"
+}
