@@ -1,0 +1,247 @@
+{
+  "id": "3004",
+  "firstName": "Aisha",
+  "lastName": "Okafor",
+  "email": "aisha.okafor@mediastreamingservice.com",
+  "company": "Media Streaming Service",
+  "title": "Senior DevOps Engineer",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "CON301",
+      "title": "Amazon EKS: Production-Grade Kubernetes",
+      "description": "Deploy and manage production Kubernetes workloads on Amazon EKS. Explore cluster autoscaling, security best practices, observability, and cost optimization techniques.",
+      "speakers": ["Aisha Okafor, Container Specialist, AWS"],
+      "dateTime": "2025-12-02T14:00:00Z",
+      "durationMinutes": 75,
+      "track": "Containers"
+    },
+    {
+      "id": "SVS201",
+      "title": "AWS Lambda: Performance Optimization Techniques",
+      "description": "Maximize Lambda function performance and minimize costs. Explore cold start reduction, memory optimization, concurrency management, and execution environment best practices.",
+      "speakers": ["Thomas Anderson, Serverless Specialist, AWS"],
+      "dateTime": "2025-12-03T15:30:00Z",
+      "durationMinutes": 60,
+      "track": "Serverless"
+    },
+    {
+      "id": "SVS301",
+      "title": "AWS Step Functions: Orchestrating Serverless Workflows",
+      "description": "Build complex serverless applications with AWS Step Functions. Learn workflow patterns, error handling, parallel execution, and integration with Lambda, ECS, and other AWS services.",
+      "speakers": ["Rachel Kim, Serverless Architect, AWS"],
+      "dateTime": "2025-12-02T10:30:00Z",
+      "durationMinutes": 75,
+      "track": "Serverless"
+    },
+    {
+      "id": "SVS302",
+      "title": "Amazon EventBridge: Event-Driven Architectures at Scale",
+      "description": "Design event-driven architectures with Amazon EventBridge. Explore event patterns, schema discovery, cross-account events, and integration with SaaS applications.",
+      "speakers": ["Brian Foster, Integration Specialist, AWS"],
+      "dateTime": "2025-12-04T09:00:00Z",
+      "durationMinutes": 60,
+      "track": "Serverless"
+    },
+    {
+      "id": "CON201",
+      "title": "Amazon ECS: Container Orchestration Made Simple",
+      "description": "Run containerized applications on Amazon ECS with Fargate. Learn task definitions, service auto scaling, load balancing, and blue/green deployments.",
+      "speakers": ["Marcus Thompson, Container Architect, AWS"],
+      "dateTime": "2025-12-01T11:00:00Z",
+      "durationMinutes": 60,
+      "track": "Containers"
+    },
+    {
+      "id": "CON302",
+      "title": "Container Observability: Metrics, Logs, and Traces",
+      "description": "Implement comprehensive observability for containerized applications. Explore CloudWatch Container Insights, AWS X-Ray, Prometheus, and distributed tracing patterns.",
+      "speakers": ["Jennifer Park, Observability Specialist, AWS"],
+      "dateTime": "2025-12-03T13:00:00Z",
+      "durationMinutes": 75,
+      "track": "Containers"
+    },
+    {
+      "id": "NET301",
+      "title": "Application Load Balancer: Advanced Routing Patterns",
+      "description": "Master Application Load Balancer features for modern applications. Learn path-based routing, host-based routing, Lambda targets, and weighted target groups.",
+      "speakers": ["Steven Williams, Network Solutions Architect, AWS"],
+      "dateTime": "2025-12-01T14:30:00Z",
+      "durationMinutes": 60,
+      "track": "Networking"
+    },
+    {
+      "id": "NET302",
+      "title": "AWS PrivateLink: Secure Service Connectivity",
+      "description": "Connect VPCs and services securely with AWS PrivateLink. Explore endpoint services, cross-account access, and private API Gateway integrations.",
+      "speakers": ["Diana Chen, Network Architect, AWS"],
+      "dateTime": "2025-12-04T11:30:00Z",
+      "durationMinutes": 60,
+      "track": "Networking"
+    },
+    {
+      "id": "DEV301",
+      "title": "AWS CodePipeline: CI/CD Best Practices",
+      "description": "Build automated deployment pipelines with AWS CodePipeline. Learn multi-stage deployments, approval gates, cross-region replication, and integration with third-party tools.",
+      "speakers": ["Alex Rodriguez, DevOps Specialist, AWS"],
+      "dateTime": "2025-12-02T16:30:00Z",
+      "durationMinutes": 75,
+      "track": "DevOps"
+    },
+    {
+      "id": "OBS201",
+      "title": "Amazon CloudWatch: Deep Dive on Observability",
+      "description": "Master CloudWatch for application monitoring. Explore custom metrics, log insights, alarms, dashboards, and ServiceLens for distributed tracing.",
+      "speakers": ["Patricia Sullivan, Observability Lead, AWS"],
+      "dateTime": "2025-12-05T10:00:00Z",
+      "durationMinutes": 60,
+      "track": "Observability"
+    },
+    {
+      "id": "SVS401",
+      "title": "Serverless Architectures for Video Processing",
+      "description": "Build scalable video processing pipelines with serverless technologies. Learn Lambda media processing, S3 event triggers, MediaConvert integration, and cost optimization.",
+      "speakers": ["Kevin Martinez, Media Solutions Architect, AWS"],
+      "dateTime": "2025-12-05T13:30:00Z",
+      "durationMinutes": 90,
+      "track": "Serverless"
+    },
+    {
+      "id": "CON401",
+      "title": "Multi-Cluster Kubernetes Management at Scale",
+      "description": "Manage multiple EKS clusters across regions and accounts. Explore GitOps with Flux/ArgoCD, cluster federation, service mesh, and centralized policy management.",
+      "speakers": ["Samantha Lee, Kubernetes Architect, AWS", "David Kumar, Container Platform Lead, AWS"],
+      "dateTime": "2025-12-03T09:00:00Z",
+      "durationMinutes": 90,
+      "track": "Containers"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Thomas Anderson",
+      "title": "Serverless Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/thomasanderson-aws"
+    },
+    {
+      "name": "Rachel Kim",
+      "title": "Serverless Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/rachelkim-aws"
+    },
+    {
+      "name": "Brian Foster",
+      "title": "Integration Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Marcus Thompson",
+      "title": "Container Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Jennifer Park",
+      "title": "Observability Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/jenniferpark-aws"
+    },
+    {
+      "name": "Steven Williams",
+      "title": "Network Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Diana Chen",
+      "title": "Network Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Alex Rodriguez",
+      "title": "DevOps Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/alexrodriguez-aws"
+    },
+    {
+      "name": "Patricia Sullivan",
+      "title": "Observability Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Kevin Martinez",
+      "title": "Media Solutions Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/kevinmartinez-aws"
+    },
+    {
+      "name": "Samantha Lee",
+      "title": "Kubernetes Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "David Kumar",
+      "title": "Container Platform Lead",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/davidkumar-aws"
+    },
+    {
+      "name": "Michelle Chen",
+      "title": "Sr. DevOps Engineer",
+      "company": "Netflix",
+      "linkedIn": "https://linkedin.com/in/michellechen-netflix"
+    },
+    {
+      "name": "Carlos Ribeiro",
+      "title": "Platform Engineering Lead",
+      "company": "Spotify"
+    },
+    {
+      "name": "Yuki Tanaka",
+      "title": "Cloud Operations Manager",
+      "company": "Disney Streaming"
+    },
+    {
+      "name": "Omar Ali",
+      "title": "Site Reliability Engineer",
+      "company": "Twitch",
+      "linkedIn": "https://linkedin.com/in/omarali-twitch"
+    },
+    {
+      "name": "Elena Popov",
+      "title": "Infrastructure Architect",
+      "company": "HBO Max"
+    },
+    {
+      "name": "James O'Connor",
+      "title": "DevOps Team Lead",
+      "company": "Paramount+"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 12,
+    "connectionsMade": 18,
+    "hoursAttended": 18,
+    "tracksExplored": 4,
+    "topAchievement": "Serverless Pioneer"
+  },
+  "callsToAction": [
+    {
+      "text": "Explore AWS Training & Certification",
+      "url": "https://aws.amazon.com/training/?ref=reinvent2025-3004",
+      "type": "primary",
+      "trackingId": "cta-aws-training"
+    },
+    {
+      "text": "Join AWS Partner Network",
+      "url": "https://aws.amazon.com/partners/?ref=reinvent2025-3004",
+      "type": "secondary",
+      "trackingId": "cta-apn"
+    },
+    {
+      "text": "Save the Date: AWS re:Invent 2026",
+      "url": "https://reinvent.awsevents.com/2026?ref=reinvent2025-3004",
+      "type": "tertiary",
+      "trackingId": "cta-reinvent2026"
+    }
+  ],
+  "registeredAt": "2025-09-15T11:20:00Z"
+}

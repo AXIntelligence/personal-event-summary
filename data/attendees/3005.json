@@ -1,0 +1,284 @@
+{
+  "id": "3005",
+  "firstName": "Emily",
+  "lastName": "Zhang",
+  "email": "emily.zhang@neuralflow.ai",
+  "company": "NeuralFlow AI (Series A)",
+  "title": "Co-Founder & CTO",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "AIM301",
+      "title": "Amazon SageMaker: MLOps for Startups",
+      "description": "Build production ML pipelines on a startup budget. Learn how to use SageMaker Studio, Model Registry, and Pipelines to automate model training, deployment, and monitoring without a large ML team.",
+      "speakers": ["Dr. Anjali Sharma, AI/ML Specialist, AWS", "Kevin Park, Startup Solutions Architect, AWS"],
+      "dateTime": "2025-12-01T10:30:00Z",
+      "durationMinutes": 90,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "AIM401",
+      "title": "Amazon Bedrock: Build Generative AI Applications Fast",
+      "description": "Launch generative AI products using Amazon Bedrock foundation models. Explore prompt engineering, RAG architectures, fine-tuning strategies, and responsible AI practices for production applications.",
+      "speakers": ["Dr. Michael Chen, Generative AI Lead, AWS"],
+      "dateTime": "2025-12-01T14:00:00Z",
+      "durationMinutes": 90,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "COP201",
+      "title": "Startup Cloud Cost Management: $0 to $1M ARR",
+      "description": "Optimize AWS costs from seed to Series A. Learn tagging strategies, rightsizing techniques, Reserved Instance planning, and cost monitoring for fast-growing startups.",
+      "speakers": ["Lisa Thompson, Startup FinOps Advisor, AWS", "Omar Hassan, CEO, CloudCost.io"],
+      "dateTime": "2025-12-02T09:00:00Z",
+      "durationMinutes": 75,
+      "track": "Cost Optimization"
+    },
+    {
+      "id": "SVS301",
+      "title": "Serverless-First Architecture for Startups",
+      "description": "Build scalable products without managing servers. Explore Lambda, API Gateway, DynamoDB, and Step Functions to create cost-effective, auto-scaling architectures perfect for early-stage companies.",
+      "speakers": ["Rachel Kim, Serverless Advocate, AWS"],
+      "dateTime": "2025-12-02T11:30:00Z",
+      "durationMinutes": 75,
+      "track": "Serverless"
+    },
+    {
+      "id": "STU101",
+      "title": "AWS Activate: $100K in Credits and Startup Support",
+      "description": "Maximize AWS Activate benefits for your startup. Learn about credits, technical support, architecture reviews, and access to AWS experts to accelerate your product development.",
+      "speakers": ["Jennifer Martinez, AWS Activate Program Lead", "Tom Chen, Startup Account Manager, AWS"],
+      "dateTime": "2025-12-02T15:00:00Z",
+      "durationMinutes": 60,
+      "track": "Startup Programs"
+    },
+    {
+      "id": "AIM302",
+      "title": "Vector Databases for AI: Amazon OpenSearch and Beyond",
+      "description": "Build semantic search and RAG applications with vector databases. Compare OpenSearch, pgvector on RDS, and third-party solutions for embedding storage and similarity search at scale.",
+      "speakers": ["Dr. Sarah Okafor, Search & AI Architect, AWS"],
+      "dateTime": "2025-12-03T10:00:00Z",
+      "durationMinutes": 75,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "AIM201",
+      "title": "Real-Time ML Inference with SageMaker Endpoints",
+      "description": "Deploy low-latency ML models for production. Learn endpoint auto-scaling, multi-model hosting, A/B testing strategies, and cost optimization for inference workloads.",
+      "speakers": ["David Liu, ML Infrastructure Specialist, AWS"],
+      "dateTime": "2025-12-03T13:30:00Z",
+      "durationMinutes": 60,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "COP301",
+      "title": "Spot Instances and Savings Plans for AI Workloads",
+      "description": "Reduce ML training costs by 70% using EC2 Spot Instances. Learn interruption handling, checkpointing strategies, and combining Spot with Savings Plans for optimal cost-performance.",
+      "speakers": ["Amanda Foster, FinOps Lead, AWS"],
+      "dateTime": "2025-12-04T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Cost Optimization"
+    },
+    {
+      "id": "SVS201",
+      "title": "Event-Driven Architectures with EventBridge",
+      "description": "Build loosely coupled systems with Amazon EventBridge. Explore event patterns, schema registry, cross-account routing, and integration with SaaS applications for scalable event-driven apps.",
+      "speakers": ["Chris Anderson, Serverless Solutions Architect, AWS"],
+      "dateTime": "2025-12-04T14:00:00Z",
+      "durationMinutes": 75,
+      "track": "Serverless"
+    },
+    {
+      "id": "AIM402",
+      "title": "Responsible AI: Bias Detection and Model Explainability",
+      "description": "Build trustworthy AI systems with Amazon SageMaker Clarify. Learn bias detection, model explainability techniques, and governance frameworks to ensure responsible AI deployment.",
+      "speakers": ["Dr. Priya Gupta, AI Ethics Researcher, AWS", "Marcus Williams, ML Governance Lead, AWS"],
+      "dateTime": "2025-12-04T16:30:00Z",
+      "durationMinutes": 90,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "KEY02",
+      "title": "AWS VP Keynote: AI & Machine Learning Innovation",
+      "description": "Discover the latest AWS AI/ML innovations including new Bedrock models, SageMaker features, and customer success stories. Learn how startups are building transformative AI products on AWS.",
+      "speakers": ["Dr. Swami Sivasubramanian, VP of AI & Data, AWS"],
+      "dateTime": "2025-12-03T08:00:00Z",
+      "durationMinutes": 90,
+      "track": "Keynote"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Dr. Anjali Sharma",
+      "title": "AI/ML Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/anjalisharma-aws"
+    },
+    {
+      "name": "Kevin Park",
+      "title": "Startup Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Dr. Michael Chen",
+      "title": "Generative AI Lead",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/michaelchen-aws-genai"
+    },
+    {
+      "name": "Lisa Thompson",
+      "title": "Startup FinOps Advisor",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Omar Hassan",
+      "title": "CEO",
+      "company": "CloudCost.io",
+      "linkedIn": "https://linkedin.com/in/omarhasan-cloudcost"
+    },
+    {
+      "name": "Rachel Kim",
+      "title": "Serverless Advocate",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/rachelkim-aws-serverless"
+    },
+    {
+      "name": "Jennifer Martinez",
+      "title": "AWS Activate Program Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Tom Chen",
+      "title": "Startup Account Manager",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/tomchen-aws-startups"
+    },
+    {
+      "name": "Dr. Sarah Okafor",
+      "title": "Search & AI Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "David Liu",
+      "title": "ML Infrastructure Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/davidliu-aws-ml"
+    },
+    {
+      "name": "Amanda Foster",
+      "title": "FinOps Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Chris Anderson",
+      "title": "Serverless Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Dr. Priya Gupta",
+      "title": "AI Ethics Researcher",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/priyagupta-aws-ethics"
+    },
+    {
+      "name": "Marcus Williams",
+      "title": "ML Governance Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Alex Rivera",
+      "title": "Co-Founder & CEO",
+      "company": "DataFlow AI",
+      "linkedIn": "https://linkedin.com/in/alexrivera-dataflow"
+    },
+    {
+      "name": "Jessica Wu",
+      "title": "VP of Engineering",
+      "company": "TensorLabs (YC W24)",
+      "linkedIn": "https://linkedin.com/in/jessicawu-tensorlabs"
+    },
+    {
+      "name": "Rahul Mehta",
+      "title": "CTO",
+      "company": "CloudVision Analytics"
+    },
+    {
+      "name": "Sofia Gonzalez",
+      "title": "Founding Engineer",
+      "company": "Semantic AI",
+      "linkedIn": "https://linkedin.com/in/sofiagonzalez-semanticai"
+    },
+    {
+      "name": "James Park",
+      "title": "Partner",
+      "company": "Sequoia Capital"
+    },
+    {
+      "name": "Elena Volkov",
+      "title": "Principal",
+      "company": "Accel Partners",
+      "linkedIn": "https://linkedin.com/in/elenavolkov-accel"
+    },
+    {
+      "name": "Daniel Kim",
+      "title": "Investment Manager",
+      "company": "Intel Capital"
+    },
+    {
+      "name": "Maya Patel",
+      "title": "Co-Founder",
+      "company": "MLStack (Seed Stage)",
+      "linkedIn": "https://linkedin.com/in/mayapatel-mlstack"
+    },
+    {
+      "name": "Carlos Dominguez",
+      "title": "Head of Product",
+      "company": "VectorDB Inc"
+    },
+    {
+      "name": "Aisha Johnson",
+      "title": "Lead ML Engineer",
+      "company": "Anthropic",
+      "linkedIn": "https://linkedin.com/in/aishajohnson-anthropic"
+    },
+    {
+      "name": "Ryan O'Connor",
+      "title": "CTO",
+      "company": "FinTech Startup (Series B)"
+    },
+    {
+      "name": "Nina Kowalski",
+      "title": "Startup Ecosystem Lead",
+      "company": "AWS Partner Network",
+      "linkedIn": "https://linkedin.com/in/ninakowalski-apn"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 11,
+    "connectionsMade": 26,
+    "hoursAttended": 16.5,
+    "tracksExplored": 5,
+    "topAchievement": "Innovation Leader"
+  },
+  "callsToAction": [
+    {
+      "text": "Apply for AWS Activate Credits",
+      "url": "https://aws.amazon.com/activate/?ref=reinvent2025-3005",
+      "type": "primary",
+      "trackingId": "cta-aws-activate"
+    },
+    {
+      "text": "Join AWS Startups Community",
+      "url": "https://aws.amazon.com/startups/?ref=reinvent2025-3005",
+      "type": "secondary",
+      "trackingId": "cta-aws-startups"
+    },
+    {
+      "text": "Explore Amazon SageMaker Free Tier",
+      "url": "https://aws.amazon.com/sagemaker/pricing/?ref=reinvent2025-3005",
+      "type": "tertiary",
+      "trackingId": "cta-sagemaker-freetier"
+    }
+  ],
+  "registeredAt": "2025-09-15T10:15:00Z"
+}

@@ -58,7 +58,7 @@ describe('End-to-End Integration Tests', () => {
       await generateAll(TEST_DIST_DIR);
 
       // Check specific attendee structure
-      const attendee1001Dir = join(TEST_DIST_DIR, 'attendees', '1001');
+      const attendee1001Dir = join(TEST_DIST_DIR, 'attendees', '2001');
       const indexPath = join(attendee1001Dir, 'index.html');
 
       await expect(access(attendee1001Dir)).resolves.not.toThrow();
@@ -119,28 +119,28 @@ describe('End-to-End Integration Tests', () => {
         const htmlPath = join(attendeesDir, id, 'index.html');
         const content = await readFile(htmlPath, 'utf-8');
 
-        expect(content).toContain('TechConf 2025');
-        expect(content).toContain('San Francisco');
+        expect(content).toContain('Event Tech Live 2025');
+        expect(content).toContain('London');
       }
     });
 
     it('should include personalized content for each attendee', async () => {
       const attendeesDir = join(TEST_DIST_DIR, 'attendees');
 
-      // Check attendee 1001 (Sarah Chen)
-      const sarah = await readFile(join(attendeesDir, '1001', 'index.html'), 'utf-8');
-      expect(sarah).toContain('Sarah');
-      expect(sarah).toContain('Sarah Chen - TechConf 2025'); // Page title should be personalized
-      expect(sarah).not.toMatch(/Michael O[&#x27;']+Brien - TechConf 2025/); // Shouldn't have other attendee's page title
+      // Check attendee 1001 (Aisha Patel)
+      const sarah = await readFile(join(attendeesDir, '2001', 'index.html'), 'utf-8');
+      expect(sarah).toContain('Aisha');
+      expect(sarah).toContain('Aisha Patel - Event Tech Live 2025'); // Page title should be personalized
+      expect(sarah).not.toMatch(/Marcus O[&#x27;']+Brien - Event Tech Live 2025/); // Shouldn't have other attendee's page title
 
-      // Check attendee 1002 (Michael O'Brien) - note: apostrophe may be HTML-encoded as &#x27;
-      const michael = await readFile(join(attendeesDir, '1002', 'index.html'), 'utf-8');
-      expect(michael).toContain('Michael');
-      expect(michael).toMatch(/Michael O[&#x27;']+Brien - TechConf 2025/); // Page title should be personalized (with encoded apostrophe)
-      expect(michael).not.toContain('Sarah Chen - TechConf 2025'); // Shouldn't have other attendee's page title
+      // Check attendee 2002 (Marcus Rodriguez)
+      const marcus = await readFile(join(attendeesDir, '2002', 'index.html'), 'utf-8');
+      expect(marcus).toContain('Marcus');
+      expect(marcus).toContain('Marcus Rodriguez - Event Tech Live 2025'); // Page title should be personalized
+      expect(marcus).not.toContain('Aisha Patel - Event Tech Live 2025'); // Shouldn't have other attendee's page title
 
       // Verify they're different
-      expect(sarah).not.toBe(michael);
+      expect(sarah).not.toBe(marcus);
     });
 
     it('should include CSS stylesheet link in all pages', async () => {
@@ -165,14 +165,14 @@ describe('End-to-End Integration Tests', () => {
         const content = await readFile(htmlPath, 'utf-8');
 
         // Should have CTAs
-        expect(content).toMatch(/Register for TechConf 2026/i);
+        expect(content).toMatch(/Save the Date: Event Tech Live 2026/i);
         expect(content).toContain('cta-card');
       }
     });
 
     it('should include attendee stats in all pages', async () => {
       const attendeesDir = join(TEST_DIST_DIR, 'attendees');
-      const htmlPath = join(attendeesDir, '1001', 'index.html');
+      const htmlPath = join(attendeesDir, '2001', 'index.html');
       const content = await readFile(htmlPath, 'utf-8');
 
       // Should show stats
@@ -184,11 +184,11 @@ describe('End-to-End Integration Tests', () => {
 
     it('should include session information', async () => {
       const attendeesDir = join(TEST_DIST_DIR, 'attendees');
-      const htmlPath = join(attendeesDir, '1001', 'index.html');
+      const htmlPath = join(attendeesDir, '2001', 'index.html');
       const content = await readFile(htmlPath, 'utf-8');
 
       // Should show sessions from mock data
-      expect(content).toContain('Future of AI');
+      expect(content).toContain('AI-Powered Networking');
       expect(content).toContain('session-card');
     });
   });
@@ -215,7 +215,7 @@ describe('End-to-End Integration Tests', () => {
     });
 
     it('should have accessible file permissions', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const cssPath = join(TEST_DIST_DIR, 'static', 'css', 'styles.css');
 
       // Files should be readable
@@ -259,7 +259,7 @@ describe('End-to-End Integration Tests', () => {
       await expect(generateAll(TEST_DIST_DIR)).resolves.not.toThrow();
 
       // Files should still exist
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       await expect(access(htmlPath)).resolves.not.toThrow();
     });
   });
@@ -278,28 +278,28 @@ describe('End-to-End Integration Tests', () => {
         const content = await readFile(htmlPath, 'utf-8');
 
         // All attendees should reference the same event
-        expect(content).toContain('TechConf 2025');
-        expect(content).toContain('5000'); // Total attendees
-        expect(content).toContain('120'); // Total sessions
+        expect(content).toContain('Event Tech Live 2025');
+        expect(content).toContain('1500'); // Total attendees
+        expect(content).toContain('30'); // Total sessions
       }
     });
 
     it('should include correct number of sessions per attendee', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const content = await readFile(htmlPath, 'utf-8');
 
-      // Count session cards (attendee 1001 has 3 sessions)
+      // Count session cards (attendee 2001 has 10 sessions)
       const sessionMatches = content.match(/session-card/g);
-      expect(sessionMatches?.length).toBe(3);
+      expect(sessionMatches?.length).toBe(10);
     });
 
     it('should include correct number of connections per attendee', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const content = await readFile(htmlPath, 'utf-8');
 
-      // Count connection cards (attendee 1001 has 3 connections)
+      // Count connection cards (attendee 2001 has 22 connections)
       const connectionMatches = content.match(/connection-card/g);
-      expect(connectionMatches?.length).toBe(3);
+      expect(connectionMatches?.length).toBe(22);
     });
   });
 
@@ -309,7 +309,7 @@ describe('End-to-End Integration Tests', () => {
     });
 
     it('should include viewport meta tag for responsive design', async () => {
-      const htmlPath = join(TEST_DIST_DIR, 'attendees', '1001', 'index.html');
+      const htmlPath = join(TEST_DIST_DIR, 'attendees', '2001', 'index.html');
       const content = await readFile(htmlPath, 'utf-8');
 
       expect(content).toContain('width=device-width');

@@ -1,0 +1,267 @@
+{
+  "id": "3003",
+  "firstName": "Carlos",
+  "lastName": "Rodriguez",
+  "email": "carlos.rodriguez@ecommerceplatform.com",
+  "company": "E-Commerce Platform",
+  "title": "DevOps Team Lead",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "CON301",
+      "title": "Amazon EKS: Production-Grade Kubernetes",
+      "description": "Deploy and manage production Kubernetes workloads on Amazon EKS. Explore cluster autoscaling, security best practices, observability, and cost optimization techniques.",
+      "speakers": ["Aisha Okafor, Container Specialist, AWS"],
+      "dateTime": "2025-12-02T14:00:00Z",
+      "durationMinutes": 75,
+      "track": "Containers"
+    },
+    {
+      "id": "CON302",
+      "title": "Amazon ECS and AWS Fargate: Serverless Containers",
+      "description": "Run containerized applications without managing servers using Amazon ECS and AWS Fargate. Learn task definitions, service discovery, load balancing, and auto-scaling patterns.",
+      "speakers": ["Marcus Thompson, Container Architect, AWS"],
+      "dateTime": "2025-12-02T16:30:00Z",
+      "durationMinutes": 60,
+      "track": "Containers"
+    },
+    {
+      "id": "SVS301",
+      "title": "Building Event-Driven Architectures with AWS Lambda",
+      "description": "Design scalable event-driven systems using AWS Lambda. Explore event sources, asynchronous patterns, error handling, and integration with EventBridge and SQS.",
+      "speakers": ["Rachel Kim, Serverless Solutions Architect, AWS"],
+      "dateTime": "2025-12-03T10:00:00Z",
+      "durationMinutes": 75,
+      "track": "Serverless"
+    },
+    {
+      "id": "DOP301",
+      "title": "AWS CodePipeline: CI/CD at Scale",
+      "description": "Build automated deployment pipelines with AWS CodePipeline. Learn multi-stage workflows, approval gates, cross-region deployments, and integration with third-party tools.",
+      "speakers": ["Jason Walker, DevOps Specialist, AWS", "Linda Chen, CI/CD Architect, AWS"],
+      "dateTime": "2025-12-03T13:30:00Z",
+      "durationMinutes": 90,
+      "track": "DevOps"
+    },
+    {
+      "id": "DOP302",
+      "title": "Infrastructure as Code with AWS CDK",
+      "description": "Define cloud infrastructure using familiar programming languages with AWS Cloud Development Kit. Explore constructs, stacks, cross-stack references, and testing strategies.",
+      "speakers": ["Sophia Martinez, Developer Advocate, AWS"],
+      "dateTime": "2025-12-03T16:00:00Z",
+      "durationMinutes": 60,
+      "track": "DevOps"
+    },
+    {
+      "id": "CON303",
+      "title": "Container Security Best Practices on AWS",
+      "description": "Secure containerized workloads on EKS and ECS. Learn image scanning, runtime security, network policies, secrets management, and compliance monitoring.",
+      "speakers": ["David Park, Container Security Lead, AWS"],
+      "dateTime": "2025-12-04T09:00:00Z",
+      "durationMinutes": 60,
+      "track": "Containers"
+    },
+    {
+      "id": "OBS201",
+      "title": "Observability with Amazon CloudWatch and X-Ray",
+      "description": "Gain deep insights into application performance using CloudWatch and X-Ray. Explore metrics, logs, traces, dashboards, and automated remediation with CloudWatch Alarms.",
+      "speakers": ["Anna Petrova, Observability Specialist, AWS"],
+      "dateTime": "2025-12-04T11:30:00Z",
+      "durationMinutes": 60,
+      "track": "Observability"
+    },
+    {
+      "id": "SVS201",
+      "title": "AWS Lambda: Performance Optimization Techniques",
+      "description": "Maximize Lambda function performance and minimize costs. Explore cold start reduction, memory optimization, concurrency management, and execution environment best practices.",
+      "speakers": ["Thomas Anderson, Serverless Specialist, AWS"],
+      "dateTime": "2025-12-03T15:30:00Z",
+      "durationMinutes": 60,
+      "track": "Serverless"
+    },
+    {
+      "id": "DOP303",
+      "title": "GitOps and Continuous Deployment with AWS",
+      "description": "Implement GitOps workflows for declarative infrastructure and application deployment. Learn Flux, ArgoCD integration with EKS, and automated drift detection.",
+      "speakers": ["Michael Santos, DevOps Architect, AWS"],
+      "dateTime": "2025-12-04T14:00:00Z",
+      "durationMinutes": 75,
+      "track": "DevOps"
+    },
+    {
+      "id": "CON304",
+      "title": "Microservices on EKS: Design Patterns",
+      "description": "Build resilient microservices architectures on Amazon EKS. Explore service mesh patterns, inter-service communication, distributed tracing, and failure isolation.",
+      "speakers": ["Elena Volkov, Principal Solutions Architect, AWS"],
+      "dateTime": "2025-12-05T10:00:00Z",
+      "durationMinutes": 90,
+      "track": "Containers"
+    },
+    {
+      "id": "DOP304",
+      "title": "Blue/Green and Canary Deployments on AWS",
+      "description": "Implement zero-downtime deployment strategies using blue/green and canary patterns. Learn traffic shifting, automated rollbacks, and feature flag integration.",
+      "speakers": ["Kevin Huang, Deployment Specialist, AWS"],
+      "dateTime": "2025-12-05T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "DevOps"
+    },
+    {
+      "id": "CMP303",
+      "title": "Auto Scaling for Modern Applications",
+      "description": "Design intelligent auto-scaling strategies for containers and serverless workloads. Explore target tracking, step scaling, scheduled scaling, and predictive scaling with ML.",
+      "speakers": ["Patricia Lee, Compute Optimization Lead, AWS"],
+      "dateTime": "2025-12-05T15:30:00Z",
+      "durationMinutes": 60,
+      "track": "Compute"
+    },
+    {
+      "id": "KEY01",
+      "title": "AWS CEO Keynote: The Future of Cloud Computing",
+      "description": "Join AWS CEO for the flagship keynote unveiling the latest innovations in cloud computing, AI/ML, and infrastructure. Discover new services, customer success stories, and the future roadmap.",
+      "speakers": ["Adam Selipsky, CEO, Amazon Web Services"],
+      "dateTime": "2025-12-02T08:00:00Z",
+      "durationMinutes": 120,
+      "track": "Keynote"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Aisha Okafor",
+      "title": "Container Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/aishaokafor-aws"
+    },
+    {
+      "name": "Marcus Thompson",
+      "title": "Container Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Rachel Kim",
+      "title": "Serverless Solutions Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/rachelkim-aws"
+    },
+    {
+      "name": "Jason Walker",
+      "title": "DevOps Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Linda Chen",
+      "title": "CI/CD Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/lindachen-aws-cicd"
+    },
+    {
+      "name": "Sophia Martinez",
+      "title": "Developer Advocate",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "David Park",
+      "title": "Container Security Lead",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/davidpark-aws-security"
+    },
+    {
+      "name": "Anna Petrova",
+      "title": "Observability Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Thomas Anderson",
+      "title": "Serverless Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Michael Santos",
+      "title": "DevOps Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/michaelsantos-aws"
+    },
+    {
+      "name": "Elena Volkov",
+      "title": "Principal Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Kevin Huang",
+      "title": "Deployment Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/kevinhuang-aws"
+    },
+    {
+      "name": "Patricia Lee",
+      "title": "Compute Optimization Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Emily Zhang",
+      "title": "DevOps Lead",
+      "company": "Deloitte Digital"
+    },
+    {
+      "name": "Marcus Johnson",
+      "title": "Solutions Engineer",
+      "company": "Datadog",
+      "linkedIn": "https://linkedin.com/in/marcusjohnson-datadog"
+    },
+    {
+      "name": "Tom Stevens",
+      "title": "VP of Engineering",
+      "company": "E-Commerce Platform",
+      "linkedIn": "https://linkedin.com/in/tomstevens-ecommerce"
+    },
+    {
+      "name": "Sarah Williams",
+      "title": "Platform Engineer",
+      "company": "Retail Tech Solutions"
+    },
+    {
+      "name": "Ahmed Hassan",
+      "title": "Sr. Cloud Engineer",
+      "company": "Financial Services Corp"
+    },
+    {
+      "name": "Julia Novak",
+      "title": "Site Reliability Engineer",
+      "company": "Streaming Media Inc",
+      "linkedIn": "https://linkedin.com/in/julianovak-sre"
+    },
+    {
+      "name": "Diego Fernandez",
+      "title": "Infrastructure Lead",
+      "company": "Global Logistics Corp"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 13,
+    "connectionsMade": 20,
+    "hoursAttended": 19.5,
+    "tracksExplored": 5,
+    "topAchievement": "Container Expert"
+  },
+  "callsToAction": [
+    {
+      "text": "Explore AWS Training & Certification",
+      "url": "https://aws.amazon.com/training/?ref=reinvent2025-3003",
+      "type": "primary",
+      "trackingId": "cta-aws-training"
+    },
+    {
+      "text": "Join AWS Partner Network",
+      "url": "https://aws.amazon.com/partners/?ref=reinvent2025-3003",
+      "type": "secondary",
+      "trackingId": "cta-apn"
+    },
+    {
+      "text": "Save the Date: AWS re:Invent 2026",
+      "url": "https://reinvent.awsevents.com/2026?ref=reinvent2025-3003",
+      "type": "tertiary",
+      "trackingId": "cta-reinvent2026"
+    }
+  ],
+  "registeredAt": "2025-09-15T10:45:00Z"
+}

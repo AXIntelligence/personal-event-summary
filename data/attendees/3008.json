@@ -1,0 +1,179 @@
+{
+  "id": "3008",
+  "firstName": "David",
+  "lastName": "Kim",
+  "email": "david.kim@globalinsurance.com",
+  "company": "Global Insurance Company",
+  "title": "VP of Engineering",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "KEY01",
+      "title": "AWS CEO Keynote: The Future of Cloud Computing",
+      "description": "Join AWS CEO for the flagship keynote unveiling the latest innovations in cloud computing, AI/ML, and infrastructure. Discover new services, customer success stories, and the future roadmap.",
+      "speakers": ["Adam Selipsky, CEO, Amazon Web Services"],
+      "dateTime": "2025-12-02T08:00:00Z",
+      "durationMinutes": 120,
+      "track": "Keynote"
+    },
+    {
+      "id": "ARC301",
+      "title": "Multi-Region Active-Active Architectures",
+      "description": "Design globally resilient applications with active-active multi-region architectures. Learn data replication strategies, traffic routing patterns, and disaster recovery best practices.",
+      "speakers": ["Michael Rodriguez, Solutions Architect, AWS"],
+      "dateTime": "2025-12-01T13:30:00Z",
+      "durationMinutes": 75,
+      "track": "Architecture"
+    },
+    {
+      "id": "SEC301",
+      "title": "Zero Trust Security on AWS",
+      "description": "Implement zero trust security models using AWS services. Explore identity verification, least privilege access, micro-segmentation, and continuous security monitoring strategies.",
+      "speakers": ["Jennifer Lee, Security Architect, AWS", "David Kim, Sr. Security Engineer, AWS"],
+      "dateTime": "2025-12-02T09:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "ARC302",
+      "title": "Well-Architected Framework: Best Practices",
+      "description": "Apply the AWS Well-Architected Framework to your applications. Review operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability pillars.",
+      "speakers": ["Lisa Martinez, Principal Solutions Architect, AWS"],
+      "dateTime": "2025-12-03T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "Architecture"
+    },
+    {
+      "id": "COP101",
+      "title": "Cost Optimization: FinOps Best Practices",
+      "description": "Implement FinOps practices to manage cloud costs effectively. Learn tagging strategies, rightsizing recommendations, Reserved Instance planning, and cost allocation techniques.",
+      "speakers": ["Amanda Foster, FinOps Lead, AWS", "Kevin O'Brien, Sr. Cost Analyst, AWS"],
+      "dateTime": "2025-12-04T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Cost Optimization"
+    },
+    {
+      "id": "SEC302",
+      "title": "AWS IAM: Advanced Access Control Patterns",
+      "description": "Master AWS Identity and Access Management with advanced patterns. Explore permission boundaries, service control policies, cross-account access, and least privilege design.",
+      "speakers": ["Patricia Moore, Identity Specialist, AWS"],
+      "dateTime": "2025-12-04T11:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "ARC303",
+      "title": "Disaster Recovery Strategies on AWS",
+      "description": "Design comprehensive disaster recovery solutions on AWS. Compare backup/restore, pilot light, warm standby, and multi-site active/active DR strategies.",
+      "speakers": ["Daniel Garcia, Resilience Architect, AWS"],
+      "dateTime": "2025-12-05T10:00:00Z",
+      "durationMinutes": 75,
+      "track": "Architecture"
+    },
+    {
+      "id": "DAT401",
+      "title": "Amazon Aurora: Global Database at Scale",
+      "description": "Build globally distributed databases with Amazon Aurora. Learn about Aurora Global Database, read replicas, failover strategies, and performance tuning for multi-region applications.",
+      "speakers": ["Carlos Mendez, Database Architect, AWS"],
+      "dateTime": "2025-12-03T10:30:00Z",
+      "durationMinutes": 60,
+      "track": "Database"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Adam Selipsky",
+      "title": "CEO",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/adamselipsky"
+    },
+    {
+      "name": "Michael Rodriguez",
+      "title": "Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Jennifer Lee",
+      "title": "Security Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/jenniferlee-aws-security"
+    },
+    {
+      "name": "Lisa Martinez",
+      "title": "Principal Solutions Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/lisamartinez-aws"
+    },
+    {
+      "name": "Amanda Foster",
+      "title": "FinOps Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Kevin O'Brien",
+      "title": "Sr. Cost Analyst",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/kevinobrien-aws"
+    },
+    {
+      "name": "Patricia Moore",
+      "title": "Identity Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Daniel Garcia",
+      "title": "Resilience Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/danielgarcia-aws"
+    },
+    {
+      "name": "Carlos Mendez",
+      "title": "Database Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Tom Stevens",
+      "title": "VP of Engineering",
+      "company": "E-Commerce Platform",
+      "linkedIn": "https://linkedin.com/in/tomstevens-ecommerce"
+    },
+    {
+      "name": "Nina Kowalski",
+      "title": "Cloud Practice Lead",
+      "company": "Slalom Consulting"
+    },
+    {
+      "name": "Chris Baker",
+      "title": "Principal Architect",
+      "company": "Global Retail Solutions"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 8,
+    "connectionsMade": 12,
+    "hoursAttended": 12,
+    "tracksExplored": 3,
+    "topAchievement": "Digital Transformation Leader"
+  },
+  "callsToAction": [
+    {
+      "text": "Explore AWS Training & Certification",
+      "url": "https://aws.amazon.com/training/?ref=reinvent2025-3008",
+      "type": "primary",
+      "trackingId": "cta-aws-training"
+    },
+    {
+      "text": "Join AWS Partner Network",
+      "url": "https://aws.amazon.com/partners/?ref=reinvent2025-3008",
+      "type": "secondary",
+      "trackingId": "cta-apn"
+    },
+    {
+      "text": "Save the Date: AWS re:Invent 2026",
+      "url": "https://reinvent.awsevents.com/2026?ref=reinvent2025-3008",
+      "type": "tertiary",
+      "trackingId": "cta-reinvent2026"
+    }
+  ],
+  "registeredAt": "2025-09-15T10:45:00Z"
+}

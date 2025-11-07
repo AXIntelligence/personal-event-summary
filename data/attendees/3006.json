@@ -1,0 +1,265 @@
+{
+  "id": "3006",
+  "firstName": "Michael",
+  "lastName": "Brown",
+  "email": "michael.brown@saasventures.io",
+  "company": "SaaS Startup (Seed)",
+  "title": "Founder & CEO",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "COP201",
+      "title": "AWS Activate: Building Cost-Efficient Startups",
+      "description": "Learn how AWS Activate helps startups build efficiently with credits, support, and cost optimization strategies. Discover tools and best practices for managing cloud spend from day one.",
+      "speakers": ["Rachel Green, Startup Programs Lead, AWS", "Jake Morrison, Solutions Architect, AWS Startups"],
+      "dateTime": "2025-12-01T10:00:00Z",
+      "durationMinutes": 60,
+      "track": "Cost Optimization"
+    },
+    {
+      "id": "SVS301",
+      "title": "Serverless at Scale: From Prototype to Production",
+      "description": "Scale serverless applications from MVP to millions of users. Learn Lambda optimization, API Gateway patterns, DynamoDB scaling, and cost management for high-growth startups.",
+      "speakers": ["Elena Rodriguez, Serverless SA, AWS", "Tim Chen, Engineering Lead, Serverless Startup"],
+      "dateTime": "2025-12-01T13:30:00Z",
+      "durationMinutes": 75,
+      "track": "Serverless"
+    },
+    {
+      "id": "ARC201",
+      "title": "Startup Architecture: Build for Scale, Pay for Today",
+      "description": "Design architectures that scale to millions while keeping costs minimal. Learn about event-driven patterns, managed services, and avoiding premature optimization.",
+      "speakers": ["Sarah Park, Principal Architect, AWS Startups"],
+      "dateTime": "2025-12-02T09:00:00Z",
+      "durationMinutes": 60,
+      "track": "Architecture"
+    },
+    {
+      "id": "COP202",
+      "title": "FinOps for Startups: Cost Visibility and Control",
+      "description": "Implement FinOps practices without a dedicated team. Learn tagging strategies, budget alerts, cost allocation, and rightsizing for lean startups.",
+      "speakers": ["Michael Torres, FinOps Specialist, AWS", "Lisa Chen, CFO, TechScale Inc"],
+      "dateTime": "2025-12-02T14:00:00Z",
+      "durationMinutes": 60,
+      "track": "Cost Optimization"
+    },
+    {
+      "id": "SVS302",
+      "title": "AWS Lambda: Cold Start Optimization for Production",
+      "description": "Eliminate cold start pain points in production serverless applications. Explore provisioned concurrency, function optimization, and cost-effective warm-up strategies.",
+      "speakers": ["David Wong, Serverless Specialist, AWS"],
+      "dateTime": "2025-12-03T10:30:00Z",
+      "durationMinutes": 60,
+      "track": "Serverless"
+    },
+    {
+      "id": "ARC202",
+      "title": "Multi-Tenant SaaS Architecture on AWS",
+      "description": "Build secure, scalable multi-tenant SaaS platforms. Learn tenant isolation, data partitioning, metering, and architecture patterns for B2B applications.",
+      "speakers": ["Jennifer Lee, SaaS Architect, AWS", "Tom Harris, CTO, CloudSaaS"],
+      "dateTime": "2025-12-03T13:00:00Z",
+      "durationMinutes": 75,
+      "track": "Architecture"
+    },
+    {
+      "id": "COP203",
+      "title": "Spot Instances and Savings Plans: Startup Edition",
+      "description": "Reduce compute costs by 70%+ with Spot Instances and Savings Plans. Learn interruption handling, capacity optimization, and commitment strategies for startups.",
+      "speakers": ["Amanda Foster, Cost Optimization Lead, AWS"],
+      "dateTime": "2025-12-04T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Cost Optimization"
+    },
+    {
+      "id": "SVS303",
+      "title": "Event-Driven Architectures with EventBridge and SQS",
+      "description": "Build resilient, decoupled systems with event-driven patterns. Learn EventBridge routing, SQS for reliability, and dead letter queue strategies.",
+      "speakers": ["Carlos Martinez, Solutions Architect, AWS"],
+      "dateTime": "2025-12-04T14:30:00Z",
+      "durationMinutes": 60,
+      "track": "Serverless"
+    },
+    {
+      "id": "ARC203",
+      "title": "API Design and Management at Scale",
+      "description": "Design robust APIs for high-growth products. Explore API Gateway, versioning strategies, rate limiting, authentication, and developer experience.",
+      "speakers": ["Nina Patel, API Architect, AWS"],
+      "dateTime": "2025-12-05T10:00:00Z",
+      "durationMinutes": 60,
+      "track": "Architecture"
+    },
+    {
+      "id": "COP204",
+      "title": "Reserved Instances and Capacity Planning for Growth",
+      "description": "Balance flexibility and savings with Reserved Instance strategies. Learn capacity forecasting, RI portfolio management, and when to commit for startups.",
+      "speakers": ["Kevin O'Brien, Sr. Cost Analyst, AWS"],
+      "dateTime": "2025-12-05T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "Cost Optimization"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Rachel Green",
+      "title": "Startup Programs Lead",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/rachelgreen-aws-startups"
+    },
+    {
+      "name": "Jake Morrison",
+      "title": "Solutions Architect",
+      "company": "AWS Startups"
+    },
+    {
+      "name": "Elena Rodriguez",
+      "title": "Serverless SA",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/elenarodriguez-aws"
+    },
+    {
+      "name": "Tim Chen",
+      "title": "Engineering Lead",
+      "company": "Serverless Startup",
+      "linkedIn": "https://linkedin.com/in/timchen-serverless"
+    },
+    {
+      "name": "Sarah Park",
+      "title": "Principal Architect",
+      "company": "AWS Startups"
+    },
+    {
+      "name": "Michael Torres",
+      "title": "FinOps Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Lisa Chen",
+      "title": "CFO",
+      "company": "TechScale Inc",
+      "linkedIn": "https://linkedin.com/in/lisachen-techscale"
+    },
+    {
+      "name": "David Wong",
+      "title": "Serverless Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/davidwong-aws"
+    },
+    {
+      "name": "Jennifer Lee",
+      "title": "SaaS Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Tom Harris",
+      "title": "CTO",
+      "company": "CloudSaaS",
+      "linkedIn": "https://linkedin.com/in/tomharris-cloudsaas"
+    },
+    {
+      "name": "Amanda Foster",
+      "title": "Cost Optimization Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Carlos Martinez",
+      "title": "Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Nina Patel",
+      "title": "API Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/ninapatel-aws"
+    },
+    {
+      "name": "Kevin O'Brien",
+      "title": "Sr. Cost Analyst",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/kevinobrien-aws"
+    },
+    {
+      "name": "Emma Wilson",
+      "title": "Partner",
+      "company": "Sequoia Capital",
+      "linkedIn": "https://linkedin.com/in/emmawilson-sequoia"
+    },
+    {
+      "name": "Ryan Mitchell",
+      "title": "Co-Founder & CTO",
+      "company": "DevTools Startup",
+      "linkedIn": "https://linkedin.com/in/ryanmitchell-devtools"
+    },
+    {
+      "name": "Sophia Turner",
+      "title": "VP of Engineering",
+      "company": "FinTech Scale-Up"
+    },
+    {
+      "name": "Alex Kim",
+      "title": "Founder",
+      "company": "AI Analytics Startup",
+      "linkedIn": "https://linkedin.com/in/alexkim-ai"
+    },
+    {
+      "name": "Maya Patel",
+      "title": "Head of Product",
+      "company": "Data Platform Startup"
+    },
+    {
+      "name": "James Rodriguez",
+      "title": "Technical Co-Founder",
+      "company": "E-Commerce SaaS",
+      "linkedIn": "https://linkedin.com/in/jamesrodriguez-ecommerce"
+    },
+    {
+      "name": "Olivia Chen",
+      "title": "Director of Engineering",
+      "company": "Collaboration Tools Inc"
+    },
+    {
+      "name": "Marcus Johnson",
+      "title": "Startup Advisor",
+      "company": "Y Combinator",
+      "linkedIn": "https://linkedin.com/in/marcusjohnson-yc"
+    },
+    {
+      "name": "Hannah Lee",
+      "title": "CEO",
+      "company": "Marketing Tech Startup",
+      "linkedIn": "https://linkedin.com/in/hannahlee-martech"
+    },
+    {
+      "name": "Daniel Foster",
+      "title": "Principal Engineer",
+      "company": "Infrastructure Startup"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 10,
+    "connectionsMade": 24,
+    "hoursAttended": 15,
+    "tracksExplored": 4,
+    "topAchievement": "Scaling Champion"
+  },
+  "callsToAction": [
+    {
+      "text": "Join AWS Activate for Startups",
+      "url": "https://aws.amazon.com/activate/?ref=reinvent2025-3006",
+      "type": "primary",
+      "trackingId": "cta-aws-activate"
+    },
+    {
+      "text": "Explore AWS Well-Architected Framework",
+      "url": "https://aws.amazon.com/architecture/well-architected/?ref=reinvent2025-3006",
+      "type": "secondary",
+      "trackingId": "cta-well-architected"
+    },
+    {
+      "text": "Save the Date: AWS re:Invent 2026",
+      "url": "https://reinvent.awsevents.com/2026?ref=reinvent2025-3006",
+      "type": "tertiary",
+      "trackingId": "cta-reinvent2026"
+    }
+  ],
+  "registeredAt": "2025-10-02T09:15:00Z"
+}

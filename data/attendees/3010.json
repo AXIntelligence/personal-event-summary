@@ -1,0 +1,257 @@
+{
+  "id": "3010",
+  "firstName": "Robert",
+  "lastName": "Taylor",
+  "email": "robert.taylor@financialservices.com",
+  "company": "Financial Services",
+  "title": "Principal Architect",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "ARC301",
+      "title": "Multi-Region Active-Active Architectures",
+      "description": "Design globally resilient applications with active-active multi-region architectures. Learn data replication strategies, traffic routing patterns, and disaster recovery best practices.",
+      "speakers": ["Michael Rodriguez, Solutions Architect, AWS"],
+      "dateTime": "2025-12-01T13:30:00Z",
+      "durationMinutes": 75,
+      "track": "Architecture"
+    },
+    {
+      "id": "SEC301",
+      "title": "Zero Trust Security on AWS",
+      "description": "Implement zero trust security models using AWS services. Explore identity verification, least privilege access, micro-segmentation, and continuous security monitoring strategies.",
+      "speakers": ["Jennifer Lee, Security Architect, AWS", "David Kim, Sr. Security Engineer, AWS"],
+      "dateTime": "2025-12-02T09:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "NET201",
+      "title": "VPC Design Patterns for Scalable Architectures",
+      "description": "Master VPC networking fundamentals and advanced design patterns. Learn subnet sizing, routing tables, NAT gateway strategies, and multi-account VPC architectures.",
+      "speakers": ["Robert Taylor, Network Architect, AWS"],
+      "dateTime": "2025-12-02T11:15:00Z",
+      "durationMinutes": 60,
+      "track": "Networking"
+    },
+    {
+      "id": "FSI201",
+      "title": "Financial Services Cloud Compliance: PCI DSS and SOC 2",
+      "description": "Navigate financial services regulatory requirements on AWS. Learn PCI DSS compliance strategies, SOC 2 controls, audit logging, and evidence collection for regulated workloads.",
+      "speakers": ["Victoria Chen, FSI Compliance Lead, AWS", "Mark Williams, Sr. Security Consultant, AWS"],
+      "dateTime": "2025-12-02T14:30:00Z",
+      "durationMinutes": 90,
+      "track": "Financial Services"
+    },
+    {
+      "id": "SEC302",
+      "title": "AWS IAM: Advanced Access Control Patterns",
+      "description": "Master AWS Identity and Access Management with advanced patterns. Explore permission boundaries, service control policies, cross-account access, and least privilege design.",
+      "speakers": ["Patricia Moore, Identity Specialist, AWS"],
+      "dateTime": "2025-12-04T11:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "NET202",
+      "title": "AWS Transit Gateway: Simplified Network Management",
+      "description": "Centralize network connectivity with AWS Transit Gateway. Learn hub-and-spoke architectures, route table design, and integration with AWS Direct Connect and VPN.",
+      "speakers": ["James Chen, Network Solutions Architect, AWS"],
+      "dateTime": "2025-12-04T14:30:00Z",
+      "durationMinutes": 60,
+      "track": "Networking"
+    },
+    {
+      "id": "ARC303",
+      "title": "Disaster Recovery Strategies on AWS",
+      "description": "Design comprehensive disaster recovery solutions on AWS. Compare backup/restore, pilot light, warm standby, and multi-site active/active DR strategies.",
+      "speakers": ["Daniel Garcia, Resilience Architect, AWS"],
+      "dateTime": "2025-12-05T10:00:00Z",
+      "durationMinutes": 75,
+      "track": "Architecture"
+    },
+    {
+      "id": "SEC401",
+      "title": "AWS GuardDuty and Security Hub: Threat Detection at Scale",
+      "description": "Build comprehensive threat detection using AWS GuardDuty and Security Hub. Explore anomaly detection, automated remediation, and security findings aggregation across accounts.",
+      "speakers": ["Elena Rodriguez, Security Specialist, AWS"],
+      "dateTime": "2025-12-03T10:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "NET301",
+      "title": "AWS PrivateLink: Secure Private Connectivity",
+      "description": "Implement private connectivity between VPCs and AWS services using AWS PrivateLink. Learn endpoint configuration, security best practices, and cross-account service access.",
+      "speakers": ["Omar Hassan, Network Architect, AWS"],
+      "dateTime": "2025-12-03T14:00:00Z",
+      "durationMinutes": 60,
+      "track": "Networking"
+    },
+    {
+      "id": "ARC302",
+      "title": "Well-Architected Framework: Best Practices",
+      "description": "Apply the AWS Well-Architected Framework to your applications. Review operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability pillars.",
+      "speakers": ["Lisa Martinez, Principal Solutions Architect, AWS"],
+      "dateTime": "2025-12-03T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "Architecture"
+    },
+    {
+      "id": "FSI301",
+      "title": "Real-Time Fraud Detection with AWS Machine Learning",
+      "description": "Build real-time fraud detection systems using Amazon SageMaker and Amazon Fraud Detector. Explore feature engineering, model training, and low-latency inference for financial transactions.",
+      "speakers": ["Dr. Anita Patel, ML Specialist, AWS", "Jason Wu, FSI Solutions Architect, AWS"],
+      "dateTime": "2025-12-04T09:00:00Z",
+      "durationMinutes": 75,
+      "track": "Financial Services"
+    },
+    {
+      "id": "SEC201",
+      "title": "AWS KMS and Secrets Manager: Encryption Key Management",
+      "description": "Implement comprehensive encryption strategies with AWS Key Management Service and Secrets Manager. Learn key rotation, envelope encryption, and secure secrets management.",
+      "speakers": ["Rachel Thompson, Cryptography Specialist, AWS"],
+      "dateTime": "2025-12-04T16:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "ARC401",
+      "title": "Event-Driven Architectures with Amazon EventBridge",
+      "description": "Design scalable event-driven architectures using Amazon EventBridge. Explore event routing patterns, schema registries, cross-account event delivery, and integration with SaaS providers.",
+      "speakers": ["Carlos Mendez, Sr. Solutions Architect, AWS"],
+      "dateTime": "2025-12-05T14:30:00Z",
+      "durationMinutes": 90,
+      "track": "Architecture"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Jennifer Lee",
+      "title": "Security Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/jenniferlee-aws-security"
+    },
+    {
+      "name": "Michael Rodriguez",
+      "title": "Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Daniel Garcia",
+      "title": "Resilience Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/danielgarcia-aws"
+    },
+    {
+      "name": "Patricia Moore",
+      "title": "Identity Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "James Chen",
+      "title": "Network Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Lisa Martinez",
+      "title": "Principal Solutions Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/lisamartinez-aws"
+    },
+    {
+      "name": "Victoria Chen",
+      "title": "FSI Compliance Lead",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/victoriachen-aws-fsi"
+    },
+    {
+      "name": "Jason Wu",
+      "title": "FSI Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Elena Rodriguez",
+      "title": "Security Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Rachel Thompson",
+      "title": "Cryptography Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/rachelthompson-aws"
+    },
+    {
+      "name": "Sarah Mitchell",
+      "title": "Chief Security Officer",
+      "company": "JP Morgan Chase",
+      "linkedIn": "https://linkedin.com/in/sarahmitchell-jpmc"
+    },
+    {
+      "name": "David Park",
+      "title": "VP of Infrastructure",
+      "company": "Goldman Sachs"
+    },
+    {
+      "name": "Maria Santos",
+      "title": "Enterprise Architect",
+      "company": "Wells Fargo",
+      "linkedIn": "https://linkedin.com/in/mariasantos-wellsfargo"
+    },
+    {
+      "name": "Kevin O'Connor",
+      "title": "Cloud Security Lead",
+      "company": "Bank of America"
+    },
+    {
+      "name": "Aisha Johnson",
+      "title": "Solutions Architect",
+      "company": "Capital One",
+      "linkedIn": "https://linkedin.com/in/aishajohnson-capitalone"
+    },
+    {
+      "name": "Thomas Chen",
+      "title": "Principal Engineer",
+      "company": "Fidelity Investments"
+    },
+    {
+      "name": "Laura Henderson",
+      "title": "Director of Cloud Engineering",
+      "company": "Charles Schwab",
+      "linkedIn": "https://linkedin.com/in/laurahenderson-schwab"
+    },
+    {
+      "name": "Marcus Williams",
+      "title": "Security Architect",
+      "company": "Morgan Stanley"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 13,
+    "connectionsMade": 18,
+    "hoursAttended": 19.5,
+    "tracksExplored": 5,
+    "topAchievement": "FinServ Architect"
+  },
+  "callsToAction": [
+    {
+      "text": "Explore AWS Financial Services Solutions",
+      "url": "https://aws.amazon.com/financial-services/?ref=reinvent2025-3010",
+      "type": "primary",
+      "trackingId": "cta-aws-fsi"
+    },
+    {
+      "text": "Download Security Best Practices Guide",
+      "url": "https://aws.amazon.com/architecture/security-identity-compliance/?ref=reinvent2025-3010",
+      "type": "secondary",
+      "trackingId": "cta-security-guide"
+    },
+    {
+      "text": "Save the Date: AWS re:Invent 2026",
+      "url": "https://reinvent.awsevents.com/2026?ref=reinvent2025-3010",
+      "type": "tertiary",
+      "trackingId": "cta-reinvent2026"
+    }
+  ],
+  "registeredAt": "2025-09-15T10:45:00Z"
+}

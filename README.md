@@ -25,16 +25,17 @@ A static site generator for creating personalized event summary pages for attend
 
 ## 🚀 Live Demo
 
-### Original Event Examples (TechConf 2025)
-- [Attendee 1001 - Sarah Chen](https://USERNAME.github.io/personal-event-summary/attendees/1001/)
-- [Attendee 1002 - Michael O'Brien](https://USERNAME.github.io/personal-event-summary/attendees/1002/)
-
-### B2B Event Examples (Event Tech Live 2025)
+### Event Tech Live 2025 (London)
 - [Attendee 2001 - Aisha Patel (Tech Scout)](https://USERNAME.github.io/personal-event-summary/attendees/2001/) - 10 sessions, 22 connections
 - [Attendee 2009 - Olivia Williams (Hybrid Producer)](https://USERNAME.github.io/personal-event-summary/attendees/2009/) - 10 sessions, 19 connections
 - [Attendee 2012 - Marcus Anderson (Networking Maven)](https://USERNAME.github.io/personal-event-summary/attendees/2012/) - 5 sessions, 28 connections
 
-*B2B examples include real company names, products explored, booth visits, and sponsor interactions*
+### AWS re:Invent 2025 (Las Vegas)
+- [Attendee 3001 - Priya Sharma (Cloud Architect)](https://USERNAME.github.io/personal-event-summary/attendees/3001/) - 11 sessions, 15 connections
+- [Attendee 3006 - Emma Thompson (Solutions Architect)](https://USERNAME.github.io/personal-event-summary/attendees/3006/) - 9 sessions, 14 connections
+- [Attendee 3012 - Olivia Martinez (Startup Founder)](https://USERNAME.github.io/personal-event-summary/attendees/3012/) - 6 sessions, 25 connections
+
+*Examples include real company names, products explored, booth visits, and sponsor interactions*
 
 ## 📋 Requirements
 
@@ -65,13 +66,14 @@ npm run generate
 personal-event-summary/
 ├── data/                      # Event and attendee data
 │   ├── events/
-│   │   ├── event-2025.json            # Original event config
-│   │   └── event-tech-live-2025.json  # Event Tech Live config
+│   │   ├── event-tech-live-2025.json  # Event Tech Live config
+│   │   └── aws-reinvent-2025.json     # AWS re:Invent config
 │   ├── sessions/
-│   │   └── event-tech-live-2025-sessions.json  # 30 B2B sessions
+│   │   ├── event-tech-live-2025-sessions.json  # 30 B2B sessions
+│   │   └── aws-reinvent-2025-sessions.json     # 30 AWS sessions
 │   └── attendees/
-│       ├── 1001-1012.json    # Original attendees (12)
-│       └── 2001-2012.json    # Event Tech Live attendees (12)
+│       ├── 2001-2012.json    # Event Tech Live attendees (12)
+│       └── 3001-3012.json    # AWS re:Invent attendees (12)
 ├── src/                       # TypeScript source code
 │   ├── types/
 │   │   └── index.ts          # Type definitions + B2B interfaces
@@ -90,9 +92,9 @@ personal-event-summary/
 │   ├── css/
 │   │   └── styles.css        # Responsive styles (14KB)
 │   └── images/
-├── tests/                     # Test suite (105 tests)
-│   ├── unit/                 # Unit tests (52)
-│   ├── integration/          # End-to-end tests (21)
+├── tests/                     # Test suite (139 tests)
+│   ├── unit/                 # Unit tests (70)
+│   ├── integration/          # End-to-end tests (55)
 │   └── validation/           # HTML validation tests (14)
 ├── dist/                      # Generated static site (24 pages)
 ├── analysis/                  # Validation reports
@@ -153,11 +155,13 @@ npm run type-check
 | generate.ts | 88.72% | 59.09% | 100% | 88.72% |
 | types/index.ts | 100% | 93.18% | 100% | 100% |
 
-**Test Suite**: 105 tests passing
+**Test Suite**: 139 tests passing
 - 18 unit tests (types - includes B2B validation)
+- 21 unit tests (cssGenerator - includes style config)
 - 21 unit tests (dataLoader)
 - 31 unit tests (generate)
-- 21 integration tests (end-to-end)
+- 13 integration tests (styleIntegration)
+- 21 integration tests (endToEnd)
 - 14 validation tests (HTML/accessibility)
 
 ## 🎨 Customization
@@ -168,62 +172,62 @@ Create a JSON file in `data/attendees/` following this structure:
 
 ```json
 {
-  "id": "1001",
-  "firstName": "Sarah",
-  "lastName": "Chen",
-  "email": "sarah.chen@example.com",
-  "eventId": "event-2025",
+  "id": "2001",
+  "firstName": "Aisha",
+  "lastName": "Patel",
+  "email": "aisha.patel@example.com",
+  "eventId": "event-tech-live-2025",
   "sessions": [
     {
       "id": "session-01",
-      "title": "Future of AI and Machine Learning",
-      "description": "Exploring cutting-edge developments...",
-      "speakers": ["Dr. Jane Smith", "Prof. Michael Zhang"],
+      "title": "AI-Powered Networking: From Random Encounters to Intentional Connections",
+      "description": "Exploring how AI is revolutionizing event networking...",
+      "speakers": ["Sarah Johnson", "Marcus Williams"],
       "durationMinutes": 60,
-      "track": "Artificial Intelligence"
+      "track": "AI & Innovation"
     }
   ],
   "connections": [
     {
       "name": "Marcus Rodriguez",
       "title": "CTO",
-      "company": "StartupXYZ",
+      "company": "ExpoPlatform",
       "linkedIn": "https://linkedin.com/in/marcusrodriguez"
     }
   ],
   "stats": {
-    "sessionsAttended": 3,
-    "connectionsMade": 3,
-    "hoursAttended": 3.75,
-    "tracksExplored": 3
+    "sessionsAttended": 10,
+    "connectionsMade": 22,
+    "hoursAttended": 8.5,
+    "tracksExplored": 5
   },
   "callsToAction": [
     {
-      "text": "Register for TechConf 2026",
-      "url": "https://techconf2026.example.com",
+      "text": "Save the Date: Event Tech Live 2026",
+      "url": "https://eventtechlive.com/2026",
       "type": "primary",
-      "trackingId": "cta-techconf-2026"
+      "trackingId": "cta-etl-2026"
     }
   ],
 
   // Optional B2B fields (for trade shows, conferences with exhibitors)
   "productsExplored": [
     {
-      "name": "AI Platform Pro",
-      "company": "TechVendor Inc",
-      "category": "Artificial Intelligence"
+      "name": "Erleah AI Networking",
+      "company": "Braindate by Erleah",
+      "category": "AI & Innovation"
     }
   ],
   "boothsVisited": [
     {
-      "company": "TechVendor Inc",
+      "company": "ExpoPlatform",
       "timeSpentMinutes": 25,
-      "productsViewed": ["AI Platform Pro", "Data Analytics Suite"]
+      "productsViewed": ["AI Matchmaking", "Smart Badge System"]
     }
   ],
   "sponsorInteractions": [
     {
-      "sponsor": "TechVendor Inc",
+      "sponsor": "ExpoPlatform",
       "type": "demo_request",
       "timestamp": "2025-11-12T14:30:00Z"
     }
@@ -278,12 +282,16 @@ Supported platforms:
 
 ### Event Data
 
-Edit `data/events/event-2025.json` to configure:
+Edit event config files in `data/events/` to configure:
 - Event name and dates
 - Venue information
 - Total attendee count
 - Total sessions
 - Branding
+
+Examples:
+- `data/events/event-tech-live-2025.json` - Event Tech Live configuration
+- `data/events/aws-reinvent-2025.json` - AWS re:Invent configuration
 
 ### Template Helpers
 
@@ -299,6 +307,7 @@ Available Handlebars helpers:
 - [Development Workflow](CLAUDE.md)
 - [Plan 001: Initial Implementation](plans/001-github-pages-attendee-summary.md) ✅ Completed
 - [Plan 002: Event Tech Live Sample Data](plans/002-event-tech-live-sample-data.md) ✅ Completed
+- [Plan 007: AWS re:Invent Data & TechConf Removal](plans/007-end-to-end-scrape-deploy-pipeline.md) ✅ Completed
 - [Validation Report: Plan 002](analysis/plan-002-validation-report.md)
 
 ## 🧪 Quality Standards
@@ -306,12 +315,13 @@ Available Handlebars helpers:
 This project follows strict quality standards:
 
 - ✅ **Test-Driven Development**: All code written test-first (RED-GREEN-REFACTOR)
-- ✅ **89.93% Test Coverage**: Exceeds 85% target (105 tests passing)
+- ✅ **89.93% Test Coverage**: Exceeds 85% target (139 tests passing)
 - ✅ **W3C Valid HTML5**: Zero validation errors across 24 pages
 - ✅ **Type Safety**: Full TypeScript with strict mode (100% types coverage)
 - ✅ **Accessibility**: WCAG 2.1 AA compliant with semantic HTML
 - ✅ **Performance**: < 1s generation for 24+ pages
 - ✅ **Responsive Design**: Mobile-first with 3 breakpoints
+- ✅ **Multi-Event Support**: Simultaneous Event Tech Live & AWS re:Invent
 - ✅ **Backward Compatibility**: Optional B2B fields don't break existing data
 
 ## 🛣️ Roadmap
@@ -388,6 +398,6 @@ For issues and questions:
 
 ---
 
-**Built with TDD** • **89.93% Test Coverage** • **105 Tests Passing** • **W3C Valid HTML5** • **24 Pages Generated** • **Fully Responsive**
+**Built with TDD** • **89.93% Test Coverage** • **139 Tests Passing** • **W3C Valid HTML5** • **24 Pages Generated** • **Fully Responsive**
 
-Last Updated: 2025-11-06 • Version: 1.1.0 (Plan 002 Completed)
+Last Updated: 2025-11-07 • Version: 1.2.0 (Plan 007 Completed)
