@@ -2,7 +2,7 @@
 
 **Status:** Draft
 **Created:** 2025-11-07
-**Last Updated:** 2025-11-07
+**Last Updated:** 2025-11-07 (Modified: removed scheduled runs)
 **Priority:** 🔴 Critical
 
 ## Overview
@@ -11,31 +11,32 @@ This plan implements automated end-to-end validation (per CLAUDE.md Lesson 16) b
 
 The enhanced pipeline will: (1) scrape event website styles using PlaywrightStyleExtractorTool, (2) validate scraped output against DevTools measurements, (3) generate static pages with event-specific CSS, and (4) deploy to GitHub Pages—all in a single automated workflow. This ensures deployed pages always reflect the latest event branding and validates the complete Python → TypeScript → HTML → Deploy integration chain that has never been fully tested (per exploration report 2025-11-07).
 
-The workflow supports three trigger modes: (1) manual dispatch for on-demand scraping, (2) scheduled runs to keep styles fresh, and (3) push-triggered deploys using cached configs. This balances freshness with API costs and deployment speed.
+The workflow supports two trigger modes: (1) manual dispatch for on-demand scraping when event websites change, and (2) push-triggered deploys using cached configs for fast deployment. This provides explicit control over when scraping occurs (and associated API costs) while maintaining continuous deployment capability.
 
 ## Target Outcomes
 
 ### Primary Outcomes
 
-1. **Automated Style Scraping**: GitHub Actions runs Python scraper against configured event websites, extracting accurate colors, typography, and brand voice
+1. **On-Demand Style Scraping**: GitHub Actions runs Python scraper when manually triggered, extracting accurate colors, typography, and brand voice
 2. **Validated Integration**: Full pipeline validation from scrape → export → CSS generation → HTML generation → deployment with zero manual steps
-3. **Fresh Branding**: Deployed pages automatically reflect latest event website styles without manual intervention
-4. **Cost-Controlled Scraping**: Configurable scraping frequency (manual/scheduled) to manage OpenAI API costs
+3. **Explicit Style Updates**: Deployed pages reflect latest event website styles when user triggers scraping (full control over timing and costs)
+4. **Cost-Controlled Scraping**: Manual-only triggers provide complete control over OpenAI API costs (no unexpected charges)
 5. **Graceful Fallback**: Pipeline continues with cached configs if scraping fails, preventing deployment failures
 6. **DevTools Validation**: Automated verification that scraped colors match actual website measurements (±2 RGB units)
 
 ### Success Criteria
 
-- [ ] GitHub Actions workflow scrapes event websites and generates valid EventStyleConfig JSON
+- [ ] GitHub Actions workflow scrapes event websites when manually triggered and generates valid EventStyleConfig JSON
 - [ ] Scraped configs pass schema validation (colors in #RRGGBB format, all required fields present)
 - [ ] TypeScript CSS generator successfully reads scraped configs and generates CSS custom properties
 - [ ] Generated HTML pages contain event-specific colors (verified via grep for CSS variables)
 - [ ] Workflow completes within GitHub Actions timeout (< 45 minutes)
 - [ ] Failed scraping doesn't block deployment (uses last known good config)
-- [ ] OpenAI API costs ≤ $5/month for weekly scraping schedule
-- [ ] Manual dispatch workflow allows on-demand scraping for specific events
+- [ ] OpenAI API costs only incurred on manual trigger (no unexpected charges)
+- [ ] Manual dispatch workflow allows on-demand scraping for specific events or all events
 - [ ] Validation script confirms scraped colors match DevTools (±2 RGB tolerance)
 - [ ] End-to-end test passes: scrape example.com → generate pages → validate colors
+- [ ] Push-triggered deploys complete in < 5 minutes (no scraping overhead)
 
 ### Validation Strategy
 
@@ -54,7 +55,7 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
   gh run view --log
   ```
 - **Expected Results:** Workflow completes successfully, status badge shows passing, deployment succeeds
-- **Acceptance Threshold:** 100% success rate for manual triggers, >90% for scheduled runs
+- **Acceptance Threshold:** 100% success rate for manual triggers, >95% for push-triggered deploys (no scraping)
 
 **Method 2: Scraped Config Validation**
 - **Tools/Commands:**
@@ -124,10 +125,11 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
 
   # Estimate API costs
   # Log OpenAI API token usage from CrewAI
-  # Weekly: 4 events × 1 scrape/week × $0.10/scrape = $1.60/month
+  # Manual-only: 4 events × ~2 scrapes/month × $0.10/scrape = $0.80/month (estimated)
+  # Actual costs depend on trigger frequency
   ```
-- **Expected Results:** Workflow completes in < 45 minutes, API costs < $5/month
-- **Acceptance Threshold:** All runs within timeout, costs within budget
+- **Expected Results:** Workflow completes in < 45 minutes (with scraping), < 5 minutes (push-only), API costs fully controlled by user
+- **Acceptance Threshold:** All runs within timeout, no unexpected API charges
 
 ---
 
@@ -410,10 +412,6 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
              required: false
              default: false
 
-       # Scheduled weekly scraping (Sundays at 2 AM UTC)
-       schedule:
-         - cron: '0 2 * * 0'
-
        # On push to main (uses cached configs, no scraping)
        push:
          branches: [ main ]
@@ -422,6 +420,7 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
            - 'templates/**'
            - 'static/**'
            - 'data/**'
+           - '!python/**'  # Ignore Python changes to avoid triggering on config updates
 
      permissions:
        contents: write  # For committing scraped configs
@@ -439,8 +438,8 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
        scrape:
          name: Scrape Event Styles
          runs-on: ubuntu-latest
-         # Only run scraping on manual dispatch or schedule (not on push)
-         if: github.event_name != 'push'
+         # Only run scraping on manual dispatch (not on push)
+         if: github.event_name == 'workflow_dispatch'
 
          steps:
          - name: Checkout code
@@ -547,7 +546,11 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
              if [ "${{ needs.scrape.outputs.scrape_status }}" == "failure" ]; then
                echo "⚠️ Scraping failed, using cached configs"
              elif [ "${{ needs.scrape.result }}" == "skipped" ]; then
-               echo "ℹ️ Scraping skipped (push event), using cached configs"
+               if [ "${{ github.event_name }}" == "push" ]; then
+                 echo "ℹ️ Scraping skipped (push event), using cached configs"
+               else
+                 echo "⚠️ Scraping skipped (unexpected), using cached configs"
+               fi
              else
                echo "✓ Scraping succeeded, using fresh configs"
              fi
@@ -869,35 +872,33 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
      ```
    - Validation: Check logs after scraping
 
-4. **Add scraping frequency control**
+4. **Add optional staleness check**
    - File affected: `.github/workflows/scrape-and-deploy.yml`
-   - Changes: Add condition to skip if recently scraped:
+   - Changes: Add optional check to warn if configs are stale (informational only):
      ```yaml
-     - name: Check if scraping needed
-       id: check_scrape
+     - name: Check config staleness (informational)
        run: |
-         # Get last commit that modified style-configs/
-         LAST_SCRAPE=$(git log -1 --format=%ct --before="7 days ago" -- python/style-configs/)
+         # Check last commit that modified style-configs/
+         LAST_SCRAPE=$(git log -1 --format="%ci" -- python/style-configs/)
+         DAYS_AGO=$(( ($(date +%s) - $(date -d "$LAST_SCRAPE" +%s)) / 86400 ))
 
-         if [ -z "$LAST_SCRAPE" ] || [ "${{ github.event.inputs.force_scrape }}" == "true" ]; then
-           echo "scrape_needed=true" >> $GITHUB_OUTPUT
+         echo "Last scraping: $LAST_SCRAPE ($DAYS_AGO days ago)"
+
+         if [ $DAYS_AGO -gt 30 ]; then
+           echo "⚠️ Style configs are >30 days old. Consider running manual scrape."
+           echo "::warning::Style configs last updated $DAYS_AGO days ago"
          else
-           echo "scrape_needed=false" >> $GITHUB_OUTPUT
-           echo "⏩ Skipping scrape (last scraped < 7 days ago)"
+           echo "✓ Style configs are reasonably fresh"
          fi
-
-     - name: Scrape event websites
-       if: steps.check_scrape.outputs.scrape_needed == 'true'
-       # ... rest of scraping step
      ```
-   - Validation: Trigger workflow multiple times, verify skip logic
+   - Validation: Check workflow annotations for staleness warnings
 
 **Validation Checkpoint:**
 - [ ] Dependency caching reduces install time by >50%
 - [ ] Parallel scraping (if implemented) saves ~40% time
 - [ ] Token usage logged for cost tracking
-- [ ] Frequency control prevents redundant scraping
-- [ ] Total workflow time < 8 minutes (with cache)
+- [ ] Staleness check warns when configs are >30 days old
+- [ ] Total workflow time < 8 minutes with scraping, < 5 minutes without (push-only)
 
 ### Phase 4: Add Monitoring and Notifications
 
@@ -975,35 +976,50 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
    - File affected: `README.md`
    - Changes: Add section:
      ```markdown
-     ## 🤖 Automated Style Scraping
+     ## 🤖 Style Scraping Pipeline
 
-     This project uses GitHub Actions to automatically scrape event website styles and apply them to generated pages.
+     This project uses GitHub Actions to scrape event website styles and apply them to generated pages.
 
      ### Workflow: Scrape and Deploy
 
      **Triggers:**
-     - 🕒 **Scheduled**: Every Sunday at 2 AM UTC (weekly refresh)
-     - 🖱️ **Manual**: Via GitHub Actions UI (on-demand scraping)
-     - 📝 **Push**: On push to `main` (uses cached configs, no scraping)
+     - 🖱️ **Manual**: Via GitHub Actions UI (on-demand scraping when event websites change)
+     - 📝 **Push**: On push to `main` (uses cached configs, no scraping, fast deployment)
 
      **Pipeline:**
-     1. Scrape event websites using Playwright
+     1. **Manual Trigger**: Scrape event websites using Playwright
      2. Extract colors, typography, brand voice with AI agents
      3. Validate scraped configs (schema + DevTools comparison)
-     4. Generate static pages with event-specific CSS
-     5. Deploy to GitHub Pages
+     4. Commit updated configs to repository
+     5. Generate static pages with event-specific CSS
+     6. Deploy to GitHub Pages
+
+     **When to Trigger Manual Scraping:**
+     - Event website redesign (colors/branding changed)
+     - New event added to system
+     - Before major releases (ensure styles are current)
+     - After discovering style mismatches
 
      **Manual Trigger:**
      ```bash
+     # Scrape all configured events
+     gh workflow run scrape-and-deploy.yml
+
+     # Scrape specific events
      gh workflow run scrape-and-deploy.yml \
-       --field events_to_scrape="eventtechlive.com,example.com" \
+       --field events_to_scrape="eventtechlive.com,example.com"
+
+     # Force re-scraping even if configs exist
+     gh workflow run scrape-and-deploy.yml \
        --field force_scrape=true
      ```
 
      **Cost Management:**
      - API usage: ~$0.10 per event per scrape
-     - Weekly schedule: ~$1.60/month for 4 events
+     - Manual-only: Costs only incurred when you trigger scraping
+     - Typical usage: ~2 scrapes/month = ~$0.80/month for 4 events
      - Cached configs used if scraping fails
+     - No unexpected charges from automated runs
      ```
    - Validation: Preview README to verify formatting
 
@@ -1023,19 +1039,21 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
      ```markdown
      ### 20. End-to-End Automation Validates Integration (Plan 006)
 
-     **Learning**: Automating the full pipeline in CI/CD provides continuous validation that multi-system integration works. This catches regressions that unit tests miss.
+     **Learning**: Automating the full pipeline in CI/CD provides continuous validation that multi-system integration works. Manual-triggered scraping provides explicit control over API costs while maintaining integration testing.
 
      **Implementation**:
-     - GitHub Actions workflow runs: Scrape → Validate → Generate → Deploy
+     - GitHub Actions workflow runs: Scrape (manual) → Validate → Generate → Deploy
      - Each step validated independently and in combination
      - Failed scraping doesn't block deployment (uses cached configs)
      - E2E test runs on every PR to catch integration breaks
+     - Manual triggers provide cost control and explicit timing
 
      **Impact**:
      - Continuous verification of Lesson 16 (end-to-end validation)
      - Catches schema changes, API breaking changes, CSS generation bugs
      - Provides living documentation (workflow as specification)
      - Enables confident refactoring (integration tested automatically)
+     - Eliminates unexpected API costs from automated scraping
 
      **Example**:
      ```yaml
@@ -1102,10 +1120,10 @@ The workflow supports three trigger modes: (1) manual dispatch for on-demand scr
 ### High Risk Items
 
 1. **Risk:** OpenAI API costs spiral out of control
-   - **Likelihood:** Medium
+   - **Likelihood:** Low (manual-only triggers)
    - **Impact:** High ($$$)
-   - **Mitigation:** Weekly schedule only, manual triggers logged, cost tracking per run
-   - **Contingency:** Add spending alerts, reduce scraping frequency, use smaller models
+   - **Mitigation:** Manual triggers only (no scheduled runs), cost tracking logged per run, user controls all spending
+   - **Contingency:** Add spending alerts, limit trigger permissions, use smaller models
 
 2. **Risk:** Playwright fails in GitHub Actions environment
    - **Likelihood:** Low (common setup, well-documented)
@@ -1203,10 +1221,12 @@ If implementation fails or causes issues:
    - Select events to scrape
    - Verify configs updated, deployment succeeds
 
-2. **Test scheduled trigger:**
-   - Temporarily change cron to next minute
-   - Wait for trigger
-   - Verify automated run
+2. **Test push trigger (no scraping):**
+   - Make change to src/ or templates/
+   - Push to main
+   - Verify workflow triggered
+   - Verify scraping skipped (cached configs used)
+   - Verify deployment succeeded quickly (< 5 min)
 
 3. **Test push trigger:**
    - Make change to src/
@@ -1378,30 +1398,39 @@ python scripts/validate_scraped_colors.py \
 
 **Assumptions:**
 - 4 events configured for scraping
-- Weekly schedule (52 weeks/year)
+- Manual-only triggers (no scheduled runs)
 - $0.10 per event per scrape (CrewAI + OpenAI API)
 
-**Annual Cost:**
+**Typical Usage Scenarios:**
+
+**Scenario 1: Conservative (quarterly scraping)**
 ```
-4 events × 52 weeks × $0.10 = $20.80/year (~$1.73/month)
+4 events × 4 quarters × $0.10 = $1.60/year (~$0.13/month)
 ```
 
-**With manual triggers (monthly deep scraping):**
+**Scenario 2: Moderate (monthly scraping)**
 ```
 4 events × 12 months × $0.10 = $4.80/year (~$0.40/month)
 ```
 
-**Recommendation:** Weekly schedule acceptable, monitor actual costs.
+**Scenario 3: Active (bi-weekly scraping)**
+```
+4 events × 26 scrapes/year × $0.10 = $10.40/year (~$0.87/month)
+```
+
+**Recommendation:** Manual-only provides complete cost control. Users trigger scraping only when event websites change or before major releases.
 
 ### Notes
 
-- First implementation should use manual triggers only (validate before automating)
-- Schedule can be adjusted after observing API costs and style change frequency
+- Manual-only approach provides complete cost and timing control
+- Users decide when scraping is necessary (event redesigns, new events, releases)
+- Staleness warnings inform users when configs haven't been updated recently
 - Consider adding "dry-run" mode that skips OpenAI API calls (for testing)
 - Playwright caching saves ~50% of workflow time on repeat runs
 - Bot commits should be squashable (group related config updates)
-- Consider adding approval step for production deployments (optional)
+- Push-triggered deploys are fast (< 5 min) since no scraping occurs
 - Monitor GitHub Actions usage (2000 min/month free tier limit)
+- Document recommended scraping frequency in runbook (e.g., before major releases, after event redesigns)
 
 ---
 
