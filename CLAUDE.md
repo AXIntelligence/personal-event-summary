@@ -650,6 +650,147 @@ cp dist/attendees/2001/index.html analysis/page-comparison-$(date +%Y%m%d)/after
 
 This case study demonstrates why Lesson 16's validation checklist is critical.
 
+### 18. Verify Scraper Output with DevTools (Plan 004 Second Iteration)
+
+**Learning**: Running the actual scraper and using real data isn't enough—you must verify the scraped output matches reality using browser DevTools inspection.
+
+**What Happened (Plan 004 Correction)**:
+- ✅ Ran actual Python scraper (better than Plan 003's sample data)
+- ✅ Captured real output: `python/style-configs/eventtechlive-com.json`
+- ✅ Fed real scraped data through TypeScript pipeline
+- ✅ Regenerated all 24 pages with scraped colors
+- ✅ All 139 tests passing
+- ❌ **Never verified scraped colors against actual website with DevTools**
+- ❌ **User discovered color mismatch during visual inspection**
+
+**The Mismatch**:
+```json
+// Scraper captured (AI-extracted from page content)
+"colors": {
+  "primary": "#0072ce"  // Medium blue
+}
+
+// Actual website (DevTools color picker on header)
+"colors": {
+  "primary": "#160822"  // Dark purple
+}
+```
+
+**Why Scraper Got It Wrong**:
+- CrewAI agents analyzed page content and made best guess
+- May have picked up accent/link colors instead of primary header color
+- Without ground truth verification, we trusted AI output blindly
+- **Lesson**: AI scrapers are helpful but not infallible—verify their work
+
+**How User Caught It**:
+1. Opened http://localhost:8080/attendees/2001/ (generated page)
+2. Opened https://eventtechlive.com (actual website)
+3. Noticed colors didn't match
+4. Used DevTools: Right-click header → Inspect
+5. Saw computed color: #160822 (not #0072ce)
+6. Reported: "something is off, the primary color on the https://eventtechlive.com is #160822"
+
+**The Missing Validation Step**:
+Even though we followed most of the validation checklist, we skipped:
+```bash
+# ❌ What we did:
+python -m event_style_scraper scrape --url https://eventtechlive.com
+# Trusted scraper output blindly
+npm run generate
+# Assumed colors were correct
+
+# ✅ What we should have done:
+python -m event_style_scraper scrape --url https://eventtechlive.com
+cat python/style-configs/eventtechlive-com.json | jq '.colors.primary'
+# Shows: "#0072ce"
+
+# Open https://eventtechlive.com in browser
+# Right-click header element → Inspect → Computed tab
+# Check background-color or color property
+# DevTools shows: rgb(22, 8, 34) = #160822
+
+# Compare: Scraped #0072ce vs Actual #160822 ❌ MISMATCH!
+# Manually correct scraped output
+jq '.colors.primary = "#160822"' python/style-configs/eventtechlive-com.json > /tmp/fixed.json
+mv /tmp/fixed.json python/style-configs/eventtechlive-com.json
+
+# Convert to TypeScript format and regenerate
+npm run generate
+
+# Now verify match:
+grep "color-primary" dist/attendees/2001/index.html
+# Shows: "#160822" ✓
+# Open in browser and compare side-by-side with actual site ✓
+```
+
+**Impact**:
+- First iteration (commit a42d2ae): Wrong color #0072ce
+- User visual inspection: Discovered mismatch
+- Second iteration (commit bd24327): Correct color #160822
+- Even with "proper validation" (Plan 004), we had a gap!
+
+**Why This Matters**:
+- **AI/scraper output is not ground truth**
+- Automated extraction can make mistakes (wrong element, wrong property)
+- Visual inspection alone isn't enough—need DevTools measurement
+- "Trusting but verifying" applies to scrapers too
+- Color accuracy matters for brand fidelity
+
+**Correct DevTools Verification Process**:
+
+1. **Open actual website** in Chrome/Firefox
+2. **Right-click dominant color element** (header, button, logo background)
+3. **Select "Inspect"** → Opens DevTools
+4. **Check Computed or Styles tab**
+5. **Find color property** (background-color, color, border-color)
+6. **Note exact hex value** (DevTools shows rgb(), convert to hex)
+7. **Compare against scraper output**
+8. **If mismatch**: Manually correct scraper output to match DevTools
+9. **Regenerate pages** with corrected colors
+10. **Visual verification**: Side-by-side comparison in browser
+
+**DevTools Hex Conversion**:
+```javascript
+// If DevTools shows: rgb(22, 8, 34)
+// Convert to hex:
+"#" + [22, 8, 34].map(x => x.toString(16).padStart(2, '0')).join('')
+// Result: "#160822"
+```
+
+**Red Flags You're Skipping DevTools Verification**:
+- ❌ "Scraper extracted the colors, should be good"
+- ❌ "Tests pass with scraped colors, must be right"
+- ❌ "AI analyzed the page, it's probably accurate"
+- ❌ "Visual inspection looks close enough"
+- ❌ "Don't have time to check every color"
+
+**When to Use DevTools Verification**:
+- ✅ Every time you scrape a new website
+- ✅ When colors are critical to brand identity
+- ✅ Before claiming "validation complete"
+- ✅ When user reports "colors don't match"
+- ✅ After any scraper code changes
+
+**Rule of Thumb**:
+> **Scrapers extract, DevTools verify. Never ship scraped colors without
+> DevTools color picker confirmation from the actual website.**
+
+**Lesson Applied in Correction**:
+1. ✅ User opened actual website (eventtechlive.com)
+2. ✅ Used DevTools to inspect header element
+3. ✅ Extracted exact color: #160822
+4. ✅ Corrected both scraped JSON files
+5. ✅ Regenerated all pages
+6. ✅ Updated test expectations
+7. ✅ Visual verification: colors now match
+
+**See Also**:
+- Lesson 16: End-to-End Validation is NON-NEGOTIABLE
+- Lesson 17: Sample/Mock Data Can Hide Critical Flaws
+- docs/validation-checklist.md Phase 3.4: "Compare against expected result"
+
+This lesson reinforces that validation is **multi-layered**: run the tools, check the output, verify against reality, inspect visually, measure with DevTools.
+
 ## Development Standards
 
 ### Test-Driven Development (TDD)
