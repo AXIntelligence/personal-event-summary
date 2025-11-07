@@ -8,5 +8,5 @@
   "totalAttendees": 65000,
   "totalSessions": 2200,
   "websiteUrl": "https://reinvent.awsevents.com/",
-  "logoUrl": "/static/images/aws-reinvent-logo.svg"
+  "logoUrl": "/static/images/aws-reinvent-logo.png"
 }
