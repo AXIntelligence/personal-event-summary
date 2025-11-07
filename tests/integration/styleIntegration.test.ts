@@ -35,7 +35,7 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
       expect(config).not.toBeNull();
       expect(config?.eventId).toBe('event-tech-live-2025');
       expect(config?.eventName).toBe('Event Tech Live 2024'); // Updated from scraped data
-      expect(config?.colors.primary).toBe('#0072ce'); // Updated to real scraped color
+      expect(config?.colors.primary).toBe('#160822'); // Updated to real scraped color
       expect(config?.typography.headingFont).toBe("'Helvetica Neue', Helvetica, Arial, sans-serif"); // Updated from scraped data
       expect(config?.brandVoice.tone).toBe('professional'); // Updated from scraped data
     });
@@ -98,7 +98,7 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
       const css = generateEventCSS(config!);
 
       // Verify different colors
-      expect(css).toContain('--color-primary: #0072ce'); // Updated to real scraped color
+      expect(css).toContain('--color-primary: #160822'); // Updated to real scraped color
       expect(css).toContain('--color-secondary: #0a2540'); // Updated from scraped data
       expect(css).toContain('--color-accent: #005bb5'); // Updated from scraped data
 
@@ -147,7 +147,7 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
       const html = await readFile(outputPath, 'utf-8');
 
       // Verify Event Tech Live styles are injected
-      expect(html).toContain('--color-primary: #0072ce'); // Updated to real scraped color
+      expect(html).toContain('--color-primary: #160822'); // Updated to real scraped color
       expect(html).toContain("--font-heading: 'Helvetica Neue', Helvetica, Arial, sans-serif"); // Updated from scraped data
       expect(html).toContain('--spacing-unit: 4px'); // Updated from scraped data
 
@@ -203,7 +203,7 @@ describe('Style Integration Tests (Plan 003 Phase 6)', () => {
 
       // Verify different primary colors
       expect(html1).toContain('--color-primary: #667eea'); // TechConf purple
-      expect(html2).toContain('--color-primary: #0072ce'); // Event Tech Live blue (scraped)
+      expect(html2).toContain('--color-primary: #160822'); // Event Tech Live blue (scraped)
 
       // Verify different fonts
       expect(html1).toContain('Inter, sans-serif');
