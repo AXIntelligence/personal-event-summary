@@ -443,6 +443,89 @@ Attendee 2012: 96 company mentions (max engagement persona)
 
 **Why It Works**: Data tells a story that matches real attendee behaviors.
 
+### 16. End-to-End Validation is NON-NEGOTIABLE (Plan 003 Critical Lesson)
+
+**Learning**: NEVER claim a multi-system integration is "complete" without running the ACTUAL end-to-end pipeline with REAL data flow.
+
+**What Went Wrong (Plan 003 Phase 5-6)**:
+- ✅ Wrote TypeScript integration code
+- ✅ Wrote 139 tests (all passing)
+- ✅ Created MOCK JSON files to test TypeScript
+- ❌ **NEVER ran the Python scraper to produce actual JSON output**
+- ❌ **NEVER validated Python → JSON → TypeScript pipeline with real data**
+- ❌ **Discovered runtime bugs only when user demanded validation**
+
+**The Fatal Flaw**:
+```
+CLAIMED: "Phase 6 Complete - Integration fully tested and validated"
+REALITY: Only tested TypeScript consuming hand-crafted JSON
+MISSED:  - Python scraper requires API key from .env
+         - Python scraper has runtime bug (.kickoff() vs .crew().kickoff())
+         - Schema compatibility untested with REAL scraped output
+```
+
+**Correct Approach**:
+1. **Write integration code** ✅
+2. **Write integration tests with mocks** ✅
+3. **Run ACTUAL end-to-end pipeline** ⚠️ THIS IS MANDATORY
+4. **Verify real data flows through entire system** ⚠️ THIS IS MANDATORY
+5. **Fix any runtime bugs discovered** ⚠️ THIS IS MANDATORY
+6. **THEN and ONLY THEN claim "complete"** ✅
+
+**Validation Checklist for Multi-System Integrations**:
+- [ ] All environment variables/secrets configured (check .env)
+- [ ] Actual CLI commands run successfully (not just unit tests)
+- [ ] Real data produced by System A consumed by System B
+- [ ] Schema compatibility verified with ACTUAL output (not mocks)
+- [ ] Performance measured with real workloads
+- [ ] Error handling tested with real failure scenarios
+
+**Anti-Pattern to Avoid**:
+```typescript
+// ❌ BAD: Testing integration with hand-crafted mock data
+const mockStyleConfig = {
+  eventId: "test-event",
+  colors: { primary: "#667eea", ... },
+  // ... manually created to match schema
+};
+const css = generateEventCSS(mockStyleConfig); // Tests pass!
+// ❌ CLAIM: "Integration validated" - NO IT'S NOT!
+```
+
+**Correct Pattern**:
+```bash
+# ✅ GOOD: Run the actual scraper
+python -m event_style_scraper scrape --url https://example.com
+# Check JSON file was created
+ls -la style-configs/example-com.json
+# Run TypeScript with REAL scraped data
+npm run generate
+# Verify pages have styles from REAL scraped data
+grep "color-primary" dist/attendees/1001/index.html
+# ✅ NOW you can claim: "Integration validated"
+```
+
+**Why This Matters**:
+- Unit tests pass but system fails at runtime
+- Schema mismatches only show up with real data
+- Environment setup issues (API keys, .env) missed
+- Integration bugs (wrong method calls) not caught
+- Performance issues with real data vs mocks
+- **False confidence is worse than no testing**
+
+**Red Flags That You're Not Validating Properly**:
+- ❌ "I created sample JSON files to test with"
+- ❌ "All tests pass" (but never ran actual CLI)
+- ❌ "Schema looks compatible" (but never tried real data)
+- ❌ "Should work" (but never executed end-to-end)
+- ❌ Claiming "Phase complete" without running actual pipeline
+
+**Rule of Thumb**:
+> **If you haven't seen the ACTUAL output file created by System A
+> successfully consumed by System B, you haven't validated anything.**
+
+This lesson learned the hard way during Plan 003 implementation.
+
 ## Development Standards
 
 ### Test-Driven Development (TDD)
