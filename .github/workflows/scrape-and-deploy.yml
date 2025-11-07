@@ -59,6 +59,12 @@ jobs:
         cd python
         pip install -r requirements.txt
 
+    - name: Cache Playwright browsers
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/ms-playwright
+        key: ${{ runner.os }}-playwright-${{ hashFiles('python/requirements.txt') }}
+
     - name: Install Playwright browsers
       run: |
         playwright install chromium
@@ -155,6 +161,32 @@ jobs:
           fi
         else
           echo "✓ Scraping succeeded, using fresh configs"
+        fi
+
+    - name: Check config staleness (informational)
+      run: |
+        # Check last commit that modified python/style-configs/
+        if [ -d "python/style-configs" ]; then
+          LAST_SCRAPE=$(git log -1 --format="%ci" -- python/style-configs/ 2>/dev/null || echo "")
+
+          if [ -n "$LAST_SCRAPE" ]; then
+            LAST_SCRAPE_EPOCH=$(date -d "$LAST_SCRAPE" +%s 2>/dev/null || date -j -f "%Y-%m-%d %H:%M:%S %z" "$LAST_SCRAPE" +%s 2>/dev/null)
+            CURRENT_EPOCH=$(date +%s)
+            DAYS_AGO=$(( ($CURRENT_EPOCH - $LAST_SCRAPE_EPOCH) / 86400 ))
+
+            echo "📅 Last scraping: $LAST_SCRAPE ($DAYS_AGO days ago)"
+
+            if [ $DAYS_AGO -gt 30 ]; then
+              echo "⚠️ Style configs are >30 days old. Consider running manual scrape."
+              echo "::warning::Style configs last updated $DAYS_AGO days ago"
+            else
+              echo "✓ Style configs are reasonably fresh"
+            fi
+          else
+            echo "ℹ️ No scraping history found (new repository?)"
+          fi
+        else
+          echo "⚠️ python/style-configs/ directory not found"
         fi
 
     - name: Setup Node.js
