@@ -1,0 +1,18 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#667eea" rx="4"/>
+
+  <!-- Calendar icon representation -->
+  <rect x="6" y="10" width="20" height="16" fill="none" stroke="#ffffff" stroke-width="2" rx="2"/>
+  <line x1="6" y1="14" x2="26" y2="14" stroke="#ffffff" stroke-width="2"/>
+  <line x1="11" y1="8" x2="11" y2="12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+  <line x1="21" y1="8" x2="21" y2="12" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Dots representing attendees/events -->
+  <circle cx="11" cy="18" r="1.5" fill="#ffffff"/>
+  <circle cx="16" cy="18" r="1.5" fill="#ffffff"/>
+  <circle cx="21" cy="18" r="1.5" fill="#ffffff"/>
+  <circle cx="11" cy="22" r="1.5" fill="#ffffff"/>
+  <circle cx="16" cy="22" r="1.5" fill="#ffffff"/>
+  <circle cx="21" cy="22" r="1.5" fill="#ffffff"/>
+</svg>

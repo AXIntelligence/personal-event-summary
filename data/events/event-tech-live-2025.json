@@ -8,5 +8,5 @@
   "totalAttendees": 1500,
   "totalSessions": 30,
   "websiteUrl": "https://eventtechlive.com",
-  "logoUrl": null
+  "logoUrl": "../../static/images/event-tech-live-logo.svg"
 }

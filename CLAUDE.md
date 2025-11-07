@@ -791,6 +791,80 @@ grep "color-primary" dist/attendees/2001/index.html
 
 This lesson reinforces that validation is **multi-layered**: run the tools, check the output, verify against reality, inspect visually, measure with DevTools.
 
+### 20. Visual Assets Require Local Hosting for Reliability (Plan 008)
+
+**Learning**: Event logos and visual assets must be hosted locally in `static/` directory rather than relying on external URLs from event websites. External dependencies can break if source sites change structure, require authentication, or go offline.
+
+**What Happened (Plan 008 Discovery)**:
+- Event JSON files had `logoUrl: null` despite templates being ready
+- AWS re:Invent style config was missing `logoUrl` and `faviconUrl` fields
+- Event Tech Live style config referenced external URL: `https://eventtechlive.com/wp-content/themes/eventtechlive/assets/images/logo.svg`
+- Markus AI attribution was conditional on `eventCSS` being present (violated PRD-002 requirement)
+- No logo image files existed in `static/images/` directory
+
+**The Solution**:
+```
+1. Create local SVG logos for both events
+   - Event Tech Live: 200x60px, brand color #160822
+   - AWS re:Invent: 200x60px, AWS colors #232f3e + #ff9900
+   - Favicon: 32x32px calendar icon
+
+2. Update event JSON files
+   "logoUrl": "/static/images/event-tech-live-logo.svg"
+
+3. Complete style configs with local paths
+   "logoUrl": "/static/images/aws-reinvent-logo.svg"
+   "faviconUrl": "/static/images/favicon.svg"
+
+4. Remove conditional rendering for Markus AI attribution
+   - Attribution must appear on ALL pages per PRD-002
+   - Was {{#if eventCSS}} - now unconditional
+```
+
+**Impact**:
+- **Before**: No logos on any page, missing Markus AI attribution
+- **After**: All 24 pages show event logos and Markus AI footer
+- **GitHub Pages**: Serves images from same domain (fast, reliable)
+- **No external dependencies**: Site remains functional even if event sites change
+
+**Why Local Hosting Matters**:
+- External URLs can break (404, authentication required, CORS issues)
+- Source sites can restructure or go offline
+- Slower load times (external domain lookups)
+- GitHub Pages has full control over static assets
+- Logos always available during development and production
+
+**Path Conventions**:
+- Use absolute paths from repository root: `/static/images/logo.svg`
+- Not relative paths: `../../static/images/logo.svg` (breaks on different page depths)
+- GitHub Pages serves assets correctly with absolute paths
+
+**SVG Benefits**:
+- Scalable to any size without quality loss
+- Small file sizes (< 1KB for text-based logos)
+- Can embed brand colors directly
+- Browser-native support (no dependencies)
+
+**Rule of Thumb**:
+> **All visual assets (logos, icons, favicons) that are part of your system's
+> branding must be hosted locally in `static/`. External URLs are acceptable
+> only for user-generated content or third-party integrations.**
+
+**Validation Checklist**:
+- [ ] All image files exist in `static/images/`
+- [ ] Event JSON files have non-null `logoUrl` fields
+- [ ] Generated HTML contains `<img>` tags with correct paths
+- [ ] Images load successfully on deployed site (HTTP 200)
+- [ ] Favicon displays in browser tab
+- [ ] Required attributions (like Markus AI) are unconditional
+
+**See Also**:
+- Plan 008: Fix Missing Event Logos and Markus AI Attribution
+- PRD-002: Requirement for Markus AI footer attribution
+- `analysis/plan-008-missing-logos-investigation.md`: Root cause analysis
+
+This lesson was learned through Plan 008 implementation and emphasizes the importance of local asset hosting for production reliability.
+
 ### 19. Agents Need Explicit Tool Instructions, Not Just Access (Plan 005)
 
 **Learning**: Assigning tools to agents is necessary but not sufficient. Agents may ignore tools and hallucinate content if task descriptions are vague. LLMs default to generating plausible text rather than invoking tools unless explicitly forced.
@@ -1192,9 +1266,9 @@ node --prof dist/generate.js
 ---
 
 **Last Updated**: 2025-11-07
-**Project Status**: ✅ Production Ready (v1.2.0 - Plan 007 Completed)
-**Documentation Version**: 2.4
+**Project Status**: ✅ Production Ready (v1.2.0 - Plan 008 Completed)
+**Documentation Version**: 2.5
 **Test Coverage**: 89.93%
 **Total Tests**: 139 passing
 **Pages Generated**: 24 (12 Event Tech Live + 12 AWS re:Invent)
-**Lessons Learned**: 19 (10 from Plan 001, 5 from Plan 002, 1 from Plan 003, 1 from Plan 004, 2 from Plan 005)
+**Lessons Learned**: 20 (10 from Plan 001, 5 from Plan 002, 1 from Plan 003, 1 from Plan 004, 2 from Plan 005, 1 from Plan 008)
