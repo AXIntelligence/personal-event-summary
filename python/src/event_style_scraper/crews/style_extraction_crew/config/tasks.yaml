@@ -1,34 +1,59 @@
 scrape_website:
   description: >
-    Use the Playwright Style Extractor tool to scrape the event website at {url}.
+    STEP 1: INVOKE THE TOOL
+    You have access to a tool called "Playwright Style Extractor".
+    You MUST call this tool with the URL: {url}
 
-    CRITICAL: You MUST use the Playwright Style Extractor tool. DO NOT generate,
-    guess, or imagine website content. ONLY use the tool's actual output.
+    Action: Use Action: Playwright Style Extractor
+    Action Input: {url}
 
-    Call the tool with the URL to extract:
-    - Raw HTML structure from the rendered page
-    - Computed styles for all key elements (header, nav, body, h1, button, a)
-    - CSS custom properties (--variable-name)
-    - Logo and favicon URLs
-    - All data comes from actual browser rendering, not assumptions
-
-    The tool returns a dictionary with:
-    - html: Full HTML content from the page
-    - computed_styles: Object with computed styles for each selector
-    - css_variables: Object with CSS custom properties
+    STEP 2: WAIT FOR TOOL OUTPUT
+    The tool will launch a browser, navigate to the URL, and return a dictionary with:
+    - url: The URL that was scraped
+    - html: Full HTML content from the rendered page
+    - computed_styles: Browser-computed styles for key elements (header, nav, body, h1, button, a)
+    - css_variables: CSS custom properties from :root (--variable-name: value)
     - assets: Logo and favicon URLs
-    - success: true if scraping succeeded
-
-    DO NOT fabricate HTML, CSS, or colors. Return ONLY the tool's actual output.
-  expected_output: >
-    The complete JSON output from the Playwright Style Extractor tool, containing:
-    - html: Actual HTML content from the browser
-    - computed_styles: Actual computed styles for key selectors
-    - css_variables: Actual CSS custom properties from :root
-    - assets: Logo and favicon URLs if present
     - success: true
 
-    This output must be real data from the tool, not generated content.
+    STEP 3: RETURN TOOL OUTPUT AS-IS
+    Copy the EXACT output from the tool into your Final Answer.
+    DO NOT modify, summarize, or reformat the tool output.
+    DO NOT generate fake HTML, CSS, or colors.
+
+    CRITICAL RULES:
+    - If you did not call the tool, your answer is WRONG
+    - If you generate fictional HTML/CSS, your answer is WRONG
+    - If you write a "scraping report", your answer is WRONG
+    - The ONLY acceptable answer is the raw dict from the Playwright Style Extractor tool
+
+    Example of CORRECT workflow:
+    Thought: I need to scrape {url} using the Playwright Style Extractor tool
+    Action: Playwright Style Extractor
+    Action Input: {url}
+    Observation: {{"url": "{url}", "html": "<actual html>", "computed_styles": {{...}}, ...}}
+    Thought: I have the tool output, I'll return it as my final answer
+    Final Answer: {{"url": "{url}", "html": "<actual html>", "computed_styles": {{...}}, ...}}
+  expected_output: >
+    A raw Python dictionary (not a string, not prose) from the Playwright Style Extractor tool.
+
+    MUST contain these keys:
+    - url: string
+    - html: string (actual HTML from browser)
+    - computed_styles: dict (actual computed styles from browser)
+    - css_variables: dict (actual CSS variables from browser)
+    - assets: dict with logo and favicon URLs
+    - success: boolean (true if scraping succeeded)
+
+    Example format:
+    {{
+      "url": "https://example.com",
+      "html": "<!DOCTYPE html><html>...",
+      "computed_styles": {{"header": {{"backgroundColor": "rgb(22, 8, 34)", ...}}, ...}},
+      "css_variables": {{"--primary-color": "#160822", ...}},
+      "assets": {{"logo": "https://...", "favicon": "https://..."}},
+      "success": true
+    }}
   agent: web_scraper_agent
 
 extract_styles:
