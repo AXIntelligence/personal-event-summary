@@ -3,6 +3,7 @@
 import click
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
 
 from event_style_scraper.flows.style_scraping_flow import StyleScrapingFlow
 
@@ -10,6 +11,8 @@ from event_style_scraper.flows.style_scraping_flow import StyleScrapingFlow
 @click.group()
 def cli():
     """Event Style Scraper - Extract styles and brand voice from event websites."""
+    # Load environment variables from .env file
+    load_dotenv()
     pass
 
 

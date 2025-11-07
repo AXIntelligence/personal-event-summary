@@ -5,7 +5,8 @@ from click.testing import CliRunner
 from pathlib import Path
 import json
 import tempfile
-from unittest.mock import patch, Mock
+import os
+from unittest.mock import patch, Mock, call
 
 from event_style_scraper.cli import cli, scrape
 from event_style_scraper.types import EventStyleConfig, ColorPalette, Typography, BrandVoice
@@ -175,3 +176,19 @@ class TestCLI:
         assert result.exit_code == 0
         assert "success" in result.output.lower() or "✓" in result.output
         assert "success-test.json" in result.output
+
+    def test_cli_imports_load_dotenv(self):
+        """Test that CLI imports load_dotenv from dotenv."""
+        from event_style_scraper import cli as cli_module
+
+        # Verify load_dotenv is imported
+        assert hasattr(cli_module, "load_dotenv")
+        assert callable(cli_module.load_dotenv)
+
+    def test_cli_help_works(self):
+        """Test that CLI help command works (verifies basic functionality)."""
+        runner = CliRunner()
+        result = runner.invoke(cli, ["--help"])
+
+        assert result.exit_code == 0
+        assert "Event Style Scraper" in result.output
