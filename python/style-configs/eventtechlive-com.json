@@ -1,0 +1,45 @@
+{
+  "event_id": "eventtechlive-com",
+  "event_name": "Event Tech Live 2024",
+  "source_url": "https://eventtechlive.com",
+  "colors": {
+    "primary": "#0072ce",
+    "secondary": "#0a2540",
+    "accent": "#005bb5",
+    "background": "#ffffff",
+    "text": "#333333"
+  },
+  "typography": {
+    "heading_font": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "body_font": "'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "heading_size": "2rem",
+    "body_size": "1rem",
+    "line_height": "1.5"
+  },
+  "brand_voice": {
+    "tone": "professional",
+    "keywords": [
+      "Event",
+      "Technology",
+      "Expo",
+      "Register",
+      "Speakers",
+      "Innovation",
+      "Agenda",
+      "Experts",
+      "Live",
+      "UK"
+    ],
+    "style": "formal yet conversational",
+    "personality": "authoritative and innovative"
+  },
+  "layout": {
+    "grid_system": "flexbox",
+    "spacing_unit": "4px",
+    "border_radius": "4px",
+    "container_width": "1140px"
+  },
+  "logo_url": "https://eventtechlive.com/wp-content/themes/eventtechlive/assets/images/logo.svg",
+  "favicon_url": "https://eventtechlive.com/wp-content/uploads/2022/03/favicon.ico",
+  "scraped_at": "2024-06-08T00:00:00Z"
+}

@@ -1,0 +1,45 @@
+{
+  "event_id": "example-com",
+  "event_name": "Welcome to Our Event",
+  "source_url": "https://example.com",
+  "colors": {
+    "primary": "#007bff",
+    "secondary": "#0056b3",
+    "accent": "#bb86fc",
+    "background": "#ffffff",
+    "text": "#333333"
+  },
+  "typography": {
+    "heading_font": "\"Open Sans\", sans-serif",
+    "body_font": "\"Helvetica Neue\", Helvetica, Arial, sans-serif",
+    "heading_size": "32px",
+    "body_size": "16px",
+    "line_height": "1.5"
+  },
+  "brand_voice": {
+    "tone": "professional",
+    "keywords": [
+      "Event",
+      "Register",
+      "Schedule",
+      "Workshops",
+      "Speakers",
+      "Activities",
+      "Opening Remarks",
+      "Closing Ceremony",
+      "Join",
+      "Privacy Policy"
+    ],
+    "style": "conversational",
+    "personality": "caring, approachable"
+  },
+  "layout": {
+    "grid_system": "flexbox",
+    "spacing_unit": "8px",
+    "border_radius": "4px",
+    "container_width": "1200px"
+  },
+  "logo_url": "https://example.com/images/logo.png",
+  "favicon_url": "https://example.com/favicon.ico",
+  "scraped_at": "2024-06-18T12:00:00Z"
+}
