@@ -135,7 +135,8 @@ When referencing plans in code comments or documentation:
 | 004 | [Fix Event Tech Live Style Mismatch](004-fix-event-tech-live-style-mismatch.md) | 📝 Draft | - | 🔴 Critical | Fix style mismatch by replacing sample config with real scraped data from eventtechlive.com |
 | 005 | [Playwright-Based Scraping Tool](005-playwright-scraping-tool.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Replace AI-guessing with actual browser automation for accurate style extraction |
 | 006 | [End-to-End Scrape-Deploy Pipeline](006-end-to-end-scrape-deploy-pipeline.md) | 📝 Draft | - | 🔴 Critical | Automate scraping in GitHub Actions for continuous style updates and full pipeline validation |
-| 007 | [AWS re:Invent Data Source Integration](007-end-to-end-scrape-deploy-pipeline.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Replace TechConf 2025 with AWS re:Invent as high-quality event data source |
+| 007 | [AWS re:Invent Data Source Integration](007-aws-reinvent-data-source.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Replace TechConf 2025 with AWS re:Invent as high-quality event data source |
+| 008 | [Fix Missing Event Logos and Markus AI Attribution](008-fix-missing-event-and-markus-logos.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Fix missing logos and Markus AI attribution on GitHub Pages deployment |
 
 ## Status Legend
 - ✅ **Completed**: Implementation done, all tests passing
@@ -155,6 +156,21 @@ When referencing plans in code comments or documentation:
 
 ## Recent Updates
 
+- **2025-11-07**: Completed Plan 008 - Fix Missing Event Logos and Markus AI Attribution ✅
+  - Created Event Tech Live and AWS re:Invent SVG logos
+  - Added favicon.svg for browser tabs
+  - Updated event JSON files with local logo paths
+  - Completed AWS re:Invent style config with logoUrl/faviconUrl
+  - Removed conditional rendering of Markus AI attribution (now shows on all pages)
+  - All 139 tests passing, 0 HTML validation errors
+  - Lesson 20 added to CLAUDE.md: "Visual Assets Require Local Hosting"
+- **2025-11-07**: Created Plan 008 - Fix Missing Event Logos and Markus AI Attribution (Draft)
+  - Addresses missing logos on GitHub Pages (AWS re:Invent, Event Tech Live)
+  - Fixes missing Markus AI attribution in footer (PRD-002 requirement)
+  - Downloads and hosts logos locally in static/images/
+  - Updates event JSON files with local logo paths
+  - Removes conditional rendering of Markus AI attribution
+  - Adds missing logoUrl/faviconUrl to AWS re:Invent style config
 - **2025-11-07**: Completed Plan 007 - AWS re:Invent Data Source Integration ✅
   - Scraped AWS re:Invent website for authentic branding (#232f3e primary color, Amazon Ember font)
   - Created aws-reinvent-2025.json event config with 30 AWS-themed sessions across 7 tracks
