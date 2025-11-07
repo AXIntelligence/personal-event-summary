@@ -27,5 +27,8 @@
     "spacingUnit": "8px",
     "borderRadius": "2px",
     "containerWidth": "1280px"
-  }
+  },
+  "logoUrl": "/static/images/aws-reinvent-logo.svg",
+  "faviconUrl": "/static/images/favicon.svg",
+  "scrapedAt": "2025-11-07T00:00:00Z"
 }
