@@ -1,0 +1,311 @@
+{
+  "id": "3001",
+  "firstName": "Priya",
+  "lastName": "Sharma",
+  "email": "priya.sharma@fintechinnovations.com",
+  "company": "FinTech Innovations Inc",
+  "title": "Senior Cloud Architect",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "CMP301",
+      "title": "Amazon EC2 Graviton: 40% Better Price-Performance",
+      "description": "Learn how AWS Graviton processors deliver industry-leading price-performance for cloud workloads. Explore migration strategies, performance benchmarks, and cost optimization techniques for compute-intensive applications.",
+      "speakers": ["Sarah Chen, Principal Engineer, AWS EC2"],
+      "dateTime": "2025-12-01T10:00:00Z",
+      "durationMinutes": 60,
+      "track": "Compute"
+    },
+    {
+      "id": "ARC301",
+      "title": "Multi-Region Active-Active Architectures",
+      "description": "Design globally resilient applications with active-active multi-region architectures. Learn data replication strategies, traffic routing patterns, and disaster recovery best practices.",
+      "speakers": ["Michael Rodriguez, Solutions Architect, AWS"],
+      "dateTime": "2025-12-01T13:30:00Z",
+      "durationMinutes": 75,
+      "track": "Architecture"
+    },
+    {
+      "id": "SEC301",
+      "title": "Zero Trust Security on AWS",
+      "description": "Implement zero trust security models using AWS services. Explore identity verification, least privilege access, micro-segmentation, and continuous security monitoring strategies.",
+      "speakers": ["Jennifer Lee, Security Architect, AWS", "David Kim, Sr. Security Engineer, AWS"],
+      "dateTime": "2025-12-02T09:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "NET201",
+      "title": "VPC Design Patterns for Scalable Architectures",
+      "description": "Master VPC networking fundamentals and advanced design patterns. Learn subnet sizing, routing tables, NAT gateway strategies, and multi-account VPC architectures.",
+      "speakers": ["Robert Taylor, Network Architect, AWS"],
+      "dateTime": "2025-12-02T11:15:00Z",
+      "durationMinutes": 60,
+      "track": "Networking"
+    },
+    {
+      "id": "CON301",
+      "title": "Amazon EKS: Production-Grade Kubernetes",
+      "description": "Deploy and manage production Kubernetes workloads on Amazon EKS. Explore cluster autoscaling, security best practices, observability, and cost optimization techniques.",
+      "speakers": ["Aisha Okafor, Container Specialist, AWS"],
+      "dateTime": "2025-12-02T14:00:00Z",
+      "durationMinutes": 75,
+      "track": "Containers"
+    },
+    {
+      "id": "DAT401",
+      "title": "Amazon Aurora: Global Database at Scale",
+      "description": "Build globally distributed databases with Amazon Aurora. Learn about Aurora Global Database, read replicas, failover strategies, and performance tuning for multi-region applications.",
+      "speakers": ["Carlos Mendez, Database Architect, AWS"],
+      "dateTime": "2025-12-03T10:30:00Z",
+      "durationMinutes": 60,
+      "track": "Database"
+    },
+    {
+      "id": "ARC302",
+      "title": "Well-Architected Framework: Best Practices",
+      "description": "Apply the AWS Well-Architected Framework to your applications. Review operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability pillars.",
+      "speakers": ["Lisa Martinez, Principal Solutions Architect, AWS"],
+      "dateTime": "2025-12-03T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "Architecture"
+    },
+    {
+      "id": "SVS201",
+      "title": "AWS Lambda: Performance Optimization Techniques",
+      "description": "Maximize Lambda function performance and minimize costs. Explore cold start reduction, memory optimization, concurrency management, and execution environment best practices.",
+      "speakers": ["Thomas Anderson, Serverless Specialist, AWS"],
+      "dateTime": "2025-12-03T15:30:00Z",
+      "durationMinutes": 60,
+      "track": "Serverless"
+    },
+    {
+      "id": "COP101",
+      "title": "Cost Optimization: FinOps Best Practices",
+      "description": "Implement FinOps practices to manage cloud costs effectively. Learn tagging strategies, rightsizing recommendations, Reserved Instance planning, and cost allocation techniques.",
+      "speakers": ["Amanda Foster, FinOps Lead, AWS", "Kevin O'Brien, Sr. Cost Analyst, AWS"],
+      "dateTime": "2025-12-04T09:30:00Z",
+      "durationMinutes": 60,
+      "track": "Cost Optimization"
+    },
+    {
+      "id": "SEC302",
+      "title": "AWS IAM: Advanced Access Control Patterns",
+      "description": "Master AWS Identity and Access Management with advanced patterns. Explore permission boundaries, service control policies, cross-account access, and least privilege design.",
+      "speakers": ["Patricia Moore, Identity Specialist, AWS"],
+      "dateTime": "2025-12-04T11:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "NET202",
+      "title": "AWS Transit Gateway: Simplified Network Management",
+      "description": "Centralize network connectivity with AWS Transit Gateway. Learn hub-and-spoke architectures, route table design, and integration with AWS Direct Connect and VPN.",
+      "speakers": ["James Chen, Network Solutions Architect, AWS"],
+      "dateTime": "2025-12-04T14:30:00Z",
+      "durationMinutes": 60,
+      "track": "Networking"
+    },
+    {
+      "id": "ARC303",
+      "title": "Disaster Recovery Strategies on AWS",
+      "description": "Design comprehensive disaster recovery solutions on AWS. Compare backup/restore, pilot light, warm standby, and multi-site active/active DR strategies.",
+      "speakers": ["Daniel Garcia, Resilience Architect, AWS"],
+      "dateTime": "2025-12-05T10:00:00Z",
+      "durationMinutes": 75,
+      "track": "Architecture"
+    },
+    {
+      "id": "CMP302",
+      "title": "Spot Instances at Scale: Best Practices and Patterns",
+      "description": "Reduce compute costs with EC2 Spot Instances. Learn interruption handling, capacity optimization, fleet management, and integration with Auto Scaling groups.",
+      "speakers": ["Maria Silva, Compute Specialist, AWS"],
+      "dateTime": "2025-12-05T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "Compute"
+    },
+    {
+      "id": "DAT402",
+      "title": "DynamoDB: Single-Digit Millisecond Performance",
+      "description": "Build high-performance applications with Amazon DynamoDB. Explore partition key design, global secondary indexes, DynamoDB Streams, and capacity planning.",
+      "speakers": ["Robert Lee, NoSQL Specialist, AWS"],
+      "dateTime": "2025-12-05T15:30:00Z",
+      "durationMinutes": 60,
+      "track": "Database"
+    },
+    {
+      "id": "KEY01",
+      "title": "AWS CEO Keynote: The Future of Cloud Computing",
+      "description": "Join AWS CEO for the flagship keynote unveiling the latest innovations in cloud computing, AI/ML, and infrastructure. Discover new services, customer success stories, and the future roadmap.",
+      "speakers": ["Adam Selipsky, CEO, Amazon Web Services"],
+      "dateTime": "2025-12-02T08:00:00Z",
+      "durationMinutes": 120,
+      "track": "Keynote"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Sarah Chen",
+      "title": "Principal Engineer",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/sarahchen-aws"
+    },
+    {
+      "name": "Michael Rodriguez",
+      "title": "Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Jennifer Lee",
+      "title": "Security Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/jenniferlee-aws-security"
+    },
+    {
+      "name": "David Kim",
+      "title": "Sr. Security Engineer",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Robert Taylor",
+      "title": "Network Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Aisha Okafor",
+      "title": "Container Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/aishaokafor-aws"
+    },
+    {
+      "name": "Carlos Mendez",
+      "title": "Database Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Lisa Martinez",
+      "title": "Principal Solutions Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/lisamartinez-aws"
+    },
+    {
+      "name": "Thomas Anderson",
+      "title": "Serverless Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Amanda Foster",
+      "title": "FinOps Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Kevin O'Brien",
+      "title": "Sr. Cost Analyst",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/kevinobrien-aws"
+    },
+    {
+      "name": "Patricia Moore",
+      "title": "Identity Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "James Chen",
+      "title": "Network Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Daniel Garcia",
+      "title": "Resilience Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/danielgarcia-aws"
+    },
+    {
+      "name": "Maria Silva",
+      "title": "Compute Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Robert Lee",
+      "title": "NoSQL Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Raj Patel",
+      "title": "Cloud Architect",
+      "company": "Accenture AWS Practice",
+      "linkedIn": "https://linkedin.com/in/rajpatel-accenture"
+    },
+    {
+      "name": "Emily Zhang",
+      "title": "DevOps Lead",
+      "company": "Deloitte Digital"
+    },
+    {
+      "name": "Marcus Johnson",
+      "title": "Solutions Engineer",
+      "company": "Datadog",
+      "linkedIn": "https://linkedin.com/in/marcusjohnson-datadog"
+    },
+    {
+      "name": "Sophie Laurent",
+      "title": "Technical Account Manager",
+      "company": "Snowflake"
+    },
+    {
+      "name": "Ahmed Hassan",
+      "title": "Sr. Cloud Engineer",
+      "company": "Financial Services Corp"
+    },
+    {
+      "name": "Linda Wu",
+      "title": "Infrastructure Architect",
+      "company": "Healthcare Technology Inc",
+      "linkedIn": "https://linkedin.com/in/lindawu-healthtech"
+    },
+    {
+      "name": "Tom Stevens",
+      "title": "VP of Engineering",
+      "company": "E-Commerce Platform",
+      "linkedIn": "https://linkedin.com/in/tomstevens-ecommerce"
+    },
+    {
+      "name": "Nina Kowalski",
+      "title": "Cloud Practice Lead",
+      "company": "Slalom Consulting"
+    },
+    {
+      "name": "Chris Baker",
+      "title": "Principal Architect",
+      "company": "Global Retail Solutions"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 15,
+    "connectionsMade": 25,
+    "hoursAttended": 24,
+    "tracksExplored": 8,
+    "topAchievement": "Architecture Expert"
+  },
+  "callsToAction": [
+    {
+      "text": "Explore AWS Training & Certification",
+      "url": "https://aws.amazon.com/training/?ref=reinvent2025-3001",
+      "type": "primary",
+      "trackingId": "cta-aws-training"
+    },
+    {
+      "text": "Join AWS Partner Network",
+      "url": "https://aws.amazon.com/partners/?ref=reinvent2025-3001",
+      "type": "secondary",
+      "trackingId": "cta-apn"
+    },
+    {
+      "text": "Save the Date: AWS re:Invent 2026",
+      "url": "https://reinvent.awsevents.com/2026?ref=reinvent2025-3001",
+      "type": "tertiary",
+      "trackingId": "cta-reinvent2026"
+    }
+  ],
+  "registeredAt": "2025-09-10T14:30:00Z"
+}

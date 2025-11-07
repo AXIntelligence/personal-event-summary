@@ -1,0 +1,31 @@
+{
+  "eventId": "aws-reinvent-2025",
+  "eventName": "AWS re:Invent 2025",
+  "sourceUrl": "https://reinvent.awsevents.com/",
+  "colors": {
+    "primary": "#232f3e",
+    "secondary": "#ff9900",
+    "accent": "#146eb4",
+    "background": "#ffffff",
+    "text": "#16191f"
+  },
+  "typography": {
+    "headingFont": "'Amazon Ember', 'Helvetica Neue', Helvetica, Arial, sans-serif",
+    "bodyFont": "'Amazon Ember', Arial, sans-serif",
+    "headingSize": "2.5rem",
+    "bodySize": "1rem",
+    "lineHeight": "1.5"
+  },
+  "brandVoice": {
+    "tone": "professional",
+    "keywords": ["AWS", "cloud", "innovation", "builders", "re:Invent", "serverless", "machine learning"],
+    "style": "technical yet accessible",
+    "personality": "authoritative and cutting-edge"
+  },
+  "layout": {
+    "gridSystem": "grid",
+    "spacingUnit": "8px",
+    "borderRadius": "2px",
+    "containerWidth": "1280px"
+  }
+}
