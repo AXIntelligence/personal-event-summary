@@ -526,6 +526,130 @@ grep "color-primary" dist/attendees/1001/index.html
 
 This lesson learned the hard way during Plan 003 implementation.
 
+### 17. Sample/Mock Data Can Hide Critical Flaws (Plan 004 Case Study)
+
+**Learning**: Creating "sample config files" for testing without validating against real sources creates false confidence and leads to production bugs.
+
+**What Happened (Plan 004 Discovery)**:
+- Plan 003 Phase 5-6 created `style-configs/event-tech-live-2025.json` as "sample config"
+- Config never validated against actual eventtechlive.com website
+- Git commit message said "add sample configs for testing" (red flag!)
+- Generated pages used wrong brand colors: #00b8d4 (cyan) vs #0072ce (actual blue)
+- User discovered mismatch: "notice the style doesn't match what was generated"
+- All 139 tests passing, but testing against WRONG data
+
+**The Root Cause**:
+```json
+// ❌ BAD: Manually created "sample" config (style-configs/event-tech-live-2025.json)
+{
+  "eventId": "event-tech-live-2025",
+  "colors": {
+    "primary": "#00b8d4",  // ❌ Cyan - made up color
+    "secondary": "#0097a7",  // ❌ Teal - not from website
+    "accent": "#ff6f00"  // ❌ Orange - not from website
+  },
+  "typography": {
+    "headingFont": "Montserrat, sans-serif"  // ❌ Wrong font
+  },
+  "brandVoice": {
+    "tone": "energetic"  // ❌ Wrong tone
+  }
+}
+```
+
+**The Actual Reality**:
+```json
+// ✅ GOOD: Real scraped data from eventtechlive.com
+{
+  "eventId": "event-tech-live-2025",
+  "colors": {
+    "primary": "#0072ce",  // ✅ Actual brand blue
+    "secondary": "#0a2540",  // ✅ Actual dark blue
+    "accent": "#005bb5"  // ✅ Actual accent blue
+  },
+  "typography": {
+    "headingFont": "'Helvetica Neue', Helvetica, Arial, sans-serif"  // ✅ Actual font
+  },
+  "brandVoice": {
+    "tone": "professional"  // ✅ Actual tone
+  }
+}
+```
+
+**Impact**:
+- 12 Event Tech Live attendee pages had wrong branding (2001-2012)
+- Pages looked unprofessional with mismatched colors
+- Damage to credibility if shown to actual event organizers
+- Tests gave false confidence (all passing against wrong data)
+- Required Plan 004 to fix: scrape real data, regenerate pages, update tests
+
+**How It Should Have Been Done**:
+
+1. **Create Plan 003 Phase 5-6** ✅
+2. **Write Python scraper code** ✅
+3. **Write TypeScript integration code** ✅
+4. **Write tests with mock data** ✅
+5. **RUN ACTUAL SCRAPER** ⚠️ THIS WAS SKIPPED
+   ```bash
+   python -m event_style_scraper scrape --url https://eventtechlive.com
+   ```
+6. **Validate scraped output against TypeScript** ⚠️ THIS WAS SKIPPED
+7. **Regenerate pages with real data** ⚠️ THIS WAS SKIPPED
+8. **Visual inspection of generated pages** ⚠️ THIS WAS SKIPPED
+9. **THEN claim Phase 6 complete** ✅
+
+**Red Flags to Watch For**:
+- ❌ Commit messages saying "sample" or "mock" or "test data"
+- ❌ Manually creating JSON files instead of generating them
+- ❌ Skipping "visual inspection" or "manual validation" steps
+- ❌ "Tests pass" but never looked at actual output
+- ❌ Never ran the CLI tool that produces the data
+- ❌ Colors/fonts/values that "look reasonable" but aren't verified
+
+**Correct Validation Process**:
+```bash
+# 1. Run actual scraper (not mocks!)
+python -m event_style_scraper scrape --url https://eventtechlive.com --output python/style-configs/output.json
+
+# 2. Convert to TypeScript format
+# (handle snake_case → camelCase, fix eventId)
+
+# 3. Regenerate pages with REAL scraped data
+npm run generate
+
+# 4. Visual inspection (open in browser)
+open dist/attendees/2001/index.html
+
+# 5. Verify colors match actual website
+# Compare side-by-side: generated page vs eventtechlive.com
+
+# 6. Save before/after for documentation
+cp dist/attendees/2001/index.html analysis/page-comparison-$(date +%Y%m%d)/after.html
+```
+
+**Why This Matters**:
+- Mock data feels safe but hides integration bugs
+- "Sample configs" become tech debt that ships to production
+- User catches bugs that tests should have caught
+- Visual/manual validation is NOT optional for user-facing output
+- Automated tests don't replace human inspection of generated artifacts
+
+**Rule of Thumb**:
+> **If the data came from your keyboard instead of the actual source system,
+> it's not validated—it's fantasy.**
+
+**Lessons Applied in Fix (Plan 004)**:
+1. ✅ Ran actual Python scraper against eventtechlive.com
+2. ✅ Captured real scraped output (python/style-configs/eventtechlive-com.json)
+3. ✅ Fixed schema conversion (snake_case → camelCase)
+4. ✅ Regenerated all 24 pages with correct colors
+5. ✅ Updated test expectations to match REAL data (not sample data)
+6. ✅ Visual comparison: saved before/after pages for documentation
+7. ✅ All 139 tests passing with correct data
+8. ✅ Verified #0072ce appears in generated pages (not #00b8d4)
+
+This case study demonstrates why Lesson 16's validation checklist is critical.
+
 ## Development Standards
 
 ### Test-Driven Development (TDD)
@@ -749,8 +873,8 @@ node --prof dist/generate.js
 
 **Last Updated**: 2025-11-06
 **Project Status**: ✅ Production Ready (v1.1.0 - Plan 002 Completed)
-**Documentation Version**: 2.1
+**Documentation Version**: 2.2
 **Test Coverage**: 89.93%
-**Total Tests**: 105 passing
+**Total Tests**: 139 passing
 **Pages Generated**: 24 (12 original + 12 Event Tech Live)
-**Lessons Learned**: 15 (10 from Plan 001, 5 from Plan 002)
+**Lessons Learned**: 17 (10 from Plan 001, 5 from Plan 002, 1 from Plan 003, 1 from Plan 004)
