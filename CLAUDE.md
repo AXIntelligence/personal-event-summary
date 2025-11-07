@@ -791,6 +791,185 @@ grep "color-primary" dist/attendees/2001/index.html
 
 This lesson reinforces that validation is **multi-layered**: run the tools, check the output, verify against reality, inspect visually, measure with DevTools.
 
+### 19. Agents Need Explicit Tool Instructions, Not Just Access (Plan 005)
+
+**Learning**: Assigning tools to agents is necessary but not sufficient. Agents may ignore tools and hallucinate content if task descriptions are vague. LLMs default to generating plausible text rather than invoking tools unless explicitly forced.
+
+**What Happened (Plan 005 Discovery)**:
+- ✅ Implemented PlaywrightStyleExtractorTool with 100% test coverage
+- ✅ Assigned tool to web_scraper_agent in CrewAI configuration
+- ❌ **Agent never invoked the tool - it generated fictional HTML/CSS instead**
+- ❌ **Agent fabricated "Example Event - Official Site" with made-up colors**
+- ❌ **0% tool invocation rate despite tool being available**
+
+**The Hallucination Output**:
+```
+Agent Output:
+"Scraping Report for https://example.com
+
+1. URL Validation & robots.txt Check:...
+2. Raw HTML Content:
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <title>Example Event - Official Site</title>  ← FICTIONAL
+   ...
+   #site-header {
+     background-color: #004080;  ← MADE UP
+```
+- ❌ Agent wrote prose report instead of calling tool
+- ❌ Fictional HTML structure that doesn't exist
+- ❌ Made-up colors (#004080, #0072ce - generic tech blues)
+- ❌ No evidence of tool invocation in logs
+
+**Root Cause**: Task description was too vague:
+```yaml
+# ❌ BAD: Vague instruction that led to hallucination
+scrape_website:
+  description: >
+    Use the Playwright Style Extractor tool to scrape the website at {url}.
+    Extract HTML, CSS, and computed styles. Return the scraped data.
+```
+
+**The Fix - Extremely Explicit Instructions**:
+```yaml
+# ✅ GOOD: Explicit step-by-step instructions
+scrape_website:
+  description: >
+    STEP 1: INVOKE THE TOOL
+    You have access to a tool called "Playwright Style Extractor".
+    You MUST call this tool with the URL: {url}
+
+    Action: Playwright Style Extractor
+    Action Input: {url}
+
+    STEP 2: WAIT FOR TOOL OUTPUT
+    The tool will return a structured dictionary containing:
+    - url: The scraped URL
+    - html: Raw HTML content
+    - computed_styles: CSS computed styles
+    - css_variables: Custom properties
+    - success: Boolean status
+
+    STEP 3: RETURN TOOL OUTPUT AS-IS
+    Copy the EXACT output from the tool into your Final Answer.
+    DO NOT modify, summarize, or reformat the tool output.
+
+    CRITICAL RULES:
+    - If you did not call the tool, your answer is WRONG
+    - If you generate fictional HTML/CSS, your answer is WRONG
+    - If you write a "scraping report", your answer is WRONG
+    - If you guess or imagine website content, your answer is WRONG
+
+    Example of CORRECT workflow:
+    Thought: I need to scrape {url} using the Playwright Style Extractor tool
+    Action: Playwright Style Extractor
+    Action Input: {url}
+    Observation: {{"url": "{url}", "html": "<actual html>", ...}}
+    Final Answer: {{"url": "{url}", "html": "<actual html>", ...}}
+```
+
+**Agent Role Redefinition**:
+```yaml
+# ❌ BAD: Role implies content generation
+web_scraper_agent:
+  role: "Web Content Scraper and Style Analyst"
+  goal: "Extract and analyze website styles"
+
+# ✅ GOOD: Role emphasizes tool operation only
+web_scraper_agent:
+  role: "Web Content Scraper (Tool Operator)"
+  goal: "Use the Playwright Style Extractor tool to extract raw HTML, CSS, and visual assets. ALWAYS invoke the tool - NEVER generate content."
+  backstory: >
+    You are a tool operator who ONLY uses the Playwright Style Extractor tool.
+    You NEVER generate, guess, or imagine website content.
+
+    Your workflow is simple:
+    1. Receive a URL
+    2. Invoke the "Playwright Style Extractor" tool
+    3. Return the exact tool output
+
+    You are like a vending machine: URL goes in → tool runs → data comes out.
+    No thinking, no creativity, no improvisation - just tool invocation.
+```
+
+**Results After Fix**:
+```
+Agent Thought: I will use the Playwright Style Extractor tool
+Action: Playwright Style Extractor
+Using Tool: Playwright Style Extractor
+Tool Input: {"url": "https://example.com"}
+Tool Output: {
+  "url": "https://example.com",
+  "html": "<!DOCTYPE html><html lang=\"en\"><head><title>Example Domain</title>...",
+  "computed_styles": {
+    "body": {"backgroundColor": "rgb(238, 238, 238)", ...}
+  },
+  "success": true
+}
+Final Answer: {same as tool output}
+```
+- ✅ Agent called tool every time (100% invocation rate)
+- ✅ Actual example.com HTML returned
+- ✅ Real computed colors from browser
+- ✅ Structured data output (not prose)
+
+**Impact**:
+- **Before**: 0% tool invocation, 100% hallucinated content
+- **After**: 100% tool invocation, 0% hallucinated content
+- Integration tests passing with real website data
+- Colors match DevTools inspection (validated with automated script)
+
+**Why This Matters**:
+- Assigning tools != agents using tools
+- LLMs are text generators by default, tool use is learned behavior
+- Vague instructions trigger text generation instinct
+- Explicit step-by-step format overrides default behavior
+- "Tool Operator" role framing reduces hallucination
+- Critical for any CrewAI implementation with tools
+
+**Key Strategies for Forcing Tool Invocation**:
+
+1. **Step-by-step format**: STEP 1, STEP 2, STEP 3
+2. **Show exact format**: `Action: Tool Name` / `Action Input: {params}`
+3. **List negative rules**: "If you did NOT call tool, answer is WRONG"
+4. **Provide concrete example**: Show correct thought → action → observation → answer
+5. **Redefine agent role**: "Tool Operator" not "Expert" or "Analyst"
+6. **Use metaphors**: "You are like a vending machine" (emphasizes mechanical behavior)
+7. **Eliminate wiggle room**: "MUST call", "ONLY use", "NEVER generate"
+
+**Red Flags Your Agent Will Hallucinate**:
+- ❌ Task says "use the tool" without showing how
+- ❌ Agent role is "Expert" or "Analyst" (implies knowledge)
+- ❌ No example of correct tool invocation workflow
+- ❌ No explicit negative rules (what NOT to do)
+- ❌ Task allows flexibility: "scrape and analyze" (analyze = hallucinate)
+
+**Validation Checklist**:
+- [ ] Check logs for "Tool: <tool_name>" or "Using Tool:"
+- [ ] Verify tool output appears in logs (not just agent's prose)
+- [ ] Compare agent output to known ground truth (DevTools for colors)
+- [ ] Search for hallucination markers (generic names, made-up CSS)
+- [ ] Integration test with real data source
+- [ ] Measure tool invocation rate (should be 100%)
+
+**Rule of Thumb**:
+> **If your task description doesn't explicitly show the Action/Action Input format
+> with a concrete example, your agent will hallucinate instead of using the tool.**
+
+**See Also**:
+- Lesson 16: End-to-End Validation is NON-NEGOTIABLE
+- Lesson 18: Verify Scraper Output with DevTools
+- `docs/scraper-validation-checklist.md`: Tool invocation validation
+- `python/tests/integration/test_real_scraping.py`: Integration tests for tool usage
+- Plan 005: Comprehensive documentation of the hallucination bug and fix
+
+**Commits**:
+- `9405ad6`: Phase 3 fix (explicit task instructions + agent role redefinition)
+- `6e0f29d`: Phase 4-5 (integration tests + validation tools)
+
+This lesson was learned through Plan 005 implementation and is critical for any AI agent system that relies on tools for accurate data extraction.
+
 ## Development Standards
 
 ### Test-Driven Development (TDD)
@@ -1012,10 +1191,10 @@ node --prof dist/generate.js
 
 ---
 
-**Last Updated**: 2025-11-06
+**Last Updated**: 2025-11-07
 **Project Status**: ✅ Production Ready (v1.1.0 - Plan 002 Completed)
-**Documentation Version**: 2.2
+**Documentation Version**: 2.3
 **Test Coverage**: 89.93%
 **Total Tests**: 139 passing
 **Pages Generated**: 24 (12 original + 12 Event Tech Live)
-**Lessons Learned**: 17 (10 from Plan 001, 5 from Plan 002, 1 from Plan 003, 1 from Plan 004)
+**Lessons Learned**: 19 (10 from Plan 001, 5 from Plan 002, 1 from Plan 003, 1 from Plan 004, 2 from Plan 005)
