@@ -1,7 +1,7 @@
 # Personal Event Summary
 
 [![Test Suite](https://github.com/USERNAME/personal-event-summary/actions/workflows/test.yml/badge.svg)](https://github.com/USERNAME/personal-event-summary/actions/workflows/test.yml)
-[![Deploy to GitHub Pages](https://github.com/USERNAME/personal-event-summary/actions/workflows/deploy.yml/badge.svg)](https://github.com/USERNAME/personal-event-summary/actions/workflows/deploy.yml)
+[![Scrape and Deploy](https://github.com/USERNAME/personal-event-summary/actions/workflows/scrape-and-deploy.yml/badge.svg)](https://github.com/USERNAME/personal-event-summary/actions/workflows/scrape-and-deploy.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > **Note**: Replace `USERNAME` in the badge URLs with your GitHub username

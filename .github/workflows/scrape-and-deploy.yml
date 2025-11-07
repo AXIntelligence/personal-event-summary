@@ -133,6 +133,37 @@ jobs:
           git push
         fi
 
+    - name: Scraping summary
+      if: always()
+      run: |
+        echo "## 🎨 Scraping Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+
+        if [ "${{ steps.scrape.outcome }}" == "success" ]; then
+          echo "✅ **Status**: Scraping successful" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "⚠️ **Status**: Scraping failed (using cached configs)" >> $GITHUB_STEP_SUMMARY
+        fi
+
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Style Configurations" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+
+        cd python
+        for config in style-configs/*.json; do
+          if [ -f "$config" ]; then
+            EVENT_NAME=$(jq -r '.event_name // "Unknown"' "$config")
+            EVENT_ID=$(jq -r '.event_id // "unknown"' "$config")
+            PRIMARY_COLOR=$(jq -r '.colors.primary // "#000000"' "$config")
+            SCRAPED_AT=$(jq -r '.scraped_at // "unknown"' "$config")
+
+            echo "- **$EVENT_NAME** (\`$EVENT_ID\`)" >> $GITHUB_STEP_SUMMARY
+            echo "  - Primary Color: \`$PRIMARY_COLOR\`" >> $GITHUB_STEP_SUMMARY
+            echo "  - Last Updated: $SCRAPED_AT" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+          fi
+        done
+
     outputs:
       scrape_status: ${{ steps.scrape.outcome }}
 
