@@ -154,12 +154,14 @@ When referencing plans in code comments or documentation:
 
 ## Recent Updates
 
-- **2025-11-07**: Created Plan 006 - End-to-End Scrape-Deploy Pipeline (Draft)
+- **2025-11-07**: Created Plan 006 - End-to-End Scrape-Deploy Pipeline (Draft) - Modified
   - Addresses CLAUDE.md Lesson 16 compliance (end-to-end validation)
   - Automates Python scraper in GitHub Actions workflow
+  - **Manual-only triggers** (no scheduled runs) for complete cost control
   - Validates complete pipeline: scrape → export → CSS gen → HTML → deploy
-  - Adds cost controls, fallback logic, and DevTools validation
+  - Adds fallback logic, staleness warnings, and DevTools validation
   - Includes E2E test script and comprehensive monitoring
+  - Push-triggered deploys complete in < 5 minutes (no scraping overhead)
 - **2025-11-07**: Completed Plan 005 - Playwright-Based Scraping Tool ✅
   - Fixed critical hallucination bug where agents generated fictional HTML/CSS
   - Implemented explicit tool invocation instructions with step-by-step format
