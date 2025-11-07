@@ -1,3 +1,7 @@
+# ⚠️ DEPRECATED: This workflow is replaced by scrape-and-deploy.yml
+# Will be removed after scrape-and-deploy.yml is validated in production
+# See Plan 006 for details
+
 name: Deploy to GitHub Pages
 
 on:
