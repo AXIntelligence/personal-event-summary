@@ -5,12 +5,12 @@ import type { Event, Attendee } from '../../src/types/index.js';
 describe('dataLoader', () => {
   describe('loadEvent', () => {
     it('should load and parse event data from JSON file', async () => {
-      const event = await loadEvent('event-2025');
+      const event = await loadEvent('event-tech-live-2025');
 
       expect(event).toBeDefined();
-      expect(event.id).toBe('event-2025');
-      expect(event.name).toBe('TechConf 2025');
-      expect(event.location).toContain('San Francisco');
+      expect(event.id).toBe('event-tech-live-2025');
+      expect(event.name).toBe('Event Tech Live 2025');
+      expect(event.location).toContain('London');
       expect(event.totalAttendees).toBeGreaterThan(0);
       expect(event.totalSessions).toBeGreaterThan(0);
     });
@@ -20,7 +20,7 @@ describe('dataLoader', () => {
     });
 
     it('should validate event data structure with type guard', async () => {
-      const event = await loadEvent('event-2025');
+      const event = await loadEvent('event-tech-live-2025');
 
       // Verify all required fields are present
       expect(event).toHaveProperty('id');
@@ -35,7 +35,7 @@ describe('dataLoader', () => {
     });
 
     it('should parse dates as strings in ISO format', async () => {
-      const event = await loadEvent('event-2025');
+      const event = await loadEvent('event-tech-live-2025');
 
       expect(typeof event.startDate).toBe('string');
       expect(typeof event.endDate).toBe('string');
@@ -45,15 +45,15 @@ describe('dataLoader', () => {
 
   describe('loadAttendee', () => {
     it('should load and parse attendee data from JSON file', async () => {
-      const attendee = await loadAttendee('1001');
+      const attendee = await loadAttendee('2001');
 
       expect(attendee).toBeDefined();
-      expect(attendee.id).toBe('1001');
+      expect(attendee.id).toBe('2001');
       expect(attendee.firstName).toBeTruthy();
       expect(attendee.lastName).toBeTruthy();
       expect(attendee.email).toContain('@');
       expect(attendee.company).toBeTruthy();
-      expect(attendee.eventId).toBe('event-2025');
+      expect(attendee.eventId).toBe('event-tech-live-2025');
     });
 
     it('should throw error for non-existent attendee', async () => {
@@ -61,7 +61,7 @@ describe('dataLoader', () => {
     });
 
     it('should load attendee with sessions array', async () => {
-      const attendee = await loadAttendee('1001');
+      const attendee = await loadAttendee('2001');
 
       expect(Array.isArray(attendee.sessions)).toBe(true);
       expect(attendee.sessions.length).toBeGreaterThan(0);
@@ -74,7 +74,7 @@ describe('dataLoader', () => {
     });
 
     it('should load attendee with connections array', async () => {
-      const attendee = await loadAttendee('1001');
+      const attendee = await loadAttendee('2001');
 
       expect(Array.isArray(attendee.connections)).toBe(true);
 
@@ -87,7 +87,7 @@ describe('dataLoader', () => {
     });
 
     it('should load attendee with stats object', async () => {
-      const attendee = await loadAttendee('1001');
+      const attendee = await loadAttendee('2001');
 
       expect(attendee.stats).toBeDefined();
       expect(typeof attendee.stats.sessionsAttended).toBe('number');
@@ -97,7 +97,7 @@ describe('dataLoader', () => {
     });
 
     it('should load attendee with callsToAction array', async () => {
-      const attendee = await loadAttendee('1001');
+      const attendee = await loadAttendee('2001');
 
       expect(Array.isArray(attendee.callsToAction)).toBe(true);
       expect(attendee.callsToAction.length).toBeGreaterThan(0);
@@ -110,13 +110,13 @@ describe('dataLoader', () => {
     });
 
     it('should validate attendee email format', async () => {
-      const attendee = await loadAttendee('1001');
+      const attendee = await loadAttendee('2001');
 
       expect(attendee.email).toMatch(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
     });
 
     it('should validate all required attendee fields', async () => {
-      const attendee = await loadAttendee('1001');
+      const attendee = await loadAttendee('2001');
 
       const requiredFields = [
         'id', 'firstName', 'lastName', 'email', 'company', 'title',
@@ -186,7 +186,7 @@ describe('dataLoader', () => {
     it('should throw meaningful error for invalid JSON', async () => {
       // Test will be implemented after dataLoader is created
       // This ensures proper error messages
-      await expect(loadEvent('event-2025')).resolves.toBeDefined();
+      await expect(loadEvent('event-tech-live-2025')).resolves.toBeDefined();
     });
 
     it('should handle file read errors gracefully', async () => {
@@ -196,7 +196,7 @@ describe('dataLoader', () => {
 
   describe('Type Safety', () => {
     it('should return properly typed Event object', async () => {
-      const event: Event = await loadEvent('event-2025');
+      const event: Event = await loadEvent('event-tech-live-2025');
 
       // TypeScript should enforce these types at compile time
       expect(typeof event.id).toBe('string');
@@ -204,7 +204,7 @@ describe('dataLoader', () => {
     });
 
     it('should return properly typed Attendee object', async () => {
-      const attendee: Attendee = await loadAttendee('1001');
+      const attendee: Attendee = await loadAttendee('2001');
 
       // TypeScript should enforce these types at compile time
       expect(typeof attendee.id).toBe('string');

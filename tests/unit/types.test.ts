@@ -11,7 +11,7 @@ describe('Type Guards', () => {
       email: 'john@example.com',
       company: 'TechCorp',
       title: 'Engineer',
-      eventId: 'event-2025',
+      eventId: 'event-tech-live-2025',
       sessions: [],
       connections: [],
       stats: {
@@ -157,7 +157,7 @@ describe('Type Guards', () => {
   describe('isEvent', () => {
     it('should accept valid event', () => {
       const event = {
-        id: 'event-2025',
+        id: 'event-tech-live-2025',
         name: 'TechConf 2025',
         description: 'A tech conference',
         location: 'San Francisco',
@@ -173,7 +173,7 @@ describe('Type Guards', () => {
 
     it('should reject event missing required fields', () => {
       const incomplete = {
-        id: 'event-2025',
+        id: 'event-tech-live-2025',
         name: 'TechConf 2025',
       };
 

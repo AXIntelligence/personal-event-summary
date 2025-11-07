@@ -135,6 +135,7 @@ When referencing plans in code comments or documentation:
 | 004 | [Fix Event Tech Live Style Mismatch](004-fix-event-tech-live-style-mismatch.md) | 📝 Draft | - | 🔴 Critical | Fix style mismatch by replacing sample config with real scraped data from eventtechlive.com |
 | 005 | [Playwright-Based Scraping Tool](005-playwright-scraping-tool.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Replace AI-guessing with actual browser automation for accurate style extraction |
 | 006 | [End-to-End Scrape-Deploy Pipeline](006-end-to-end-scrape-deploy-pipeline.md) | 📝 Draft | - | 🔴 Critical | Automate scraping in GitHub Actions for continuous style updates and full pipeline validation |
+| 007 | [AWS re:Invent Data Source Integration](007-end-to-end-scrape-deploy-pipeline.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Replace TechConf 2025 with AWS re:Invent as high-quality event data source |
 
 ## Status Legend
 - ✅ **Completed**: Implementation done, all tests passing
@@ -154,6 +155,22 @@ When referencing plans in code comments or documentation:
 
 ## Recent Updates
 
+- **2025-11-07**: Completed Plan 007 - AWS re:Invent Data Source Integration ✅
+  - Scraped AWS re:Invent website for authentic branding (#232f3e primary color, Amazon Ember font)
+  - Created aws-reinvent-2025.json event config with 30 AWS-themed sessions across 7 tracks
+  - Generated 12 believable attendee personas (3001-3012) with realistic engagement patterns
+  - Removed TechConf 2025 data (event-2025.json, attendees 1001-1012)
+  - Updated all 139 tests to reference Event Tech Live (2001-2012) and AWS re:Invent (3001-3012)
+  - All tests passing (100%), test coverage maintained at 89.93%
+  - Documentation updated (README.md, CLAUDE.md, plans/README.md)
+  - Validation report: [analysis/plan-007-validation-report.md](../analysis/plan-007-validation-report.md)
+- **2025-11-07**: Created Plan 007 - AWS re:Invent Data Source Integration (Draft)
+  - Replaces generic TechConf 2025 with AWS re:Invent as high-quality event example
+  - Scrapes https://reinvent.awsevents.com/ for authentic AWS branding
+  - Creates 12 believable attendee personas (3001-3012) with AWS-themed sessions
+  - Includes 60+ unique AWS sessions across 7 tracks (Compute, AI/ML, Serverless, etc.)
+  - Removes old event-2025.json and attendees 1001-1012
+  - Hypothesis-driven approach with DevTools color validation
 - **2025-11-07**: Created Plan 006 - End-to-End Scrape-Deploy Pipeline (Draft) - Modified
   - Addresses CLAUDE.md Lesson 16 compliance (end-to-end validation)
   - Automates Python scraper in GitHub Actions workflow
