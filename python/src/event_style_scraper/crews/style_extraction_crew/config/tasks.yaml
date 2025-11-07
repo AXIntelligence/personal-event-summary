@@ -1,29 +1,34 @@
 scrape_website:
   description: >
-    Scrape the event website at {url} to extract:
-    - Raw HTML structure and content
-    - All CSS stylesheets (inline and external)
-    - Computed styles for key elements (headers, body, buttons, links)
+    Use the Playwright Style Extractor tool to scrape the event website at {url}.
+
+    CRITICAL: You MUST use the Playwright Style Extractor tool. DO NOT generate,
+    guess, or imagine website content. ONLY use the tool's actual output.
+
+    Call the tool with the URL to extract:
+    - Raw HTML structure from the rendered page
+    - Computed styles for all key elements (header, nav, body, h1, button, a)
+    - CSS custom properties (--variable-name)
     - Logo and favicon URLs
-    - Page metadata and structure
+    - All data comes from actual browser rendering, not assumptions
 
-    Use Playwright to handle JavaScript-rendered content. Ensure all network requests
-    complete before extracting styles. Capture both light and dark mode styles if
-    present.
+    The tool returns a dictionary with:
+    - html: Full HTML content from the page
+    - computed_styles: Object with computed styles for each selector
+    - css_variables: Object with CSS custom properties
+    - assets: Logo and favicon URLs
+    - success: true if scraping succeeded
 
-    Security requirements:
-    - Validate URL before scraping (no localhost, private IPs)
-    - Respect robots.txt
-    - Use appropriate User-Agent
-    - Implement rate limiting (minimum 1 second between requests)
+    DO NOT fabricate HTML, CSS, or colors. Return ONLY the tool's actual output.
   expected_output: >
-    A structured report containing:
-    1. Raw HTML content (relevant sections only, not entire page)
-    2. Extracted CSS rules and computed styles
-    3. List of all color values found
-    4. List of all font-family declarations
-    5. Logo URL and favicon URL
-    6. Page structure (header, nav, main sections)
+    The complete JSON output from the Playwright Style Extractor tool, containing:
+    - html: Actual HTML content from the browser
+    - computed_styles: Actual computed styles for key selectors
+    - css_variables: Actual CSS custom properties from :root
+    - assets: Logo and favicon URLs if present
+    - success: true
+
+    This output must be real data from the tool, not generated content.
   agent: web_scraper_agent
 
 extract_styles:

@@ -6,7 +6,7 @@ from typing import Any
 from crewai import Agent, Crew, Process, Task
 from crewai.project import CrewBase, agent, crew, task
 
-from event_style_scraper.tools import WebScraperTool, SecurityError
+from event_style_scraper.tools import WebScraperTool, SecurityError, PlaywrightStyleExtractorTool
 
 
 @CrewBase
@@ -47,9 +47,10 @@ class StyleExtractionCrew:
 
     @agent
     def web_scraper_agent(self) -> Agent:
-        """Create web scraper agent."""
+        """Create web scraper agent with Playwright tool."""
         return Agent(
             config=self.agents_config["web_scraper_agent"],
+            tools=[PlaywrightStyleExtractorTool(timeout=self.timeout * 1000)],  # Convert seconds to milliseconds
             verbose=True,
             allow_delegation=False
         )
