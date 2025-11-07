@@ -1,0 +1,236 @@
+{
+  "id": "3012",
+  "firstName": "Kevin",
+  "lastName": "O'Brien",
+  "email": "kevin.obrien@adtechnology.com",
+  "company": "Advertising Technology",
+  "title": "Senior ML Engineer",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "AIM301",
+      "title": "Building Production LLMs with Amazon Bedrock",
+      "description": "Deploy large language models at scale using Amazon Bedrock. Learn prompt engineering, fine-tuning strategies, guardrails implementation, and cost optimization for generative AI workloads.",
+      "speakers": ["Dr. Emily Chen, Principal ML Scientist, AWS AI"],
+      "dateTime": "2025-12-01T09:00:00Z",
+      "durationMinutes": 90,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "AIM401",
+      "title": "Real-Time ML with Amazon SageMaker Feature Store",
+      "description": "Build real-time machine learning pipelines with SageMaker Feature Store. Explore feature engineering, online/offline stores, feature freshness, and sub-10ms latency serving.",
+      "speakers": ["Raj Kumar, Sr. ML Solutions Architect, AWS"],
+      "dateTime": "2025-12-01T13:00:00Z",
+      "durationMinutes": 75,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "AIM302",
+      "title": "Recommendation Systems at Scale with AWS",
+      "description": "Design high-performance recommendation engines using Amazon Personalize and SageMaker. Learn collaborative filtering, deep learning models, real-time personalization, and A/B testing strategies.",
+      "speakers": ["Maria Gonzalez, ML Specialist, AWS", "Tom Harrison, Personalization Lead, AWS"],
+      "dateTime": "2025-12-02T10:30:00Z",
+      "durationMinutes": 90,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "DAT301",
+      "title": "Streaming Data Pipelines with Amazon Kinesis",
+      "description": "Process millions of events per second with Amazon Kinesis. Explore stream processing patterns, windowing functions, exactly-once semantics, and integration with ML inference endpoints.",
+      "speakers": ["Sarah Mitchell, Streaming Analytics Architect, AWS"],
+      "dateTime": "2025-12-02T14:00:00Z",
+      "durationMinutes": 60,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "AIM403",
+      "title": "MLOps: Automating ML Lifecycle with SageMaker Pipelines",
+      "description": "Implement end-to-end MLOps with SageMaker Pipelines. Learn CI/CD for ML models, automated retraining, model monitoring, drift detection, and feature store integration.",
+      "speakers": ["David Park, MLOps Specialist, AWS"],
+      "dateTime": "2025-12-03T09:30:00Z",
+      "durationMinutes": 75,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "AIM304",
+      "title": "Generative AI for Content Creation and Personalization",
+      "description": "Build generative AI applications for marketing and advertising. Explore text generation, image synthesis with Stable Diffusion, video generation, and ethical AI considerations.",
+      "speakers": ["Lisa Wang, AI Research Scientist, AWS", "Alex Thompson, Generative AI Specialist, AWS"],
+      "dateTime": "2025-12-03T13:00:00Z",
+      "durationMinutes": 90,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "DAT401",
+      "title": "Amazon Aurora: Global Database at Scale",
+      "description": "Build globally distributed databases with Amazon Aurora. Learn about Aurora Global Database, read replicas, failover strategies, and performance tuning for multi-region applications.",
+      "speakers": ["Carlos Mendez, Database Architect, AWS"],
+      "dateTime": "2025-12-03T15:30:00Z",
+      "durationMinutes": 60,
+      "track": "Database"
+    },
+    {
+      "id": "AIM305",
+      "title": "Vector Databases for LLM Applications with pgvector",
+      "description": "Build semantic search and RAG applications using pgvector on Amazon RDS and Aurora. Learn embedding generation, similarity search, indexing strategies, and hybrid search patterns.",
+      "speakers": ["Michael Rodriguez, Database ML Specialist, AWS"],
+      "dateTime": "2025-12-04T10:00:00Z",
+      "durationMinutes": 75,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "AIM402",
+      "title": "GPU Optimization for Deep Learning on Amazon EC2",
+      "description": "Maximize GPU utilization for deep learning workloads. Explore P5 instances, NVIDIA H100 optimization, multi-GPU training, distributed training with PyTorch FSDP, and cost management.",
+      "speakers": ["Jennifer Lee, HPC & ML Infrastructure Lead, AWS"],
+      "dateTime": "2025-12-04T13:30:00Z",
+      "durationMinutes": 90,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "AIM306",
+      "title": "Click-Through Rate Prediction with Amazon SageMaker",
+      "description": "Build high-performance CTR prediction models for advertising platforms. Learn feature engineering for sparse data, deep learning architectures (Wide & Deep, DeepFM), and real-time inference optimization.",
+      "speakers": ["Patricia Chen, ML Engineer, AWS"],
+      "dateTime": "2025-12-04T16:00:00Z",
+      "durationMinutes": 60,
+      "track": "AI & Machine Learning"
+    },
+    {
+      "id": "DAT302",
+      "title": "Real-Time Analytics with Amazon Redshift Streaming",
+      "description": "Query streaming data with zero-ETL using Redshift streaming ingestion. Learn materialized views, incremental refresh strategies, and sub-second analytics on live data.",
+      "speakers": ["Robert Taylor, Analytics Solutions Architect, AWS"],
+      "dateTime": "2025-12-05T09:00:00Z",
+      "durationMinutes": 60,
+      "track": "Data & Analytics"
+    },
+    {
+      "id": "AIM307",
+      "title": "Responsible AI: Bias Detection and Model Explainability",
+      "description": "Build trustworthy ML systems with SageMaker Clarify and Responsible AI tools. Explore bias detection, fairness metrics, SHAP explanations, model cards, and governance frameworks.",
+      "speakers": ["Dr. Amanda Foster, AI Ethics Lead, AWS", "Kevin Chen, ML Governance Specialist, AWS"],
+      "dateTime": "2025-12-05T13:00:00Z",
+      "durationMinutes": 75,
+      "track": "AI & Machine Learning"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Dr. Emily Chen",
+      "title": "Principal ML Scientist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/emilychen-aws-ai"
+    },
+    {
+      "name": "Raj Kumar",
+      "title": "Sr. ML Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Maria Gonzalez",
+      "title": "ML Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/mariagonzalez-aws-ml"
+    },
+    {
+      "name": "Tom Harrison",
+      "title": "Personalization Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Sarah Mitchell",
+      "title": "Streaming Analytics Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "David Park",
+      "title": "MLOps Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/davidpark-aws-mlops"
+    },
+    {
+      "name": "Lisa Wang",
+      "title": "AI Research Scientist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Alex Thompson",
+      "title": "Generative AI Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/alexthompson-genai"
+    },
+    {
+      "name": "Jennifer Lee",
+      "title": "HPC & ML Infrastructure Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Patricia Chen",
+      "title": "ML Engineer",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Robert Taylor",
+      "title": "Analytics Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Dr. Amanda Foster",
+      "title": "AI Ethics Lead",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/amandafoster-ai-ethics"
+    },
+    {
+      "name": "Marcus Lee",
+      "title": "ML Platform Engineer",
+      "company": "Netflix",
+      "linkedIn": "https://linkedin.com/in/marcuslee-netflix"
+    },
+    {
+      "name": "Sophia Martinez",
+      "title": "Director of Data Science",
+      "company": "Meta Advertising"
+    },
+    {
+      "name": "James Wong",
+      "title": "Principal ML Engineer",
+      "company": "Google Ads",
+      "linkedIn": "https://linkedin.com/in/jameswong-google"
+    },
+    {
+      "name": "Rachel Adams",
+      "title": "Head of ML Infrastructure",
+      "company": "DoorDash"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 12,
+    "connectionsMade": 16,
+    "hoursAttended": 18,
+    "tracksExplored": 3,
+    "topAchievement": "ML at Scale Expert"
+  },
+  "callsToAction": [
+    {
+      "text": "Explore AWS Training & Certification",
+      "url": "https://aws.amazon.com/training/?ref=reinvent2025-3012",
+      "type": "primary",
+      "trackingId": "cta-aws-training"
+    },
+    {
+      "text": "Join AWS Partner Network",
+      "url": "https://aws.amazon.com/partners/?ref=reinvent2025-3012",
+      "type": "secondary",
+      "trackingId": "cta-apn"
+    },
+    {
+      "text": "Save the Date: AWS re:Invent 2026",
+      "url": "https://reinvent.awsevents.com/2026?ref=reinvent2025-3012",
+      "type": "tertiary",
+      "trackingId": "cta-reinvent2026"
+    }
+  ],
+  "registeredAt": "2025-08-28T16:45:00Z"
+}

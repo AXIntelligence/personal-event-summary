@@ -1,0 +1,12 @@
+{
+  "id": "aws-reinvent-2025",
+  "name": "AWS re:Invent 2025",
+  "description": "AWS re:Invent is a learning conference hosted by Amazon Web Services for the global cloud computing community. Join 60,000+ builders, developers, and IT leaders for five days of keynotes, training, certification opportunities, and hands-on labs. Explore the latest innovations in compute, AI/ML, serverless, containers, databases, security, and more. Connect with AWS experts, partners, and peers while discovering best practices for building and scaling cloud applications.",
+  "location": "Las Vegas, NV",
+  "startDate": "2025-12-01T08:00:00Z",
+  "endDate": "2025-12-05T18:00:00Z",
+  "totalAttendees": 65000,
+  "totalSessions": 2200,
+  "websiteUrl": "https://reinvent.awsevents.com/",
+  "logoUrl": null
+}

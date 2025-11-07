@@ -1,0 +1,256 @@
+{
+  "id": "3011",
+  "firstName": "Fatima",
+  "lastName": "Al-Mansouri",
+  "email": "fatima.almansouri@avstartup.ai",
+  "company": "Autonomous Vehicles Startup",
+  "title": "Machine Learning Engineer",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "AIM301",
+      "title": "Amazon SageMaker: End-to-End ML Workflows",
+      "description": "Build production ML pipelines with Amazon SageMaker. Explore data preparation, model training, hyperparameter tuning, and deployment workflows for scalable machine learning.",
+      "speakers": ["Dr. Emily Chen, ML Architect, AWS"],
+      "dateTime": "2025-12-01T09:00:00Z",
+      "durationMinutes": 90,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM401",
+      "title": "Amazon Bedrock: Building with Foundation Models",
+      "description": "Leverage generative AI with Amazon Bedrock. Learn to integrate foundation models like Claude, Llama, and Stable Diffusion into applications without managing infrastructure.",
+      "speakers": ["Dr. Raj Sharma, AI Research Scientist, AWS", "Alexandra Torres, Generative AI Lead, AWS"],
+      "dateTime": "2025-12-01T13:30:00Z",
+      "durationMinutes": 75,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM201",
+      "title": "Computer Vision with Amazon Rekognition",
+      "description": "Build intelligent computer vision applications with Amazon Rekognition. Explore object detection, facial analysis, text extraction, and custom model training for image and video analysis.",
+      "speakers": ["Michael Zhang, Computer Vision Specialist, AWS"],
+      "dateTime": "2025-12-02T10:00:00Z",
+      "durationMinutes": 60,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM302",
+      "title": "MLOps: Automating Machine Learning Lifecycle",
+      "description": "Implement MLOps best practices on AWS. Learn CI/CD for ML models, model monitoring, A/B testing, feature stores, and automated retraining pipelines with SageMaker Pipelines.",
+      "speakers": ["Sarah Liu, MLOps Architect, AWS"],
+      "dateTime": "2025-12-02T14:00:00Z",
+      "durationMinutes": 75,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM402",
+      "title": "Training Large Models on SageMaker: Distributed Strategies",
+      "description": "Scale model training with distributed strategies on SageMaker. Explore data parallelism, model parallelism, mixed precision training, and GPU optimization techniques.",
+      "speakers": ["Dr. James Park, ML Systems Engineer, AWS"],
+      "dateTime": "2025-12-03T09:30:00Z",
+      "durationMinutes": 90,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM303",
+      "title": "Real-Time Inference with SageMaker Endpoints",
+      "description": "Deploy ML models for real-time inference at scale. Learn endpoint configuration, auto-scaling, multi-model endpoints, and cost optimization strategies for production inference.",
+      "speakers": ["Linda Nguyen, ML Infrastructure Lead, AWS"],
+      "dateTime": "2025-12-03T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM202",
+      "title": "Feature Engineering with SageMaker Feature Store",
+      "description": "Build robust feature engineering pipelines with SageMaker Feature Store. Learn feature versioning, online/offline stores, feature discovery, and feature reusability patterns.",
+      "speakers": ["Carlos Rodriguez, Data Science Engineer, AWS"],
+      "dateTime": "2025-12-03T15:30:00Z",
+      "durationMinutes": 60,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM403",
+      "title": "Neural Network Optimization for Edge Devices",
+      "description": "Deploy ML models to edge devices with AWS IoT Greengrass and SageMaker Neo. Explore model quantization, pruning, compilation, and optimization for resource-constrained environments.",
+      "speakers": ["Dr. Yuki Tanaka, Edge AI Specialist, AWS", "Marcus Brown, IoT ML Architect, AWS"],
+      "dateTime": "2025-12-04T10:00:00Z",
+      "durationMinutes": 90,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM304",
+      "title": "Amazon SageMaker Autopilot: Automated Machine Learning",
+      "description": "Accelerate ML development with SageMaker Autopilot. Learn automated model selection, hyperparameter optimization, and model explainability with AutoML capabilities.",
+      "speakers": ["Patricia Kim, AutoML Lead, AWS"],
+      "dateTime": "2025-12-04T13:30:00Z",
+      "durationMinutes": 60,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM501",
+      "title": "Deep Reinforcement Learning for Autonomous Systems",
+      "description": "Build autonomous systems with deep reinforcement learning on AWS. Explore AWS DeepRacer, custom RL environments, policy optimization, and simulation-to-reality transfer techniques.",
+      "speakers": ["Dr. Aisha Williams, RL Research Lead, AWS"],
+      "dateTime": "2025-12-04T15:30:00Z",
+      "durationMinutes": 90,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM305",
+      "title": "Model Monitoring and Drift Detection",
+      "description": "Ensure ML model reliability with monitoring and drift detection. Learn to detect data drift, concept drift, and model performance degradation using SageMaker Model Monitor.",
+      "speakers": ["Robert Johnson, ML Observability Engineer, AWS"],
+      "dateTime": "2025-12-05T09:00:00Z",
+      "durationMinutes": 60,
+      "track": "AI/ML"
+    },
+    {
+      "id": "AIM306",
+      "title": "Generative AI for Synthetic Data Creation",
+      "description": "Generate synthetic training data with generative AI models. Explore GANs, VAEs, and diffusion models for data augmentation, privacy-preserving datasets, and simulation environments.",
+      "speakers": ["Dr. Sofia Martinez, Generative AI Researcher, AWS"],
+      "dateTime": "2025-12-05T11:30:00Z",
+      "durationMinutes": 60,
+      "track": "AI/ML"
+    },
+    {
+      "id": "KEY01",
+      "title": "AWS CEO Keynote: The Future of Cloud Computing",
+      "description": "Join AWS CEO for the flagship keynote unveiling the latest innovations in cloud computing, AI/ML, and infrastructure. Discover new services, customer success stories, and the future roadmap.",
+      "speakers": ["Adam Selipsky, CEO, Amazon Web Services"],
+      "dateTime": "2025-12-02T08:00:00Z",
+      "durationMinutes": 120,
+      "track": "Keynote"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Dr. Emily Chen",
+      "title": "ML Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/emilychen-aws-ml"
+    },
+    {
+      "name": "Dr. Raj Sharma",
+      "title": "AI Research Scientist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Alexandra Torres",
+      "title": "Generative AI Lead",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/alexandratorres-aws"
+    },
+    {
+      "name": "Michael Zhang",
+      "title": "Computer Vision Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Sarah Liu",
+      "title": "MLOps Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/sarahliu-mlops"
+    },
+    {
+      "name": "Dr. James Park",
+      "title": "ML Systems Engineer",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Linda Nguyen",
+      "title": "ML Infrastructure Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Carlos Rodriguez",
+      "title": "Data Science Engineer",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/carlosrodriguez-datasci"
+    },
+    {
+      "name": "Dr. Yuki Tanaka",
+      "title": "Edge AI Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Marcus Brown",
+      "title": "IoT ML Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Patricia Kim",
+      "title": "AutoML Lead",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/patriciakim-automl"
+    },
+    {
+      "name": "Dr. Aisha Williams",
+      "title": "RL Research Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Robert Johnson",
+      "title": "ML Observability Engineer",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Dr. Sofia Martinez",
+      "title": "Generative AI Researcher",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/sofiamartinez-genai"
+    },
+    {
+      "name": "Kevin Tanaka",
+      "title": "Senior ML Engineer",
+      "company": "Tesla Autopilot Team",
+      "linkedIn": "https://linkedin.com/in/kevintanaka-tesla"
+    },
+    {
+      "name": "Rachel Green",
+      "title": "Computer Vision Lead",
+      "company": "Waymo",
+      "linkedIn": "https://linkedin.com/in/rachelgreen-waymo"
+    },
+    {
+      "name": "David Okonkwo",
+      "title": "Perception Engineer",
+      "company": "Cruise Automation"
+    },
+    {
+      "name": "Julia Santos",
+      "title": "ML Platform Engineer",
+      "company": "NVIDIA Automotive"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 13,
+    "connectionsMade": 18,
+    "hoursAttended": 19.5,
+    "tracksExplored": 4,
+    "topAchievement": "AI Pioneer"
+  },
+  "callsToAction": [
+    {
+      "text": "Explore AWS Training & Certification",
+      "url": "https://aws.amazon.com/training/?ref=reinvent2025-3011",
+      "type": "primary",
+      "trackingId": "cta-aws-training"
+    },
+    {
+      "text": "Join AWS Partner Network",
+      "url": "https://aws.amazon.com/partners/?ref=reinvent2025-3011",
+      "type": "secondary",
+      "trackingId": "cta-apn"
+    },
+    {
+      "text": "Save the Date: AWS re:Invent 2026",
+      "url": "https://reinvent.awsevents.com/2026?ref=reinvent2025-3011",
+      "type": "tertiary",
+      "trackingId": "cta-reinvent2026"
+    }
+  ],
+  "registeredAt": "2025-09-15T11:20:00Z"
+}

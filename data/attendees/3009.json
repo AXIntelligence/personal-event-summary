@@ -1,0 +1,275 @@
+{
+  "id": "3009",
+  "firstName": "Lisa",
+  "lastName": "Martinez",
+  "email": "lisa.martinez@healthcareprovider.com",
+  "company": "Healthcare Provider",
+  "title": "Lead Solutions Architect",
+  "eventId": "aws-reinvent-2025",
+  "sessions": [
+    {
+      "id": "ARC302",
+      "title": "Well-Architected Framework: Best Practices",
+      "description": "Apply the AWS Well-Architected Framework to your applications. Review operational excellence, security, reliability, performance efficiency, cost optimization, and sustainability pillars.",
+      "speakers": ["Lisa Martinez, Principal Solutions Architect, AWS"],
+      "dateTime": "2025-12-03T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "Architecture"
+    },
+    {
+      "id": "SEC301",
+      "title": "Zero Trust Security on AWS",
+      "description": "Implement zero trust security models using AWS services. Explore identity verification, least privilege access, micro-segmentation, and continuous security monitoring strategies.",
+      "speakers": ["Jennifer Lee, Security Architect, AWS", "David Kim, Sr. Security Engineer, AWS"],
+      "dateTime": "2025-12-02T09:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "HLC201",
+      "title": "HIPAA Compliance on AWS: Architecture Best Practices",
+      "description": "Build HIPAA-compliant healthcare applications on AWS. Learn about BAA requirements, PHI data protection, audit logging with CloudTrail, encryption strategies, and compliance automation.",
+      "speakers": ["Dr. Rachel Park, Healthcare Solutions Architect, AWS", "James Wilson, Compliance Specialist, AWS"],
+      "dateTime": "2025-12-01T10:00:00Z",
+      "durationMinutes": 90,
+      "track": "Healthcare & Life Sciences"
+    },
+    {
+      "id": "DAT401",
+      "title": "Amazon Aurora: Global Database at Scale",
+      "description": "Build globally distributed databases with Amazon Aurora. Learn about Aurora Global Database, read replicas, failover strategies, and performance tuning for multi-region applications.",
+      "speakers": ["Carlos Mendez, Database Architect, AWS"],
+      "dateTime": "2025-12-03T10:30:00Z",
+      "durationMinutes": 60,
+      "track": "Database"
+    },
+    {
+      "id": "SEC401",
+      "title": "Healthcare Data Security: Encryption and Key Management",
+      "description": "Protect sensitive healthcare data with AWS encryption services. Master AWS KMS, CloudHSM, encryption at rest and in transit, and key rotation strategies for HIPAA workloads.",
+      "speakers": ["Sarah Thompson, Security Engineer, AWS", "Michael Chen, Cryptography Specialist, AWS"],
+      "dateTime": "2025-12-02T14:00:00Z",
+      "durationMinutes": 75,
+      "track": "Security"
+    },
+    {
+      "id": "ARC301",
+      "title": "Multi-Region Active-Active Architectures",
+      "description": "Design globally resilient applications with active-active multi-region architectures. Learn data replication strategies, traffic routing patterns, and disaster recovery best practices.",
+      "speakers": ["Michael Rodriguez, Solutions Architect, AWS"],
+      "dateTime": "2025-12-01T13:30:00Z",
+      "durationMinutes": 75,
+      "track": "Architecture"
+    },
+    {
+      "id": "DAT301",
+      "title": "Database Migration Strategies for Healthcare Providers",
+      "description": "Migrate legacy healthcare databases to AWS with minimal downtime. Explore AWS DMS, Schema Conversion Tool, data validation, and compliance maintenance during migration.",
+      "speakers": ["Patricia Rodriguez, Database Migration Specialist, AWS"],
+      "dateTime": "2025-12-03T15:00:00Z",
+      "durationMinutes": 60,
+      "track": "Database"
+    },
+    {
+      "id": "SEC302",
+      "title": "AWS IAM: Advanced Access Control Patterns",
+      "description": "Master AWS Identity and Access Management with advanced patterns. Explore permission boundaries, service control policies, cross-account access, and least privilege design.",
+      "speakers": ["Patricia Moore, Identity Specialist, AWS"],
+      "dateTime": "2025-12-04T11:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "ARC401",
+      "title": "Architecting for Healthcare Interoperability: FHIR on AWS",
+      "description": "Build interoperable healthcare systems using FHIR standards on AWS. Learn about Amazon HealthLake, API integration patterns, and data normalization strategies.",
+      "speakers": ["Dr. Emily Zhang, Healthcare Architect, AWS", "Robert Lee, Sr. Solutions Architect, AWS"],
+      "dateTime": "2025-12-04T09:00:00Z",
+      "durationMinutes": 90,
+      "track": "Architecture"
+    },
+    {
+      "id": "ARC303",
+      "title": "Disaster Recovery Strategies on AWS",
+      "description": "Design comprehensive disaster recovery solutions on AWS. Compare backup/restore, pilot light, warm standby, and multi-site active/active DR strategies.",
+      "speakers": ["Daniel Garcia, Resilience Architect, AWS"],
+      "dateTime": "2025-12-05T10:00:00Z",
+      "durationMinutes": 75,
+      "track": "Architecture"
+    },
+    {
+      "id": "HLC301",
+      "title": "Patient Data Privacy: AWS Best Practices",
+      "description": "Implement comprehensive patient data privacy controls. Explore data anonymization, consent management, access logging, and breach notification automation on AWS.",
+      "speakers": ["Dr. Amanda Foster, Privacy Solutions Architect, AWS"],
+      "dateTime": "2025-12-04T14:30:00Z",
+      "durationMinutes": 60,
+      "track": "Healthcare & Life Sciences"
+    },
+    {
+      "id": "DAT402",
+      "title": "DynamoDB: Single-Digit Millisecond Performance",
+      "description": "Build high-performance applications with Amazon DynamoDB. Explore partition key design, global secondary indexes, DynamoDB Streams, and capacity planning.",
+      "speakers": ["Robert Lee, NoSQL Specialist, AWS"],
+      "dateTime": "2025-12-05T15:30:00Z",
+      "durationMinutes": 60,
+      "track": "Database"
+    },
+    {
+      "id": "SEC501",
+      "title": "AWS Security Hub: Centralized Compliance Monitoring",
+      "description": "Automate security and compliance monitoring with AWS Security Hub. Learn continuous compliance checks, automated remediation, and integration with AWS Config and GuardDuty.",
+      "speakers": ["Mark Johnson, Security Automation Lead, AWS"],
+      "dateTime": "2025-12-05T13:00:00Z",
+      "durationMinutes": 60,
+      "track": "Security"
+    },
+    {
+      "id": "ARC201",
+      "title": "Serverless Architectures for Healthcare Applications",
+      "description": "Build HIPAA-eligible serverless applications with AWS Lambda, API Gateway, and DynamoDB. Learn event-driven patterns, cost optimization, and security best practices.",
+      "speakers": ["Thomas Anderson, Serverless Specialist, AWS", "Nina Patel, Healthcare Solutions Engineer, AWS"],
+      "dateTime": "2025-12-02T11:00:00Z",
+      "durationMinutes": 90,
+      "track": "Architecture"
+    }
+  ],
+  "connections": [
+    {
+      "name": "Dr. Rachel Park",
+      "title": "Healthcare Solutions Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/rachelpark-aws-healthcare"
+    },
+    {
+      "name": "James Wilson",
+      "title": "Compliance Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Jennifer Lee",
+      "title": "Security Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/jenniferlee-aws-security"
+    },
+    {
+      "name": "Sarah Thompson",
+      "title": "Security Engineer",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Michael Chen",
+      "title": "Cryptography Specialist",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/michaelchen-aws-crypto"
+    },
+    {
+      "name": "Carlos Mendez",
+      "title": "Database Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Patricia Rodriguez",
+      "title": "Database Migration Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Dr. Emily Zhang",
+      "title": "Healthcare Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/emilyzhang-aws-healthcare"
+    },
+    {
+      "name": "Daniel Garcia",
+      "title": "Resilience Architect",
+      "company": "Amazon Web Services",
+      "linkedIn": "https://linkedin.com/in/danielgarcia-aws"
+    },
+    {
+      "name": "Dr. Amanda Foster",
+      "title": "Privacy Solutions Architect",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Patricia Moore",
+      "title": "Identity Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Mark Johnson",
+      "title": "Security Automation Lead",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Robert Lee",
+      "title": "NoSQL Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Thomas Anderson",
+      "title": "Serverless Specialist",
+      "company": "Amazon Web Services"
+    },
+    {
+      "name": "Dr. Kevin Walsh",
+      "title": "Chief Medical Information Officer",
+      "company": "Regional Health System",
+      "linkedIn": "https://linkedin.com/in/kevinwalsh-cmio"
+    },
+    {
+      "name": "Maria Santos",
+      "title": "Healthcare IT Director",
+      "company": "Community Hospital Network"
+    },
+    {
+      "name": "David Nguyen",
+      "title": "VP of Technology",
+      "company": "Digital Health Solutions",
+      "linkedIn": "https://linkedin.com/in/davidnguyen-digitalhealth"
+    },
+    {
+      "name": "Rebecca Miller",
+      "title": "Compliance Manager",
+      "company": "Healthcare Technology Partners"
+    },
+    {
+      "name": "Dr. James Thompson",
+      "title": "Solutions Architect",
+      "company": "Health Information Exchange",
+      "linkedIn": "https://linkedin.com/in/jamesthompson-hie"
+    },
+    {
+      "name": "Samantha Brooks",
+      "title": "Cloud Security Lead",
+      "company": "MedTech Innovations Inc"
+    }
+  ],
+  "stats": {
+    "sessionsAttended": 14,
+    "connectionsMade": 20,
+    "hoursAttended": 21,
+    "tracksExplored": 6,
+    "topAchievement": "Healthcare Cloud Expert"
+  },
+  "callsToAction": [
+    {
+      "text": "Explore AWS Training & Certification",
+      "url": "https://aws.amazon.com/training/?ref=reinvent2025-3009",
+      "type": "primary",
+      "trackingId": "cta-aws-training"
+    },
+    {
+      "text": "Learn About AWS Healthcare Solutions",
+      "url": "https://aws.amazon.com/health/?ref=reinvent2025-3009",
+      "type": "secondary",
+      "trackingId": "cta-healthcare"
+    },
+    {
+      "text": "Save the Date: AWS re:Invent 2026",
+      "url": "https://reinvent.awsevents.com/2026?ref=reinvent2025-3009",
+      "type": "tertiary",
+      "trackingId": "cta-reinvent2026"
+    }
+  ],
+  "registeredAt": "2025-09-15T10:00:00Z"
+}
