@@ -111,9 +111,12 @@ class StyleExtractionCrew:
     @task
     def compile_config(self) -> Task:
         """Create task to compile configuration."""
+        from event_style_scraper.types import EventStyleConfig
+
         return Task(
             config=self.tasks_config["compile_config"],
-            agent=self.compiler_agent()
+            agent=self.compiler_agent(),
+            output_pydantic=EventStyleConfig  # Native Pydantic output
         )
 
     @crew

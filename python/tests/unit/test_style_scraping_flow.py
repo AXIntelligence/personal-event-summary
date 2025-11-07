@@ -12,7 +12,32 @@ from event_style_scraper.flows.style_scraping_flow import (
     StyleScrapingFlow,
     StyleScrapingState,
 )
-from event_style_scraper.types import EventStyleConfig, ColorPalette, Typography, BrandVoice
+from event_style_scraper.types import EventStyleConfig, ColorPalette, Typography, BrandVoice, LayoutConfig
+
+
+def create_test_config(event_id="test"):
+    """Helper function to create a test EventStyleConfig."""
+    return EventStyleConfig(
+        event_id=event_id,
+        event_name="Test Event",
+        source_url="https://example.com",
+        colors=ColorPalette(
+            primary="#667eea",
+            secondary="#764ba2",
+            accent="#f093fb",
+            background="#ffffff",
+            text="#1a202c"
+        ),
+        typography=Typography(
+            heading_font="Inter, sans-serif",
+            body_font="system-ui, sans-serif"
+        ),
+        brand_voice=BrandVoice(
+            tone="professional",
+            style="modern",
+            keywords=["test"]
+        )
+    )
 
 
 class TestStyleScrapingState:
@@ -162,34 +187,15 @@ class TestStyleScrapingFlow:
     @patch("event_style_scraper.flows.style_scraping_flow.StyleExtractionCrew")
     def test_start_updates_state_to_scraping(self, mock_crew_class):
         """Test that start() updates state to 'scraping'."""
-        # Mock crew to return a complete result
-        config_json = {
-            "event_id": "test",
-            "event_name": "Test",
-            "source_url": "https://example.com",
-            "colors": {
-                "primary": "#667eea",
-                "secondary": "#764ba2",
-                "accent": "#f093fb",
-                "background": "#ffffff",
-                "text": "#1a202c"
-            },
-            "typography": {
-                "heading_font": "Inter, sans-serif",
-                "body_font": "system-ui, sans-serif"
-            },
-            "brand_voice": {
-                "tone": "professional",
-                "style": "modern",
-                "keywords": ["test"]
-            }
-        }
-        mock_crew = Mock()
+        config = create_test_config()
+
+        mock_crew_instance = Mock()
+        mock_crew_obj = Mock()
         mock_result = Mock()
-        import json
-        mock_result.raw = json.dumps(config_json)
-        mock_crew.kickoff.return_value = mock_result
-        mock_crew_class.return_value = mock_crew
+        mock_result.pydantic = config
+        mock_crew_obj.kickoff.return_value = mock_result
+        mock_crew_instance.crew.return_value = mock_crew_obj
+        mock_crew_class.return_value = mock_crew_instance
 
         flow = StyleScrapingFlow(url="https://example.com")
 
@@ -208,72 +214,35 @@ class TestStyleScrapingFlow:
     @patch("event_style_scraper.flows.style_scraping_flow.StyleExtractionCrew")
     def test_start_calls_crew_kickoff(self, mock_crew_class):
         """Test that start() calls crew.kickoff()."""
-        config_json = {
-            "event_id": "test",
-            "event_name": "Test",
-            "source_url": "https://example.com",
-            "colors": {
-                "primary": "#667eea",
-                "secondary": "#764ba2",
-                "accent": "#f093fb",
-                "background": "#ffffff",
-                "text": "#1a202c"
-            },
-            "typography": {
-                "heading_font": "Inter, sans-serif",
-                "body_font": "system-ui, sans-serif"
-            },
-            "brand_voice": {
-                "tone": "professional",
-                "style": "modern",
-                "keywords": ["test"]
-            }
-        }
-        mock_crew = Mock()
+        config = create_test_config()
+
+        mock_crew_instance = Mock()
+        mock_crew_obj = Mock()
         mock_result = Mock()
-        import json
-        mock_result.raw = json.dumps(config_json)
-        mock_crew.kickoff.return_value = mock_result
-        mock_crew_class.return_value = mock_crew
+        mock_result.pydantic = config
+        mock_crew_obj.kickoff.return_value = mock_result
+        mock_crew_instance.crew.return_value = mock_crew_obj
+        mock_crew_class.return_value = mock_crew_instance
 
         flow = StyleScrapingFlow(url="https://example.com")
         flow.start()
 
-        # Verify kickoff was called
-        mock_crew.kickoff.assert_called_once()
+        # Verify crew() and kickoff() were called
+        mock_crew_instance.crew.assert_called_once()
+        mock_crew_obj.kickoff.assert_called_once()
 
     @patch("event_style_scraper.flows.style_scraping_flow.StyleExtractionCrew")
     def test_start_returns_event_style_config(self, mock_crew_class):
         """Test that start() returns EventStyleConfig on success."""
-        # Create a valid config JSON
-        config_json = {
-            "event_id": "example-com",
-            "event_name": "Example Event",
-            "source_url": "https://example.com",
-            "colors": {
-                "primary": "#667eea",
-                "secondary": "#764ba2",
-                "accent": "#f093fb",
-                "background": "#ffffff",
-                "text": "#1a202c"
-            },
-            "typography": {
-                "heading_font": "Inter, sans-serif",
-                "body_font": "system-ui, sans-serif"
-            },
-            "brand_voice": {
-                "tone": "professional",
-                "style": "modern",
-                "keywords": ["innovation"]
-            }
-        }
+        config = create_test_config(event_id="example-com")
 
-        mock_crew = Mock()
+        mock_crew_instance = Mock()
+        mock_crew_obj = Mock()
         mock_result = Mock()
-        import json
-        mock_result.raw = json.dumps(config_json)
-        mock_crew.kickoff.return_value = mock_result
-        mock_crew_class.return_value = mock_crew
+        mock_result.pydantic = config
+        mock_crew_obj.kickoff.return_value = mock_result
+        mock_crew_instance.crew.return_value = mock_crew_obj
+        mock_crew_class.return_value = mock_crew_instance
 
         flow = StyleScrapingFlow(url="https://example.com")
         result = flow.start()
@@ -285,34 +254,15 @@ class TestStyleScrapingFlow:
     @patch("event_style_scraper.flows.style_scraping_flow.StyleExtractionCrew")
     def test_start_updates_state_on_success(self, mock_crew_class):
         """Test that start() updates state to 'completed' on success."""
-        config_json = {
-            "event_id": "test",
-            "event_name": "Test",
-            "source_url": "https://example.com",
-            "colors": {
-                "primary": "#667eea",
-                "secondary": "#764ba2",
-                "accent": "#f093fb",
-                "background": "#ffffff",
-                "text": "#1a202c"
-            },
-            "typography": {
-                "heading_font": "Inter, sans-serif",
-                "body_font": "system-ui, sans-serif"
-            },
-            "brand_voice": {
-                "tone": "professional",
-                "style": "modern",
-                "keywords": ["test"]
-            }
-        }
+        config = create_test_config()
 
-        mock_crew = Mock()
+        mock_crew_instance = Mock()
+        mock_crew_obj = Mock()
         mock_result = Mock()
-        import json
-        mock_result.raw = json.dumps(config_json)
-        mock_crew.kickoff.return_value = mock_result
-        mock_crew_class.return_value = mock_crew
+        mock_result.pydantic = config
+        mock_crew_obj.kickoff.return_value = mock_result
+        mock_crew_instance.crew.return_value = mock_crew_obj
+        mock_crew_class.return_value = mock_crew_instance
 
         flow = StyleScrapingFlow(url="https://example.com")
         result = flow.start()
@@ -325,9 +275,11 @@ class TestStyleScrapingFlow:
     @patch("event_style_scraper.flows.style_scraping_flow.StyleExtractionCrew")
     def test_start_handles_crew_failure(self, mock_crew_class):
         """Test that start() handles crew failures gracefully."""
-        mock_crew = Mock()
-        mock_crew.kickoff.side_effect = Exception("Connection timeout")
-        mock_crew_class.return_value = mock_crew
+        mock_crew_instance = Mock()
+        mock_crew_obj = Mock()
+        mock_crew_obj.kickoff.side_effect = Exception("Connection timeout")
+        mock_crew_instance.crew.return_value = mock_crew_obj
+        mock_crew_class.return_value = mock_crew_instance
 
         flow = StyleScrapingFlow(url="https://example.com")
 
@@ -341,11 +293,16 @@ class TestStyleScrapingFlow:
     @patch("event_style_scraper.flows.style_scraping_flow.StyleExtractionCrew")
     def test_start_handles_invalid_json(self, mock_crew_class):
         """Test that start() handles invalid JSON from crew."""
-        mock_crew = Mock()
+        mock_crew_instance = Mock()
+        mock_crew_obj = Mock()
         mock_result = Mock()
+        # No pydantic, no json_dict, only invalid raw
+        mock_result.pydantic = None
+        mock_result.json_dict = None
         mock_result.raw = "not valid json"
-        mock_crew.kickoff.return_value = mock_result
-        mock_crew_class.return_value = mock_crew
+        mock_crew_obj.kickoff.return_value = mock_result
+        mock_crew_instance.crew.return_value = mock_crew_obj
+        mock_crew_class.return_value = mock_crew_instance
 
         flow = StyleScrapingFlow(url="https://example.com")
 

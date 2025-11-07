@@ -86,9 +86,21 @@ class StyleScrapingFlow:
             crew_instance = StyleExtractionCrew(url=self.url, timeout=self.timeout)
             result = crew_instance.crew().kickoff()
 
-            # Parse result JSON
-            config_data = json.loads(result.raw)
-            config = EventStyleConfig(**config_data)
+            # Get Pydantic output directly from CrewAI (output_pydantic configured on final task)
+            if hasattr(result, 'pydantic') and result.pydantic:
+                config = result.pydantic
+            elif hasattr(result, 'json_dict') and result.json_dict:
+                # Fallback: parse from json_dict
+                config = EventStyleConfig(**result.json_dict)
+            elif hasattr(result, 'raw') and result.raw:
+                # Fallback: try parsing raw as JSON
+                try:
+                    config_data = json.loads(result.raw)
+                    config = EventStyleConfig(**config_data)
+                except (json.JSONDecodeError, TypeError, ValueError) as parse_error:
+                    raise ValueError(f"Failed to parse crew output as JSON: {parse_error}. Output: {result.raw[:500]}")
+            else:
+                raise ValueError("Crew result has no valid output (no pydantic, json_dict, or raw)")
 
             # Update state to completed
             self._state.status = "completed"
