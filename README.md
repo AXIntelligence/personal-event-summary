@@ -164,6 +164,102 @@ npm run type-check
 - 21 integration tests (endToEnd)
 - 14 validation tests (HTML/accessibility)
 
+## 🤖 Automated Style Scraping Pipeline
+
+This project uses GitHub Actions to automatically scrape event website styles and apply them to generated pages.
+
+### Workflow: Scrape and Deploy
+
+**Triggers:**
+- 🖱️ **Manual Dispatch**: Via GitHub Actions UI (on-demand scraping when event websites change)
+- 📝 **Push to main**: Automatic deployment using cached style configs (no scraping, fast)
+
+**Pipeline Flow:**
+```
+Manual Trigger → Scrape Event Websites → Validate JSON → Commit Configs → Generate Pages → Deploy
+Push to main   → (Skip Scraping)       → Use Cached Configs → Generate Pages → Deploy
+```
+
+### Manual Scraping
+
+Trigger scraping when:
+- Event website redesign (colors/branding changed)
+- New event added to system
+- Before major releases (ensure styles are current)
+- After discovering style mismatches
+
+**Using GitHub CLI:**
+```bash
+# Scrape all configured events
+gh workflow run scrape-and-deploy.yml
+
+# Scrape specific events
+gh workflow run scrape-and-deploy.yml \
+  --field events_to_scrape="eventtechlive.com,example.com"
+
+# Force re-scraping even if configs exist
+gh workflow run scrape-and-deploy.yml \
+  --field force_scrape=true
+```
+
+**Using GitHub UI:**
+1. Go to Actions → "Scrape Styles and Deploy"
+2. Click "Run workflow"
+3. Select events to scrape or choose "all"
+4. Click "Run workflow"
+
+### Cost Management
+
+- **API Usage**: ~$0.10 per event per scrape (OpenAI API via CrewAI)
+- **Manual-Only Triggers**: Costs only incurred when you manually trigger scraping
+- **Typical Usage**: ~2 scrapes/month = ~$0.80/month for 4 events
+- **Cached Configs**: Used if scraping fails (graceful fallback)
+- **No Unexpected Charges**: No automated/scheduled scraping runs
+
+### Pipeline Features
+
+**Performance:**
+- First run: ~5-7 min (install Playwright + scrape)
+- Cached run: ~3-5 min (50% faster with browser caching)
+- Push-only: <5 min (no scraping overhead)
+
+**Monitoring:**
+- Workflow status badge in README
+- Scraping summary with event names, colors, timestamps
+- Staleness warnings (configs >30 days old)
+- Cost tracking (token usage logged)
+
+**Validation:**
+- JSON schema validation (all required fields present)
+- Color format validation (#RRGGBB hex codes)
+- End-to-end pipeline test (runs on push to main/develop)
+- CSS injection verification (colors appear in generated HTML)
+
+### Configuration
+
+**Add New Events:**
+
+1. Update `python/config/events.json`:
+```json
+{
+  "id": "my-event-2025",
+  "name": "My Conference 2025",
+  "website": "https://myconference.com",
+  "scraping": {
+    "enabled": true,
+    "timeout": 90,
+    "selectors": {
+      "header": "header",
+      "primary_cta": ".btn-primary"
+    }
+  }
+}
+```
+
+2. Run manual scraping workflow
+3. Scraped config will be saved to `python/style-configs/my-event-2025.json`
+4. Generate pages with event-specific styling
+
 ## 🎨 Customization
 
 ### Adding Attendees

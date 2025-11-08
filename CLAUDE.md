@@ -1044,6 +1044,99 @@ Final Answer: {same as tool output}
 
 This lesson was learned through Plan 005 implementation and is critical for any AI agent system that relies on tools for accurate data extraction.
 
+### 21. Automate End-to-End Validation in CI/CD (Plan 006)
+
+**Learning**: Automating the complete pipeline in GitHub Actions provides continuous validation that multi-system integrations work correctly. Manual-triggered scraping with cached fallbacks provides explicit cost control while maintaining integration testing.
+
+**What Was Built (Plan 006 Implementation)**:
+- GitHub Actions workflow: Manual scrape → Validate → Generate → Deploy
+- E2E validation script: Tests actual Python → TypeScript → HTML pipeline
+- Playwright browser caching (~50% faster repeat runs)
+- API cost tracking (logs token usage after each scrape)
+- Staleness warnings (alerts if configs >30 days old)
+- Workflow summaries (shows scraped colors, event names, timestamps)
+
+**The Pipeline**:
+```
+Manual Trigger → Scrape websites → Commit configs → Generate pages → Deploy
+Push to main   → Skip scraping   → Use cached configs → Generate  → Deploy (fast)
+```
+
+**Key Design Decisions**:
+
+1. **Manual-Only Scraping**: No scheduled/automated runs
+   - ✅ Full cost control (~$0.10/event/scrape, user decides when)
+   - ✅ No surprise OpenAI API charges
+   - ✅ Explicit timing (scrape before releases, after website redesigns)
+
+2. **Graceful Fallback**: If scraping fails → use last known good config
+   - ✅ Deployment never blocked by scraping failures
+   - ✅ Cached configs provide reliability
+   - ✅ Warning logged, but pipeline continues
+
+3. **End-to-End Test**: Validates actual data flow (not mocks!)
+   - ✅ Runs on every push to main/develop
+   - ✅ Scrapes example.com with real Playwright + CrewAI
+   - ✅ Verifies JSON → TypeScript → HTML → CSS injection
+   - ✅ Addresses CLAUDE.md Lesson 16 (E2E validation requirement)
+
+**Performance Impact**:
+- First run: ~5-7 min (install Playwright + scrape)
+- Cached run: ~3-5 min (50% faster)
+- Push-only: <5 min (no scraping overhead)
+
+**Monitoring Features**:
+```yaml
+# Workflow summary shows:
+## 🎨 Scraping Results
+✅ Status: Scraping successful
+
+### Style Configurations
+- **Event Tech Live 2025** (`event-tech-live-2025`)
+  - Primary Color: `#160822`
+  - Last Updated: 2024-11-06T12:34:56Z
+```
+
+**Cost Tracking**:
+```
+💰 API Cost Tracking:
+   Tokens used: 15,234
+   Estimated cost: $0.30
+```
+
+**Why This Matters**:
+- Continuous validation catches regressions immediately
+- Manual triggers prevent cost surprises
+- Cached fallbacks ensure reliability
+- Workflow summaries provide visibility
+- E2E tests prove integration (not just unit tests)
+- Addresses Lesson 16's "validate with REAL data" requirement
+
+**Example Usage**:
+```bash
+# Trigger scraping for all events
+gh workflow run scrape-and-deploy.yml
+
+# Scrape specific events only
+gh workflow run scrape-and-deploy.yml \
+  --field events_to_scrape="eventtechlive.com"
+
+# Force re-scrape even if configs exist
+gh workflow run scrape-and-deploy.yml \
+  --field force_scrape=true
+```
+
+**Rule of Thumb**:
+> **Automate validation, not costs. Manual triggers for expensive operations (API calls) + automated testing = continuous validation with predictable expenses.**
+
+**Commits**:
+- `a547ec0`: Phase 1 (workflow creation)
+- `d31ffc0`: Phase 2 (E2E validation script)
+- `a0df305`: Phase 3 (caching, cost tracking, staleness warnings)
+- `d5dfb31`: Phase 4 (monitoring, workflow summaries)
+
+This lesson was learned through Plan 006 implementation and demonstrates how to balance automation (for validation) with manual control (for costs).
+
 ## Development Standards
 
 ### Test-Driven Development (TDD)
