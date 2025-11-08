@@ -1,0 +1,28 @@
+[
+  {
+    "id": "event-tech-live-2025",
+    "name": "Event Tech Live 2025",
+    "website": "https://eventtechlive.com",
+    "scraping": {
+      "enabled": true,
+      "timeout": 90,
+      "selectors": {
+        "header": "header",
+        "primary_cta": ".btn-primary, button.primary"
+      }
+    }
+  },
+  {
+    "id": "event-2025",
+    "name": "TechConf 2025",
+    "website": "https://example.com",
+    "scraping": {
+      "enabled": true,
+      "timeout": 60,
+      "selectors": {
+        "header": "header",
+        "primary_cta": "button"
+      }
+    }
+  }
+]

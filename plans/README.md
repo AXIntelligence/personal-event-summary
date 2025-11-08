@@ -134,7 +134,7 @@ When referencing plans in code comments or documentation:
 | 003 | [Event-Centered Styling with CrewAI](003-event-centered-styling-crewai.md) | 📝 Draft | - | 🟡 High | Implement PRD-002: Event website style scraping using crewAI multi-agent framework |
 | 004 | [Fix Event Tech Live Style Mismatch](004-fix-event-tech-live-style-mismatch.md) | 📝 Draft | - | 🔴 Critical | Fix style mismatch by replacing sample config with real scraped data from eventtechlive.com |
 | 005 | [Playwright-Based Scraping Tool](005-playwright-scraping-tool.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Replace AI-guessing with actual browser automation for accurate style extraction |
-| 006 | [End-to-End Scrape-Deploy Pipeline](006-end-to-end-scrape-deploy-pipeline.md) | 📝 Draft | - | 🔴 Critical | Automate scraping in GitHub Actions for continuous style updates and full pipeline validation |
+| 006 | [End-to-End Scrape-Deploy Pipeline](006-end-to-end-scrape-deploy-pipeline.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Automate scraping in GitHub Actions for continuous style updates and full pipeline validation |
 | 007 | [AWS re:Invent Data Source Integration](007-aws-reinvent-data-source.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Replace TechConf 2025 with AWS re:Invent as high-quality event data source |
 | 008 | [Fix Missing Event Logos and Markus AI Attribution](008-fix-missing-event-and-markus-logos.md) | ✅ Completed | 2025-11-07 | 🔴 Critical | Fix missing logos and Markus AI attribution on GitHub Pages deployment |
 

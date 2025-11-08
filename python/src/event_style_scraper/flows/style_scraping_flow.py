@@ -86,6 +86,18 @@ class StyleScrapingFlow:
             crew_instance = StyleExtractionCrew(url=self.url, timeout=self.timeout)
             result = crew_instance.crew().kickoff()
 
+            # Log API token usage for cost tracking
+            if hasattr(result, 'token_usage') and result.token_usage:
+                tokens = result.token_usage
+                estimated_cost = tokens * 0.00002  # Rough estimate: $0.02 per 1K tokens
+                print(f"\n💰 API Cost Tracking:")
+                print(f"   Tokens used: {tokens:,}")
+                print(f"   Estimated cost: ${estimated_cost:.4f}")
+            elif hasattr(result, 'usage_metrics') and result.usage_metrics:
+                # Alternative attribute name
+                print(f"\n💰 API Cost Tracking:")
+                print(f"   Usage metrics: {result.usage_metrics}")
+
             # Get Pydantic output directly from CrewAI (output_pydantic configured on final task)
             if hasattr(result, 'pydantic') and result.pydantic:
                 config = result.pydantic
