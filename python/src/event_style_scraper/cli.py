@@ -2,6 +2,8 @@
 
 import click
 import sys
+import logging
+import os
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -13,6 +15,13 @@ def cli():
     """Event Style Scraper - Extract styles and brand voice from event websites."""
     # Load environment variables from .env file
     load_dotenv()
+
+    # Configure logging based on environment
+    log_level = os.getenv('LOG_LEVEL', 'INFO').upper()
+    logging.basicConfig(
+        level=getattr(logging, log_level),
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    )
     pass
 
 
@@ -28,7 +37,12 @@ def cli():
     type=int,
     help="Timeout in seconds for scraping operations (default: 60)"
 )
-def scrape(url: str, timeout: int):
+@click.option(
+    "--debug",
+    is_flag=True,
+    help="Enable debug logging for troubleshooting"
+)
+def scrape(url: str, timeout: int, debug: bool):
     """
     Scrape an event website to extract styles and brand voice.
 
@@ -39,7 +53,15 @@ def scrape(url: str, timeout: int):
 
     Example:
         python -m event_style_scraper scrape --url https://dearmarkus.ai/
+        python -m event_style_scraper scrape --url https://example.com --debug
     """
+    # Enable debug logging if flag is set
+    if debug:
+        logging.getLogger().setLevel(logging.DEBUG)
+        logging.getLogger("httpx").setLevel(logging.DEBUG)
+        logging.getLogger("openai").setLevel(logging.DEBUG)
+        click.echo("🐛 Debug logging enabled", err=True)
+
     try:
         # Create flow and run scraping
         click.echo(f"🔍 Scraping website: {url}")
