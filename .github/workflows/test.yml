@@ -117,4 +117,5 @@ jobs:
     - name: Run E2E pipeline test
       env:
         OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        CI: true
       run: ./scripts/test-e2e-pipeline.sh
