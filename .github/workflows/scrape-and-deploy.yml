@@ -75,6 +75,10 @@ jobs:
       continue-on-error: true
       env:
         CI: true
+        CREWAI_VERBOSE: "True"
+        OPENAI_LOG: "debug"
+        LOG_LEVEL: "DEBUG"
+        HTTPX_LOG_LEVEL: "DEBUG"
       run: |
         cd python
 
@@ -85,13 +89,24 @@ jobs:
           IFS=',' read -ra EVENTS <<< "${{ github.event.inputs.events_to_scrape }}"
         fi
 
-        echo "Scraping events: ${EVENTS[@]}"
+        echo "🔍 Scraping events with debug logging enabled: ${EVENTS[@]}"
+        echo ""
 
         for event in "${EVENTS[@]}"; do
-          echo "Scraping $event..."
+          echo "=================================================="
+          echo "🌐 Scraping: $event"
+          echo "⏰ Start time: $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          echo "=================================================="
+
           PYTHONPATH=./src python -m event_style_scraper scrape \
             --url "https://$event" \
-            --timeout 90 || echo "⚠️ Failed to scrape $event"
+            --timeout 90 \
+            --debug || echo "⚠️ Failed to scrape $event"
+
+          echo ""
+          echo "⏰ End time: $(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+          echo "=================================================="
+          echo ""
         done
 
     - name: Validate scraped configs
